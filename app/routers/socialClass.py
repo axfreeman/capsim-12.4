@@ -12,9 +12,12 @@ router=APIRouter(
 )
 
 # get all socialClasses
-#TODO  this should (1) only retrieve the items assigned to the logged in user (2) allow the admin user to see all items (3) allow the admin user to filter by user
 @router.get("/",response_model=List[SocialClassBase])
 def get_socialClasses(db: Session = Depends (get_db),simulation:Simulation=Depends(get_current_simulation)):
+    """
+    API Endpoint which provides all social classes
+    TODO should allow the admin user to see all items and filter by user
+    """
     if (simulation==None):
         return []
     socialClasses=db.query(SocialClass).where(SocialClass.simulation_id==simulation.id)

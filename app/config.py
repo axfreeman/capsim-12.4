@@ -2,6 +2,12 @@ from pydantic_settings import BaseSettings
 import os
 
 class Settings(BaseSettings):
+    """
+    Subclass the pydantic BaseSettings class by adding
+    the secret environment variables that we need.
+
+    TODO pydocs doesn't like this
+    """
     database_hostname: str
     database_port: str
     database_password: str

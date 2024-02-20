@@ -1,8 +1,8 @@
-## 20 Feb 2024  
-Authorization works but very barebones, not user-friendly  
-Demand and Supply work OK  
-Trade not re-ported from 12.1  
-Production can't be tested until trade is fixed  
+# Informal list of issues requiring attention
+* see also the buglist for capfront.05
 
-## Other
-*  TESTS as specified in apps.json WON'T WORK BECAUSE WE DON'T USE manage.py
+# TODO
+* Reset should be protected and only admin can do it
+* Neither tokens nor hashed passwords should be exported in any endpoint
+* Two standard users guest and admin should be initialised via the reset method
+* Use .env file
