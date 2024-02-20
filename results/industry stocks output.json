@@ -1,0 +1,1560 @@
+[
+  {
+      "id": 1,
+      "owner": 2,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 1,
+      "commodity_id": 3,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 4,
+      "owner": 2,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 1,
+      "commodity_id": 2,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 5,
+      "owner": 1,
+      "usage_type": "Sales",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 1,
+      "commodity_id": 3,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 6,
+      "owner": 1,
+      "usage_type": "Money",
+      "size": 8000.0,
+      "requirement": 0.0,
+      "simulation": 1,
+      "commodity_id": 4,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 7,
+      "owner": 2,
+      "usage_type": "Money",
+      "size": 4000.0,
+      "requirement": 0.0,
+      "simulation": 1,
+      "commodity_id": 4,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 8,
+      "owner": 1,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 1,
+      "commodity_id": 2,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 9,
+      "owner": 1,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 1,
+      "commodity_id": 3,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 10,
+      "owner": 2,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 1,
+      "commodity_id": 1,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 17,
+      "owner": 4,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 2,
+      "commodity_id": 6,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 18,
+      "owner": 3,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 2,
+      "commodity_id": 6,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 19,
+      "owner": 4,
+      "usage_type": "Sales",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 2,
+      "commodity_id": 7,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 20,
+      "owner": 4,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 2,
+      "commodity_id": 7,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 21,
+      "owner": 3,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 2,
+      "commodity_id": 8,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 22,
+      "owner": 4,
+      "usage_type": "Money",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 2,
+      "commodity_id": 8,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 23,
+      "owner": 3,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 2,
+      "commodity_id": 7,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 24,
+      "owner": 3,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 2,
+      "commodity_id": 5,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 31,
+      "owner": 5,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 3,
+      "commodity_id": 12,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 32,
+      "owner": 6,
+      "usage_type": "Money",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 3,
+      "commodity_id": 12,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 33,
+      "owner": 5,
+      "usage_type": "Production",
+      "size": 1000.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 3,
+      "commodity_id": 11,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 34,
+      "owner": 6,
+      "usage_type": "Production",
+      "size": 2000.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 3,
+      "commodity_id": 11,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 35,
+      "owner": 6,
+      "usage_type": "Production",
+      "size": 1000.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 3,
+      "commodity_id": 10,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 36,
+      "owner": 5,
+      "usage_type": "Production",
+      "size": 500.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 3,
+      "commodity_id": 10,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 37,
+      "owner": 6,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 3,
+      "commodity_id": 11,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 38,
+      "owner": 5,
+      "usage_type": "Sales",
+      "size": 1500.0,
+      "requirement": 0.0,
+      "simulation": 3,
+      "commodity_id": 9,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 46,
+      "owner": 8,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 4,
+      "commodity_id": 13,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIa"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 47,
+      "owner": 9,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 14,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIb"
+      },
+      "commodity": {
+          "name": "Luxuries",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 48,
+      "owner": 9,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 4,
+      "commodity_id": 15,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIb"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 49,
+      "owner": 8,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 4,
+      "commodity_id": 15,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIa"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 50,
+      "owner": 7,
+      "usage_type": "Sales",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 15,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 51,
+      "owner": 7,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 4,
+      "commodity_id": 13,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 52,
+      "owner": 7,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 4,
+      "commodity_id": 15,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 53,
+      "owner": 7,
+      "usage_type": "Money",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 16,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 54,
+      "owner": 8,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 16,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIa"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 55,
+      "owner": 8,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 17,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIa"
+      },
+      "commodity": {
+          "name": "Necessities",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 56,
+      "owner": 9,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 4,
+      "commodity_id": 13,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIb"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 57,
+      "owner": 9,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 4,
+      "commodity_id": 16,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department IIb"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 65,
+      "owner": 11,
+      "usage_type": "Sales",
+      "size": 5500.0,
+      "requirement": 0.0,
+      "simulation": 5,
+      "commodity_id": 20,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 66,
+      "owner": 11,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 5,
+      "commodity_id": 20,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 67,
+      "owner": 11,
+      "usage_type": "Money",
+      "size": 9000.0,
+      "requirement": 0.0,
+      "simulation": 5,
+      "commodity_id": 21,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 68,
+      "owner": 10,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.5,
+      "simulation": 5,
+      "commodity_id": 20,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 69,
+      "owner": 10,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.5,
+      "simulation": 5,
+      "commodity_id": 19,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 70,
+      "owner": 11,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 5,
+      "commodity_id": 19,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Means of Production"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 71,
+      "owner": 10,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 5,
+      "commodity_id": 21,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 72,
+      "owner": 10,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 5,
+      "commodity_id": 18,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 79,
+      "owner": 12,
+      "usage_type": "Sales",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 6,
+      "commodity_id": 24,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 80,
+      "owner": 13,
+      "usage_type": "Money",
+      "size": 4000.0,
+      "requirement": 0.0,
+      "simulation": 6,
+      "commodity_id": 25,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 81,
+      "owner": 12,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 6,
+      "commodity_id": 23,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 82,
+      "owner": 13,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 6,
+      "commodity_id": 23,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 83,
+      "owner": 12,
+      "usage_type": "Money",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 6,
+      "commodity_id": 25,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 84,
+      "owner": 12,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 6,
+      "commodity_id": 24,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department I"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 85,
+      "owner": 13,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 6,
+      "commodity_id": 24,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Means of Production",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 86,
+      "owner": 13,
+      "usage_type": "Sales",
+      "size": 6000.0,
+      "requirement": 0.0,
+      "simulation": 6,
+      "commodity_id": 22,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 94,
+      "owner": 16,
+      "usage_type": "Money",
+      "size": 10000.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 30,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Fixed"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 96,
+      "owner": 14,
+      "usage_type": "Money",
+      "size": 9000.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 30,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 97,
+      "owner": 15,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 26,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Circulating"
+      },
+      "commodity": {
+          "name": "Circulating",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 98,
+      "owner": 15,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 29,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Circulating"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 100,
+      "owner": 15,
+      "usage_type": "Sales",
+      "size": 600.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 26,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Circulating"
+      },
+      "commodity": {
+          "name": "Circulating",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 101,
+      "owner": 15,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 28,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Circulating"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 102,
+      "owner": 14,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.005,
+      "simulation": 7,
+      "commodity_id": 26,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Circulating",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 103,
+      "owner": 15,
+      "usage_type": "Money",
+      "size": 8000.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 30,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Circulating"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 104,
+      "owner": 14,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 28,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 105,
+      "owner": 14,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 29,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 106,
+      "owner": 16,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 26,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Fixed"
+      },
+      "commodity": {
+          "name": "Circulating",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 107,
+      "owner": 16,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 28,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Fixed"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 109,
+      "owner": 16,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.01,
+      "simulation": 7,
+      "commodity_id": 29,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Fixed"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 110,
+      "owner": 16,
+      "usage_type": "Sales",
+      "size": 10000.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 28,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Fixed"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 111,
+      "owner": 14,
+      "usage_type": "Sales",
+      "size": 300.0,
+      "requirement": 0.0,
+      "simulation": 7,
+      "commodity_id": 27,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Consumption"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 118,
+      "owner": 17,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 8,
+      "commodity_id": 35,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ia"
+      },
+      "commodity": {
+          "name": "Raw Materials",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 119,
+      "owner": 17,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 8,
+      "commodity_id": 33,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ia"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 120,
+      "owner": 17,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 34,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ia"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 121,
+      "owner": 17,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 8,
+      "commodity_id": 32,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ia"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 122,
+      "owner": 17,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 32,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ia"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 123,
+      "owner": 19,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 35,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ib"
+      },
+      "commodity": {
+          "name": "Raw Materials",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 124,
+      "owner": 19,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 34,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ib"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 125,
+      "owner": 19,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 8,
+      "commodity_id": 32,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ib"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 126,
+      "owner": 19,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 35,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ib"
+      },
+      "commodity": {
+          "name": "Raw Materials",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 127,
+      "owner": 19,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 8,
+      "commodity_id": 33,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department Ib"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 128,
+      "owner": 18,
+      "usage_type": "Money",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 34,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Money",
+          "origin": "MONEY",
+          "usage": "MONEY"
+      }
+  },
+  {
+      "id": 129,
+      "owner": 18,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.3333333333333333,
+      "simulation": 8,
+      "commodity_id": 33,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Labour Power",
+          "origin": "SOCIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 130,
+      "owner": 18,
+      "usage_type": "Sales",
+      "size": 3000.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 31,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Consumption",
+          "origin": "INDUSTRIAL",
+          "usage": "CONSUMPTION"
+      }
+  },
+  {
+      "id": 131,
+      "owner": 18,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.0,
+      "simulation": 8,
+      "commodity_id": 32,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Fixed",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  },
+  {
+      "id": 132,
+      "owner": 18,
+      "usage_type": "Production",
+      "size": 0.0,
+      "requirement": 0.6666666666666666,
+      "simulation": 8,
+      "commodity_id": 35,
+      "demand": 2.0,
+      "owner_id": 1,
+      "industry": {
+          "name": "Department II"
+      },
+      "commodity": {
+          "name": "Raw Materials",
+          "origin": "INDUSTRIAL",
+          "usage": "PRODUCTIVE"
+      }
+  }
+]

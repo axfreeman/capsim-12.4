@@ -1,0 +1,822 @@
+	[
+		{
+			"id": 6,
+			"owner_id": 1,
+			"usage_type": "Money",
+			"size": 8000,
+			"requirement": 0,
+			"simulation_id": 1,
+			"commodity_id": 4,
+			"demand": 0
+		},
+		{
+			"id": 8,
+			"owner_id": 1,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 1,
+			"commodity_id": 2,
+			"demand": 0
+		},
+		{
+			"id": 9,
+			"owner_id": 1,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 1,
+			"commodity_id": 3,
+			"demand": 0
+		},
+		{
+			"id": 5,
+			"owner_id": 1,
+			"usage_type": "Sales",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 1,
+			"commodity_id": 3,
+			"demand": 0
+		},
+		{
+			"id": 7,
+			"owner_id": 2,
+			"usage_type": "Money",
+			"size": 4000,
+			"requirement": 0,
+			"simulation_id": 1,
+			"commodity_id": 4,
+			"demand": 0
+		},
+		{
+			"id": 1,
+			"owner_id": 2,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 1,
+			"commodity_id": 3,
+			"demand": 0
+		},
+		{
+			"id": 4,
+			"owner_id": 2,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 1,
+			"commodity_id": 2,
+			"demand": 0
+		},
+		{
+			"id": 10,
+			"owner_id": 2,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 1,
+			"commodity_id": 1,
+			"demand": 0
+		},
+		{
+			"id": 21,
+			"owner_id": 3,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 2,
+			"commodity_id": 8,
+			"demand": 0
+		},
+		{
+			"id": 18,
+			"owner_id": 3,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 2,
+			"commodity_id": 6,
+			"demand": 0
+		},
+		{
+			"id": 23,
+			"owner_id": 3,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 2,
+			"commodity_id": 7,
+			"demand": 0
+		},
+		{
+			"id": 24,
+			"owner_id": 3,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 2,
+			"commodity_id": 5,
+			"demand": 0
+		},
+		{
+			"id": 22,
+			"owner_id": 4,
+			"usage_type": "Money",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 2,
+			"commodity_id": 8,
+			"demand": 0
+		},
+		{
+			"id": 17,
+			"owner_id": 4,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 2,
+			"commodity_id": 6,
+			"demand": 0
+		},
+		{
+			"id": 20,
+			"owner_id": 4,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 2,
+			"commodity_id": 7,
+			"demand": 0
+		},
+		{
+			"id": 19,
+			"owner_id": 4,
+			"usage_type": "Sales",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 2,
+			"commodity_id": 7,
+			"demand": 0
+		},
+		{
+			"id": 31,
+			"owner_id": 5,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 3,
+			"commodity_id": 12,
+			"demand": 0
+		},
+		{
+			"id": 33,
+			"owner_id": 5,
+			"usage_type": "Production",
+			"size": 1000,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 3,
+			"commodity_id": 11,
+			"demand": 0
+		},
+		{
+			"id": 36,
+			"owner_id": 5,
+			"usage_type": "Production",
+			"size": 500,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 3,
+			"commodity_id": 10,
+			"demand": 0
+		},
+		{
+			"id": 38,
+			"owner_id": 5,
+			"usage_type": "Sales",
+			"size": 1500,
+			"requirement": 0,
+			"simulation_id": 3,
+			"commodity_id": 9,
+			"demand": 0
+		},
+		{
+			"id": 32,
+			"owner_id": 6,
+			"usage_type": "Money",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 3,
+			"commodity_id": 12,
+			"demand": 0
+		},
+		{
+			"id": 34,
+			"owner_id": 6,
+			"usage_type": "Production",
+			"size": 2000,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 3,
+			"commodity_id": 11,
+			"demand": 0
+		},
+		{
+			"id": 35,
+			"owner_id": 6,
+			"usage_type": "Production",
+			"size": 1000,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 3,
+			"commodity_id": 10,
+			"demand": 0
+		},
+		{
+			"id": 37,
+			"owner_id": 6,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 3,
+			"commodity_id": 11,
+			"demand": 0
+		},
+		{
+			"id": 53,
+			"owner_id": 7,
+			"usage_type": "Money",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 16,
+			"demand": 0
+		},
+		{
+			"id": 51,
+			"owner_id": 7,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 4,
+			"commodity_id": 13,
+			"demand": 0
+		},
+		{
+			"id": 52,
+			"owner_id": 7,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 4,
+			"commodity_id": 15,
+			"demand": 0
+		},
+		{
+			"id": 50,
+			"owner_id": 7,
+			"usage_type": "Sales",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 15,
+			"demand": 0
+		},
+		{
+			"id": 54,
+			"owner_id": 8,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 16,
+			"demand": 0
+		},
+		{
+			"id": 46,
+			"owner_id": 8,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 4,
+			"commodity_id": 13,
+			"demand": 0
+		},
+		{
+			"id": 49,
+			"owner_id": 8,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 4,
+			"commodity_id": 15,
+			"demand": 0
+		},
+		{
+			"id": 55,
+			"owner_id": 8,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 17,
+			"demand": 0
+		},
+		{
+			"id": 57,
+			"owner_id": 9,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 16,
+			"demand": 0
+		},
+		{
+			"id": 48,
+			"owner_id": 9,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 4,
+			"commodity_id": 15,
+			"demand": 0
+		},
+		{
+			"id": 56,
+			"owner_id": 9,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 4,
+			"commodity_id": 13,
+			"demand": 0
+		},
+		{
+			"id": 47,
+			"owner_id": 9,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 4,
+			"commodity_id": 14,
+			"demand": 0
+		},
+		{
+			"id": 71,
+			"owner_id": 10,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 5,
+			"commodity_id": 21,
+			"demand": 0
+		},
+		{
+			"id": 68,
+			"owner_id": 10,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.5,
+			"simulation_id": 5,
+			"commodity_id": 20,
+			"demand": 0
+		},
+		{
+			"id": 69,
+			"owner_id": 10,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.5,
+			"simulation_id": 5,
+			"commodity_id": 19,
+			"demand": 0
+		},
+		{
+			"id": 72,
+			"owner_id": 10,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 5,
+			"commodity_id": 18,
+			"demand": 0
+		},
+		{
+			"id": 67,
+			"owner_id": 11,
+			"usage_type": "Money",
+			"size": 9000,
+			"requirement": 0,
+			"simulation_id": 5,
+			"commodity_id": 21,
+			"demand": 0
+		},
+		{
+			"id": 66,
+			"owner_id": 11,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 5,
+			"commodity_id": 20,
+			"demand": 0
+		},
+		{
+			"id": 70,
+			"owner_id": 11,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 5,
+			"commodity_id": 19,
+			"demand": 0
+		},
+		{
+			"id": 65,
+			"owner_id": 11,
+			"usage_type": "Sales",
+			"size": 5500,
+			"requirement": 0,
+			"simulation_id": 5,
+			"commodity_id": 20,
+			"demand": 0
+		},
+		{
+			"id": 83,
+			"owner_id": 12,
+			"usage_type": "Money",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 6,
+			"commodity_id": 25,
+			"demand": 0
+		},
+		{
+			"id": 81,
+			"owner_id": 12,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 6,
+			"commodity_id": 23,
+			"demand": 0
+		},
+		{
+			"id": 84,
+			"owner_id": 12,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 6,
+			"commodity_id": 24,
+			"demand": 0
+		},
+		{
+			"id": 79,
+			"owner_id": 12,
+			"usage_type": "Sales",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 6,
+			"commodity_id": 24,
+			"demand": 0
+		},
+		{
+			"id": 80,
+			"owner_id": 13,
+			"usage_type": "Money",
+			"size": 4000,
+			"requirement": 0,
+			"simulation_id": 6,
+			"commodity_id": 25,
+			"demand": 0
+		},
+		{
+			"id": 82,
+			"owner_id": 13,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 6,
+			"commodity_id": 23,
+			"demand": 0
+		},
+		{
+			"id": 85,
+			"owner_id": 13,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 6,
+			"commodity_id": 24,
+			"demand": 0
+		},
+		{
+			"id": 86,
+			"owner_id": 13,
+			"usage_type": "Sales",
+			"size": 6000,
+			"requirement": 0,
+			"simulation_id": 6,
+			"commodity_id": 22,
+			"demand": 0
+		},
+		{
+			"id": 96,
+			"owner_id": 14,
+			"usage_type": "Money",
+			"size": 9000,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 30,
+			"demand": 0
+		},
+		{
+			"id": 102,
+			"owner_id": 14,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.005,
+			"simulation_id": 7,
+			"commodity_id": 26,
+			"demand": 0
+		},
+		{
+			"id": 104,
+			"owner_id": 14,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 28,
+			"demand": 0
+		},
+		{
+			"id": 105,
+			"owner_id": 14,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 29,
+			"demand": 0
+		},
+		{
+			"id": 111,
+			"owner_id": 14,
+			"usage_type": "Sales",
+			"size": 300,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 27,
+			"demand": 0
+		},
+		{
+			"id": 103,
+			"owner_id": 15,
+			"usage_type": "Money",
+			"size": 8000,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 30,
+			"demand": 0
+		},
+		{
+			"id": 97,
+			"owner_id": 15,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 26,
+			"demand": 0
+		},
+		{
+			"id": 98,
+			"owner_id": 15,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 29,
+			"demand": 0
+		},
+		{
+			"id": 101,
+			"owner_id": 15,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 28,
+			"demand": 0
+		},
+		{
+			"id": 100,
+			"owner_id": 15,
+			"usage_type": "Sales",
+			"size": 600,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 26,
+			"demand": 0
+		},
+		{
+			"id": 94,
+			"owner_id": 16,
+			"usage_type": "Money",
+			"size": 10000,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 30,
+			"demand": 0
+		},
+		{
+			"id": 106,
+			"owner_id": 16,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 26,
+			"demand": 0
+		},
+		{
+			"id": 107,
+			"owner_id": 16,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 28,
+			"demand": 0
+		},
+		{
+			"id": 109,
+			"owner_id": 16,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.01,
+			"simulation_id": 7,
+			"commodity_id": 29,
+			"demand": 0
+		},
+		{
+			"id": 110,
+			"owner_id": 16,
+			"usage_type": "Sales",
+			"size": 10000,
+			"requirement": 0,
+			"simulation_id": 7,
+			"commodity_id": 28,
+			"demand": 0
+		},
+		{
+			"id": 120,
+			"owner_id": 17,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 34,
+			"demand": 0
+		},
+		{
+			"id": 118,
+			"owner_id": 17,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 8,
+			"commodity_id": 35,
+			"demand": 0
+		},
+		{
+			"id": 119,
+			"owner_id": 17,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 8,
+			"commodity_id": 33,
+			"demand": 0
+		},
+		{
+			"id": 121,
+			"owner_id": 17,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 8,
+			"commodity_id": 32,
+			"demand": 0
+		},
+		{
+			"id": 122,
+			"owner_id": 17,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 32,
+			"demand": 0
+		},
+		{
+			"id": 128,
+			"owner_id": 18,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 34,
+			"demand": 0
+		},
+		{
+			"id": 129,
+			"owner_id": 18,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 8,
+			"commodity_id": 33,
+			"demand": 0
+		},
+		{
+			"id": 131,
+			"owner_id": 18,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 32,
+			"demand": 0
+		},
+		{
+			"id": 132,
+			"owner_id": 18,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 8,
+			"commodity_id": 35,
+			"demand": 0
+		},
+		{
+			"id": 130,
+			"owner_id": 18,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 31,
+			"demand": 0
+		},
+		{
+			"id": 124,
+			"owner_id": 19,
+			"usage_type": "Money",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 34,
+			"demand": 0
+		},
+		{
+			"id": 125,
+			"owner_id": 19,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.6666666666666666,
+			"simulation_id": 8,
+			"commodity_id": 32,
+			"demand": 0
+		},
+		{
+			"id": 126,
+			"owner_id": 19,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 35,
+			"demand": 0
+		},
+		{
+			"id": 127,
+			"owner_id": 19,
+			"usage_type": "Production",
+			"size": 0,
+			"requirement": 0.3333333333333333,
+			"simulation_id": 8,
+			"commodity_id": 33,
+			"demand": 0
+		},
+		{
+			"id": 123,
+			"owner_id": 19,
+			"usage_type": "Sales",
+			"size": 3000,
+			"requirement": 0,
+			"simulation_id": 8,
+			"commodity_id": 35,
+			"demand": 0
+		}
+	]

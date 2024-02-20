@@ -1,0 +1,20 @@
+{
+  "name": "Start on Heroku: Python",
+  "description": "Backend for Capitalism simulation",
+  "image": "heroku/python",
+  "repository": "https://github.com/axfreeman/Capitalism-12.2",
+  "keywords": ["python"],
+  "env": {
+    "DJANGO_SECRET_KEY": {
+      "description": "The secret key for the application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "./manage.py test --debug-mode"
+      }
+    }
+  }
+}
