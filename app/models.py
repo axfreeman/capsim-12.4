@@ -263,10 +263,15 @@ class Stock(Base):
     """
     __tablename__ = "stocks"
     id = Column(Integer, primary_key=True, nullable=False)
+    # We cannot make this a foreign key because the owner can either be 
+    # a social class or an industry and we don't know which.
+    # This arises from the difficulty of implementing polymorphic relations in an SQL database
     owner_id = Column(Integer, nullable=False)
-    simulation_id = Column(Integer, nullable=False)
+    simulation_id = Column(
+        Integer, ForeignKey("simulations.id", ondelete="CASCADE"), nullable=False
+    )
     username = Column(String, nullable=True)
-    commodity_id = Column(Integer, nullable=False)
+    commodity_id = Column(Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False)
     name = Column(String)  # Owner.Name+Commodity.Name+usage_type
     owner_type = Column(String)  #'Industry' or 'Class'
     usage_type = Column(String)  # 'Consumption' or 'Production'
