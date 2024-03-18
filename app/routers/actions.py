@@ -17,6 +17,8 @@ from ..simulation.trade import buy_and_sell, constrain_demand
 from ..simulation.production import produce
 from ..authorization.auth import User, get_current_user_and_simulation, usPair
 from ..models import (
+    Class_stock,
+    Industry_stock,
     Simulation,
     Stock,
     SocialClass,
@@ -249,15 +251,21 @@ def get_json(db: Session = Depends(get_db)):
     reload_table(db, SocialClass, "static/classes.json", True, 1)
     reload_table(db, Commodity, "static/commodities.json", True, 1)
     reload_table(db, Industry, "static/industries.json", True, 1)
-    # reload_table(session, SocialStocks, "static/class_stocks.json", True, 1)
-    # reload_table(session, IndustryStocks, "static/industry_stocks.json", True, 1)
+    reload_table(db, Class_stock, "static/class_stocks.json", True, 1)
+    reload_table(db, Industry_stock, "static/industry_stocks.json", True, 1)
     reload_table(db, Stock, "static/stocks.json", True, 1)
     reload_table(db, Trace, "Trace table: no reload required", False, 1)
-    users:User=db.query(User).all()
+
     # Reset all users to default status
-    for user in users:
+    for user in db.query(User).all():
         db.add(user)
         user.current_simulation=0
         user.is_logged_in=0
+
+    # Set the username in all simulations to be "admin"
+    # TODO improve on this bodge
+    for simulation in db.query(Simulation).all():
+        db.add(simulation)
+        simulation.username="admin"
     db.commit()
     return "Database reloaded"

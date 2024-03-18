@@ -5,13 +5,7 @@ from ..models import Buyer, Seller, Stock
 from .demand import report
 
 def reload_table(db: Session, baseModel, filename: str, reload: bool, simulation_id:int):
-    """
-    Initialise one table,specified by baseModel, from JSON fixture data specified by filename.
-
-    Sets the username of this table to be the admin user.
-
-    TODO something more robust is required.
-    """
+    """Initialise one table,specified by baseModel, from JSON fixture data specified by filename."""
     report(2,simulation_id,f"Initialising table {filename}", db)
     query = db.query(baseModel)
     query.delete(synchronize_session=False)
@@ -20,7 +14,6 @@ def reload_table(db: Session, baseModel, filename: str, reload: bool, simulation
         jason = json.load(file)
         for item in jason:
             new_object = baseModel(**item)
-            new_object.username="admin" 
             db.add(new_object)
     db.commit()
 

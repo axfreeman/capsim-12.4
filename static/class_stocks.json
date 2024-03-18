@@ -1,0 +1,689 @@
+[
+	{
+		"id": 2,
+		"class_id": 20,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 1,
+		"commodity_id": 1,
+		"demand": 0
+	},
+	{
+		"id": 3,
+		"class_id": 20,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 1,
+		"commodity_id": 4,
+		"demand": 0
+	},
+	{
+		"id": 14,
+		"class_id": 20,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 1,
+		"commodity_id": 37,
+		"demand": 0
+	},
+	{
+		"id": 11,
+		"class_id": 21,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 1,
+		"commodity_id": 1,
+		"demand": 0
+	},
+	{
+		"id": 12,
+		"class_id": 21,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 1,
+		"commodity_id": 4,
+		"demand": 0
+	},
+	{
+		"id": 13,
+		"class_id": 21,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 3000,
+		
+		"simulation_id": 1,
+		"commodity_id": 2,
+		"demand": 0
+	},
+	{
+		"id": 15,
+		"class_id": 22,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 2,
+		"commodity_id": 5,
+		"demand": 0
+	},
+	{
+		"id": 16,
+		"class_id": 22,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 2,
+		"commodity_id": 8,
+		"demand": 0
+	},
+	{
+		"id": 28,
+		"class_id": 22,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 2,
+		"commodity_id": 6,
+		"demand": 0
+	},
+	{
+		"id": 25,
+		"class_id": 23,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 2,
+		"commodity_id": 5,
+		"demand": 0
+	},
+	{
+		"id": 26,
+		"class_id": 23,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 2,
+		"commodity_id": 8,
+		"demand": 0
+	},
+	{
+		"id": 27,
+		"class_id": 23,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 3000,
+		
+		"simulation_id": 2,
+		"commodity_id": 6,
+		"demand": 0
+	},
+	{
+		"id": 29,
+		"class_id": 24,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 3,
+		"commodity_id": 9,
+		"demand": 0
+	},
+	{
+		"id": 30,
+		"class_id": 24,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 750,
+		
+		"simulation_id": 3,
+		"commodity_id": 12,
+		"demand": 0
+	},
+	{
+		"id": 42,
+		"class_id": 24,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 3,
+		"commodity_id": 10,
+		"demand": 0
+	},
+	{
+		"id": 39,
+		"class_id": 25,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 3,
+		"commodity_id": 9,
+		"demand": 0
+	},
+	{
+		"id": 40,
+		"class_id": 25,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 750,
+		
+		"simulation_id": 3,
+		"commodity_id": 12,
+		"demand": 0
+	},
+	{
+		"id": 41,
+		"class_id": 25,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 1500,
+		
+		"simulation_id": 3,
+		"commodity_id": 10,
+		"demand": 0
+	},
+	{
+		"id": 43,
+		"class_id": 26,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 4,
+		"commodity_id": 14,
+		"demand": 0
+	},
+	{
+		"id": 45,
+		"class_id": 26,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 4,
+		"commodity_id": 17,
+		"demand": 0
+	},
+	{
+		"id": 44,
+		"class_id": 26,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 3000,
+		
+		"simulation_id": 4,
+		"commodity_id": 16,
+		"demand": 0
+	},
+	{
+		"id": 62,
+		"class_id": 26,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 4,
+		"commodity_id": 13,
+		"demand": 0
+	},
+	{
+		"id": 60,
+		"class_id": 27,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 4,
+		"commodity_id": 14,
+		"demand": 0
+	},
+	{
+		"id": 61,
+		"class_id": 27,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 4,
+		"commodity_id": 17,
+		"demand": 0
+	},
+	{
+		"id": 58,
+		"class_id": 27,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 4,
+		"commodity_id": 16,
+		"demand": 0
+	},
+	{
+		"id": 59,
+		"class_id": 27,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 3000,
+		
+		"simulation_id": 4,
+		"commodity_id": 13,
+		"demand": 0
+	},
+	{
+		"id": 63,
+		"class_id": 28,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 5,
+		"commodity_id": 18,
+		"demand": 0
+	},
+	{
+		"id": 64,
+		"class_id": 28,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1750,
+		
+		"simulation_id": 5,
+		"commodity_id": 21,
+		"demand": 0
+	},
+	{
+		"id": 76,
+		"class_id": 28,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 5,
+		"commodity_id": 19,
+		"demand": 0
+	},
+	{
+		"id": 73,
+		"class_id": 29,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 5,
+		"commodity_id": 18,
+		"demand": 0
+	},
+	{
+		"id": 75,
+		"class_id": 29,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 3500,
+		
+		"simulation_id": 5,
+		"commodity_id": 21,
+		"demand": 0
+	},
+	{
+		"id": 74,
+		"class_id": 29,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 3500,
+		
+		"simulation_id": 5,
+		"commodity_id": 19,
+		"demand": 0
+	},
+	{
+		"id": 77,
+		"class_id": 30,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 6,
+		"commodity_id": 22,
+		"demand": 0
+	},
+	{
+		"id": 78,
+		"class_id": 30,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 3000,
+		
+		"simulation_id": 6,
+		"commodity_id": 25,
+		"demand": 0
+	},
+	{
+		"id": 90,
+		"class_id": 30,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 6,
+		"commodity_id": 23,
+		"demand": 0
+	},
+	{
+		"id": 87,
+		"class_id": 31,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 6,
+		"commodity_id": 22,
+		"demand": 0
+	},
+	{
+		"id": 88,
+		"class_id": 31,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 6,
+		"commodity_id": 25,
+		"demand": 0
+	},
+	{
+		"id": 89,
+		"class_id": 31,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 6000,
+		
+		"simulation_id": 6,
+		"commodity_id": 23,
+		"demand": 0
+	},
+	{
+		"id": 93,
+		"class_id": 32,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		"simulation_id": 7,
+		"commodity_id": 27,
+		"demand": 0
+	},
+	{
+		"id": 95,
+		"class_id": 32,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 10000,
+		
+		"simulation_id": 7,
+		"commodity_id": 30,
+		"demand": 0
+	},
+	{
+		"id": 99,
+		"class_id": 32,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 7,
+		"commodity_id": 29,
+		"demand": 0
+	},
+	{
+		"id": 91,
+		"class_id": 33,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 7,
+		"commodity_id": 27,
+		"demand": 0
+	},
+	{
+		"id": 92,
+		"class_id": 33,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 3000,
+		
+		"simulation_id": 7,
+		"commodity_id": 30,
+		"demand": 0
+	},
+	{
+		"id": 114,
+		"class_id": 33,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 7,
+		"commodity_id": 29,
+		"demand": 0
+	},
+	{
+		"id": 108,
+		"class_id": 34,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		"simulation_id": 7,
+		"commodity_id": 27,
+		"demand": 0
+	},
+	{
+		"id": 112,
+		"class_id": 34,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 3000,
+		
+		"simulation_id": 7,
+		"commodity_id": 30,
+		"demand": 0
+	},
+	{
+		"id": 113,
+		"class_id": 34,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 300,
+		
+		"simulation_id": 7,
+		"commodity_id": 29,
+		"demand": 0
+	},
+	{
+		"id": 115,
+		"class_id": 35,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 8,
+		"commodity_id": 31,
+		"demand": 0
+	},
+	{
+		"id": 116,
+		"class_id": 35,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 8,
+		"commodity_id": 34,
+		"demand": 0
+	},
+	{
+		"id": 117,
+		"class_id": 35,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 0,
+		
+		"simulation_id": 8,
+		"commodity_id": 33,
+		"demand": 0
+	},
+	{
+		"id": 133,
+		"class_id": 36,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Consumption",
+		"size": 0,
+		
+		"simulation_id": 8,
+		"commodity_id": 31,
+		"demand": 0
+	},
+	{
+		"id": 134,
+		"class_id": 36,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Money",
+		"size": 1500,
+		
+		"simulation_id": 8,
+		"commodity_id": 34,
+		"demand": 0
+	},
+	{
+		"id": 135,
+		"class_id": 36,
+		"name": "",
+		"value": 0,
+		"price": 0,
+		"usage_type": "Sales",
+		"size": 3000,
+		
+		"simulation_id": 8,
+		"commodity_id": 33,
+		"demand": 0
+	}
+]

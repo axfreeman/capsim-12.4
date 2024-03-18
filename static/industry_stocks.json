@@ -2,9 +2,6 @@
 		{
 			"id": 6,
 			"industry_id": 1,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 8000,
 			"requirement": 0,
@@ -15,9 +12,6 @@
 		{
 			"id": 8,
 			"industry_id": 1,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -28,9 +22,6 @@
 		{
 			"id": 9,
 			"industry_id": 1,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -41,9 +32,6 @@
 		{
 			"id": 5,
 			"industry_id": 1,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 6000,
 			"requirement": 0,
@@ -54,9 +42,6 @@
 		{
 			"id": 7,
 			"industry_id": 2,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 4000,
 			"requirement": 0,
@@ -67,9 +52,6 @@
 		{
 			"id": 1,
 			"industry_id": 2,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -80,9 +62,6 @@
 		{
 			"id": 4,
 			"industry_id": 2,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -93,9 +72,6 @@
 		{
 			"id": 10,
 			"industry_id": 2,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -106,9 +82,6 @@
 		{
 			"id": 21,
 			"industry_id": 3,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -119,9 +92,6 @@
 		{
 			"id": 18,
 			"industry_id": 3,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -132,9 +102,6 @@
 		{
 			"id": 23,
 			"industry_id": 3,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -145,9 +112,6 @@
 		{
 			"id": 24,
 			"industry_id": 3,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -158,9 +122,6 @@
 		{
 			"id": 22,
 			"industry_id": 4,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 6000,
 			"requirement": 0,
@@ -171,9 +132,6 @@
 		{
 			"id": 17,
 			"industry_id": 4,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -184,9 +142,6 @@
 		{
 			"id": 20,
 			"industry_id": 4,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -197,9 +152,6 @@
 		{
 			"id": 19,
 			"industry_id": 4,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 6000,
 			"requirement": 0,
@@ -210,9 +162,6 @@
 		{
 			"id": 31,
 			"industry_id": 5,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -223,9 +172,6 @@
 		{
 			"id": 33,
 			"industry_id": 5,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 1000,
 			"requirement": 0.6666666666666666,
@@ -236,9 +182,6 @@
 		{
 			"id": 36,
 			"industry_id": 5,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 500,
 			"requirement": 0.3333333333333333,
@@ -249,9 +192,6 @@
 		{
 			"id": 38,
 			"industry_id": 5,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 1500,
 			"requirement": 0,
@@ -262,9 +202,6 @@
 		{
 			"id": 32,
 			"industry_id": 6,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 6000,
 			"requirement": 0,
@@ -275,9 +212,6 @@
 		{
 			"id": 34,
 			"industry_id": 6,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 2000,
 			"requirement": 0.6666666666666666,
@@ -288,9 +222,6 @@
 		{
 			"id": 35,
 			"industry_id": 6,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 1000,
 			"requirement": 0.3333333333333333,
@@ -301,9 +232,6 @@
 		{
 			"id": 37,
 			"industry_id": 6,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -314,9 +242,6 @@
 		{
 			"id": 53,
 			"industry_id": 7,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 6000,
 			"requirement": 0,
@@ -327,9 +252,6 @@
 		{
 			"id": 51,
 			"industry_id": 7,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -340,9 +262,6 @@
 		{
 			"id": 52,
 			"industry_id": 7,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -353,9 +272,6 @@
 		{
 			"id": 50,
 			"industry_id": 7,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 6000,
 			"requirement": 0,
@@ -366,9 +282,6 @@
 		{
 			"id": 54,
 			"industry_id": 8,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -379,9 +292,6 @@
 		{
 			"id": 46,
 			"industry_id": 8,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -392,9 +302,6 @@
 		{
 			"id": 49,
 			"industry_id": 8,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -405,9 +312,6 @@
 		{
 			"id": 55,
 			"industry_id": 8,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -418,9 +322,6 @@
 		{
 			"id": 57,
 			"industry_id": 9,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -431,9 +332,6 @@
 		{
 			"id": 48,
 			"industry_id": 9,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -444,9 +342,6 @@
 		{
 			"id": 56,
 			"industry_id": 9,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -457,9 +352,6 @@
 		{
 			"id": 47,
 			"industry_id": 9,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -470,9 +362,6 @@
 		{
 			"id": 71,
 			"industry_id": 10,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -483,9 +372,6 @@
 		{
 			"id": 68,
 			"industry_id": 10,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.5,
@@ -496,9 +382,6 @@
 		{
 			"id": 69,
 			"industry_id": 10,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.5,
@@ -509,9 +392,6 @@
 		{
 			"id": 72,
 			"industry_id": 10,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -522,9 +402,6 @@
 		{
 			"id": 67,
 			"industry_id": 11,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 9000,
 			"requirement": 0,
@@ -535,9 +412,6 @@
 		{
 			"id": 66,
 			"industry_id": 11,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -548,9 +422,6 @@
 		{
 			"id": 70,
 			"industry_id": 11,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -561,9 +432,6 @@
 		{
 			"id": 65,
 			"industry_id": 11,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 5500,
 			"requirement": 0,
@@ -574,9 +442,6 @@
 		{
 			"id": 83,
 			"industry_id": 12,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 6000,
 			"requirement": 0,
@@ -587,9 +452,6 @@
 		{
 			"id": 81,
 			"industry_id": 12,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -600,9 +462,6 @@
 		{
 			"id": 84,
 			"industry_id": 12,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -613,9 +472,6 @@
 		{
 			"id": 79,
 			"industry_id": 12,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 6000,
 			"requirement": 0,
@@ -626,9 +482,6 @@
 		{
 			"id": 80,
 			"industry_id": 13,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 4000,
 			"requirement": 0,
@@ -639,9 +492,6 @@
 		{
 			"id": 82,
 			"industry_id": 13,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -652,9 +502,6 @@
 		{
 			"id": 85,
 			"industry_id": 13,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -665,9 +512,6 @@
 		{
 			"id": 86,
 			"industry_id": 13,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 6000,
 			"requirement": 0,
@@ -678,9 +522,6 @@
 		{
 			"id": 96,
 			"industry_id": 14,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 9000,
 			"requirement": 0,
@@ -691,9 +532,6 @@
 		{
 			"id": 102,
 			"industry_id": 14,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.005,
@@ -704,9 +542,6 @@
 		{
 			"id": 104,
 			"industry_id": 14,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -717,9 +552,6 @@
 		{
 			"id": 105,
 			"industry_id": 14,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -730,9 +562,6 @@
 		{
 			"id": 111,
 			"industry_id": 14,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 300,
 			"requirement": 0,
@@ -743,9 +572,6 @@
 		{
 			"id": 103,
 			"industry_id": 15,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 8000,
 			"requirement": 0,
@@ -756,9 +582,6 @@
 		{
 			"id": 97,
 			"industry_id": 15,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -769,9 +592,6 @@
 		{
 			"id": 98,
 			"industry_id": 15,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -782,9 +602,6 @@
 		{
 			"id": 101,
 			"industry_id": 15,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -795,9 +612,6 @@
 		{
 			"id": 100,
 			"industry_id": 15,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 600,
 			"requirement": 0,
@@ -808,9 +622,6 @@
 		{
 			"id": 94,
 			"industry_id": 16,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 10000,
 			"requirement": 0,
@@ -821,9 +632,6 @@
 		{
 			"id": 106,
 			"industry_id": 16,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -834,9 +642,6 @@
 		{
 			"id": 107,
 			"industry_id": 16,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -847,9 +652,6 @@
 		{
 			"id": 109,
 			"industry_id": 16,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.01,
@@ -860,9 +662,6 @@
 		{
 			"id": 110,
 			"industry_id": 16,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 10000,
 			"requirement": 0,
@@ -873,9 +672,6 @@
 		{
 			"id": 120,
 			"industry_id": 17,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -886,9 +682,6 @@
 		{
 			"id": 118,
 			"industry_id": 17,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -899,9 +692,6 @@
 		{
 			"id": 119,
 			"industry_id": 17,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -912,9 +702,6 @@
 		{
 			"id": 121,
 			"industry_id": 17,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -925,9 +712,6 @@
 		{
 			"id": 122,
 			"industry_id": 17,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -938,9 +722,6 @@
 		{
 			"id": 128,
 			"industry_id": 18,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -951,9 +732,6 @@
 		{
 			"id": 129,
 			"industry_id": 18,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -964,9 +742,6 @@
 		{
 			"id": 131,
 			"industry_id": 18,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0,
@@ -977,9 +752,6 @@
 		{
 			"id": 132,
 			"industry_id": 18,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -990,9 +762,6 @@
 		{
 			"id": 130,
 			"industry_id": 18,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,
@@ -1003,9 +772,6 @@
 		{
 			"id": 124,
 			"industry_id": 19,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Money",
 			"size": 3000,
 			"requirement": 0,
@@ -1016,9 +782,6 @@
 		{
 			"id": 125,
 			"industry_id": 19,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.6666666666666666,
@@ -1029,9 +792,6 @@
 		{
 			"id": 126,
 			"industry_id": 19,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0,
@@ -1042,9 +802,6 @@
 		{
 			"id": 127,
 			"industry_id": 19,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Production",
 			"size": 0,
 			"requirement": 0.3333333333333333,
@@ -1055,9 +812,6 @@
 		{
 			"id": 123,
 			"industry_id": 19,
-			"name": "",
-			"value": 0,
-			"price": 0,
 			"usage_type": "Sales",
 			"size": 3000,
 			"requirement": 0,

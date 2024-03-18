@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship, Session
 """This module contains models, and their methods, for the objects of
 the system, except for the User model which is in authorization.py.
 """
+
 class Simulation(Base):
     """
     Simulation is the primary model of the projet. Each entry in the
@@ -27,8 +28,8 @@ class Simulation(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
     time_stamp = Column(Integer)
-    username = Column(String, nullable=True)    # Foreign key to the User model
-    state = Column(String)                      # what stage the simulation has reached
+    username = Column(String, nullable=True)  # Foreign key to the User model
+    state = Column(String)  # what stage the simulation has reached
     periods_per_year = Column(Float)
     population_growth_rate = Column(Float)
     investment_ratio = Column(Float)
@@ -40,7 +41,7 @@ class Simulation(Base):
     melt = Column(Float)
     user_id = Column(
         Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False
-    )                                           
+    )
     # TODO not sure if this is used any more
     owner = relationship("User")  # See part 77 of the tutorial. Not used at present
 
@@ -48,9 +49,9 @@ class Commodity(Base):
     """
     The commodity object refers to a type of tradeable good, for example
     Means of Production, Means of Consumption, Labour Power. In Marx's
-    terms it is a 'use value'. Each commodity has a one-many relation 
+    terms it is a 'use value'. Each commodity has a one-many relation
     to the stocks in the simulation, so if an industry owns a stock of
-    Means of Production, the stock object will have a foreign key to 
+    Means of Production, the stock object will have a foreign key to
     the Means of Production Commodity.
 
     The simulation keeps track of aggregate magnitudes associated with
@@ -60,6 +61,7 @@ class Commodity(Base):
     It also keeps track of the total supply of, and the total demand for
     that Commodity.
     """
+
     __tablename__ = "commodities"
     id = Column(Integer, primary_key=True, nullable=False)
     simulation_id = Column(
@@ -88,7 +90,6 @@ class Commodity(Base):
     simulation_name = relationship("Simulation")
 
 class Industry(Base):
-
     """Each Industry is a basic productive unit.
 
     It owns:
@@ -114,7 +115,7 @@ class Industry(Base):
 
     To facilitate the calculation, the app calculates the money cost of
     buying the productive Stocks needed for one unit of output in one
-    period. 
+    period.
 
     This is provided by the method 'self.unit_cost'.
     """
@@ -137,23 +138,31 @@ class Industry(Base):
     profit_rate = Column(Float)
     successor_id = Column(Integer, nullable=True)  # Helper column to use when cloning
 
-    def unit_cost(self, db:Session):
+    def unit_cost(self, db: Session):
         """Calculate the cost of producing a single unit of output."""
-        cost=0
-        for stock in db.query(Stock).where(Stock.owner_id == self.id).where(Stock.usage_type=="Production"):
-            print(f"Stock called {stock.name} is adding {stock.unit_cost(db)} to its industry's unit cost")
-            cost+=stock.unit_cost(db)
+        cost = 0
+        for stock in (
+            db.query(Stock)
+            .where(Stock.owner_id == self.id)
+            .where(Stock.usage_type == "Production")
+        ):
+            print(
+                f"Stock called {stock.name} is adding {stock.unit_cost(db)} to its industry's unit cost"
+            )
+            cost += stock.unit_cost(db)
         return cost
 
-    def simulation(self, db:Session):
+    def simulation(self, db: Session):
         """
         Helper method yields the (unique) Simulation this industry belongs to.
         """
         return db.get_one(Simulation, self.simulation_id)
 
-    def sales_stock(self, db:Session):
+    def sales_stock(self, db: Session):
         """Helper method yields the Sales Stock of this industry."""
-        result = get_industry_sales_stock(self, db)# workaround because pydantic won't easily accept this query in a built-in function
+        result = get_industry_sales_stock(
+            self, db
+        )  # workaround because pydantic won't easily accept this query in a built-in function
         if result == None:
             raise Exception(
                 f"INDUSTRY {self.name} with id {self.id} and simulation id {self.simulation_id} HAS NO SALES STOCK"
@@ -161,8 +170,10 @@ class Industry(Base):
         return result
 
     def money_stock(self, session):
-       """Helper method yields the Money Stock of this industry."""        
-       return get_industry_money_stock(self, session) # workaround because pydantic won't easily accept this query in a built-in function
+        """Helper method yields the Money Stock of this industry."""
+        return get_industry_money_stock(
+            self, session
+        )  # workaround because pydantic won't easily accept this query in a built-in function
 
 def get_industry_sales_stock(industry, session):
     """Workaround because pydantic won't accept this query in a built-in function."""
@@ -240,7 +251,6 @@ def get_class_money_stock(social_class, session):
     )
 
 class Stock(Base):
-
     """Stocks are the things that are produced, consumed, and traded in a
     market economy.
 
@@ -254,16 +264,17 @@ class Stock(Base):
 
     The other fields depend to some extent on the usage_type.
 
-    Thus a productive Stock has a field Stock.requirement which says how 
+    Thus a productive Stock has a field Stock.requirement which says how
     much of it will be used for its Industry to produce Industry.output_scale.
 
     The helper method Stock.unit_cost says how much it will cost to do this.
 
     (TODO document the properties of Consumption Stocks)
     """
+
     __tablename__ = "stocks"
     id = Column(Integer, primary_key=True, nullable=False)
-    # We cannot make this a foreign key because the owner can either be 
+    # We cannot make this a foreign key because the owner can either be
     # a social class or an industry and we don't know which.
     # This arises from the difficulty of implementing polymorphic relations in an SQL database
     owner_id = Column(Integer, nullable=False)
@@ -271,7 +282,9 @@ class Stock(Base):
         Integer, ForeignKey("simulations.id", ondelete="CASCADE"), nullable=False
     )
     username = Column(String, nullable=True)
-    commodity_id = Column(Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False)
+    commodity_id = Column(
+        Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
+    )
     name = Column(String)  # Owner.Name+Commodity.Name+usage_type
     owner_type = Column(String)  #'Industry' or 'Class'
     usage_type = Column(String)  # 'Consumption' or 'Production'
@@ -281,48 +294,56 @@ class Stock(Base):
     requirement = Column(Float)
     demand = Column(Float)
 
-    def flow_rate(self, db:Session) -> float:
+    def flow_rate(self, db: Session) -> float:
         """The annual rate at which this Stock is consumed.
 
         Applies only to productive stocks and consumption stocks.
 
         Returns zero for Money and Sales Stocks.
         """
-        if self.usage_type=="Production":
-            industry=db.query(Industry).where(Industry.id==self.owner_id).first()
-            return industry.output_scale*self.requirement
+        if self.usage_type == "Production":
+            industry = db.query(Industry).where(Industry.id == self.owner_id).first()
+            return industry.output_scale * self.requirement
         elif self.usage_type == "Consumption":
-            social_class=db.query(SocialClass).where(SocialClass.id==self.owner_id).first()
-            return social_class.population*social_class.consumption_ratio
+            social_class = (
+                db.query(SocialClass).where(SocialClass.id == self.owner_id).first()
+            )
+            return social_class.population * social_class.consumption_ratio
         else:
             return 0.0
 
-    def flow_per_period(self, db:Session) -> float:
+    def flow_per_period(self, db: Session) -> float:
         """The same as flow_rate, but per period instead of per year."""
-        simulation=db.query(Simulation).where(Simulation.id == self.simulation_id).first()
-        return self.flow_rate(db)/simulation.periods_per_year
+        simulation = (
+            db.query(Simulation).where(Simulation.id == self.simulation_id).first()
+        )
+        return self.flow_rate(db) / simulation.periods_per_year
 
-    def standard_stock(self, db:Session) -> float:
+    def standard_stock(self, db: Session) -> float:
         """The normal stock which an owner must maintain in order to conduct
-        production or consumption. 
+        production or consumption.
 
         Applies only to productive stocks and consumption stocks.
 
         Returns zero for Money and Sales Stocks.
         """
-        if self.usage_type=="Production":
-            commodity=db.query(Commodity).where(Commodity.id==self.commodity_id).first()
-            return self.flow_rate(db)*commodity.turnover_time
+        if self.usage_type == "Production":
+            commodity = (
+                db.query(Commodity).where(Commodity.id == self.commodity_id).first()
+            )
+            return self.flow_rate(db) * commodity.turnover_time
         elif self.usage_type == "Consumption":
-            commodity=db.query(Commodity).where(Commodity.id==self.commodity_id).first()
+            commodity = (
+                db.query(Commodity).where(Commodity.id == self.commodity_id).first()
+            )
             # Not sure about this one. I guess even food has a turnover time.
             # But makes sense for consumer durables and housing, so quite a large
             # proportion of consumer spending.
-            return self.flow_rate(db)*commodity.turnover_time
+            return self.flow_rate(db) * commodity.turnover_time
         else:
             return 0.0
 
-    def owner(self, db:Session):
+    def owner(self, db: Session):
         """Returns either an Industry or a SocialClass, depending on
         self.usage_type.
 
@@ -337,21 +358,103 @@ class Stock(Base):
         else:
             print(f"owner type for stock with id {self.id} was not understood")
 
-    def commodity(self, db:Session):
+    def commodity(self, db: Session):
         return db.get_one(Commodity, self.commodity_id)
 
     def simulation(self, session):
         return session.get_one(Simulation, self.simulation_id)
-    
-    def unit_cost(self, db:Session):
-        """Money price of using this Stock to make one unit of output 
+
+    def unit_cost(self, db: Session):
+        """Money price of using this Stock to make one unit of output
         in a period.
-        
+
         Returns zero if Stock is not productive, which is harmless -
         nevertheless, caller should invoke this method only on productive
         Stocks.
         """
-        return self.requirement*self.commodity(db).unit_price
+        return self.requirement * self.commodity(db).unit_price
+
+class Industry_stock(Base):
+    """Stocks are produced, consumed, and traded in a
+    market economy.
+
+    There are two types of stock:
+        Those that belong to Industries
+        Those that belong to Classes
+
+    An Industry_stock knows:
+        which Simulation it belongs to;
+        which Commodity it consists of (in Marx's terms, its Use Value);
+        quantitative information notably its size, value and price;
+        which Industry it belongs to.
+
+    It has a usage_type which may be Consumption, Production or Money.
+    Note that an industry can own any of these.
+    This is because Consumption goods are produced by industries.
+
+    Usage type is a substitute for subclassing.
+
+    The field 'requirement' says how much of it will be used for its
+    Industry to produce a unit of output.
+
+    The helper method Stock.unit_cost says how much it will cost to do this.
+
+    """
+
+    __tablename__ = "industry_stocks"
+    id = Column(Integer, primary_key=True, nullable=False)
+    industry_id = Column(Integer, ForeignKey("industries.id"), nullable=False)
+    simulation_id = Column(
+        Integer, ForeignKey("simulations.id", ondelete="CASCADE"), nullable=False
+    )
+    commodity_id = Column(
+        Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
+    )
+    name = Column(String)  # Owner.Name+Commodity.Name+usage_type
+    usage_type = Column(String)  # 'Consumption', 'Production' or 'Money'
+    size = Column(Float)
+    value = Column(Float)
+    price = Column(Float)
+    requirement = Column(Float)
+    demand = Column(Float)
+
+class Class_stock(Base):
+    """Stocks are produced, consumed, and traded in a
+    market economy.
+
+    There are two types of stock:
+        Those that belong to Industries
+        Those that belong to Classes
+
+    A Class_stock knows:
+        which Simulation it belongs to;
+        which Commodity it consists of (in Marx's terms, its Use Value);
+        quantitative information notably its size, value and price;
+        which Social Class it belongs to.
+
+    It has a usage_type which may be Consumption, Production or Money.
+    Note that classes can own any type of stock.
+    This is because Labour Power is a stock of type Production.
+
+    Usage_type is a substitute for subclassing, since these are all types of Stock.
+
+    """
+
+    __tablename__ = "class_stocks"
+    id = Column(Integer, primary_key=True, nullable=False)
+    class_id = Column(Integer, ForeignKey("social_classes.id"), nullable=False)
+    simulation_id = Column(
+        Integer, ForeignKey("simulations.id", ondelete="CASCADE"), nullable=False
+    )
+    commodity_id = Column(
+        Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
+    )
+    name = Column(String)  # Owner.Name+Commodity.Name+usage_type
+    usage_type = Column(String)  # 'Consumption', Production' or 'Money'
+    size = Column(Float)
+    value = Column(Float)
+    price = Column(Float)
+    demand = Column(Float)
 
 class Trace(Base):
     """

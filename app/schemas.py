@@ -105,6 +105,37 @@ class stocksBase(BaseModel):
     requirement: float
     demand: float
 
+class Industry_stock_base(BaseModel):
+    __tablename__="industry_stocks"
+
+    id: int
+    simulation_id:int
+    username: str
+    owner_id: int
+    commodity_id:int
+    name:str
+    usage_type: str
+    size: float
+    value: float
+    price: float
+    requirement: float
+    demand: float
+
+class Class_stock_base(BaseModel):
+    __tablename__="class_stocks"
+
+    id: int
+    simulation_id:int
+    username: str
+    owner_id: int
+    commodity_id:int
+    name:str
+    usage_type: str
+    size: float
+    value: float
+    price: float
+    demand: float
+
 class BuyerBase(BaseModel):
     __tablename__ = "buyers"
 
