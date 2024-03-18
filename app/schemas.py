@@ -110,8 +110,7 @@ class Industry_stock_base(BaseModel):
 
     id: int
     simulation_id:int
-    username: str
-    owner_id: int
+    industry_id: int
     commodity_id:int
     name:str
     usage_type: str
@@ -126,8 +125,7 @@ class Class_stock_base(BaseModel):
 
     id: int
     simulation_id:int
-    username: str
-    owner_id: int
+    class_id: int
     commodity_id:int
     name:str
     usage_type: str

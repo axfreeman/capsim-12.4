@@ -7,7 +7,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 1,
 		"commodity_id": 1,
 		"demand": 0
@@ -20,7 +19,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 1,
 		"commodity_id": 4,
 		"demand": 0
@@ -33,7 +31,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 1,
 		"commodity_id": 37,
 		"demand": 0
@@ -46,7 +43,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 1,
 		"commodity_id": 1,
 		"demand": 0
@@ -59,7 +55,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 1,
 		"commodity_id": 4,
 		"demand": 0
@@ -72,7 +67,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 3000,
-		
 		"simulation_id": 1,
 		"commodity_id": 2,
 		"demand": 0
@@ -85,7 +79,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 2,
 		"commodity_id": 5,
 		"demand": 0
@@ -98,7 +91,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 2,
 		"commodity_id": 8,
 		"demand": 0
@@ -111,7 +103,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 2,
 		"commodity_id": 6,
 		"demand": 0
@@ -124,7 +115,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 2,
 		"commodity_id": 5,
 		"demand": 0
@@ -137,7 +127,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 2,
 		"commodity_id": 8,
 		"demand": 0
@@ -150,7 +139,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 3000,
-		
 		"simulation_id": 2,
 		"commodity_id": 6,
 		"demand": 0
@@ -163,7 +151,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 3,
 		"commodity_id": 9,
 		"demand": 0
@@ -176,7 +163,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 750,
-		
 		"simulation_id": 3,
 		"commodity_id": 12,
 		"demand": 0
@@ -189,7 +175,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 3,
 		"commodity_id": 10,
 		"demand": 0
@@ -202,7 +187,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 3,
 		"commodity_id": 9,
 		"demand": 0
@@ -215,7 +199,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 750,
-		
 		"simulation_id": 3,
 		"commodity_id": 12,
 		"demand": 0
@@ -228,7 +211,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 1500,
-		
 		"simulation_id": 3,
 		"commodity_id": 10,
 		"demand": 0
@@ -241,7 +223,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 4,
 		"commodity_id": 14,
 		"demand": 0
@@ -254,7 +235,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 4,
 		"commodity_id": 17,
 		"demand": 0
@@ -267,7 +247,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 3000,
-		
 		"simulation_id": 4,
 		"commodity_id": 16,
 		"demand": 0
@@ -280,7 +259,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 4,
 		"commodity_id": 13,
 		"demand": 0
@@ -293,7 +271,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 4,
 		"commodity_id": 14,
 		"demand": 0
@@ -306,7 +283,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 4,
 		"commodity_id": 17,
 		"demand": 0
@@ -319,7 +295,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 4,
 		"commodity_id": 16,
 		"demand": 0
@@ -332,7 +307,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 3000,
-		
 		"simulation_id": 4,
 		"commodity_id": 13,
 		"demand": 0
@@ -345,7 +319,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 5,
 		"commodity_id": 18,
 		"demand": 0
@@ -358,7 +331,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1750,
-		
 		"simulation_id": 5,
 		"commodity_id": 21,
 		"demand": 0
@@ -371,7 +343,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 5,
 		"commodity_id": 19,
 		"demand": 0
@@ -384,7 +355,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 5,
 		"commodity_id": 18,
 		"demand": 0
@@ -397,7 +367,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 3500,
-		
 		"simulation_id": 5,
 		"commodity_id": 21,
 		"demand": 0
@@ -410,7 +379,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 3500,
-		
 		"simulation_id": 5,
 		"commodity_id": 19,
 		"demand": 0
@@ -423,7 +391,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 6,
 		"commodity_id": 22,
 		"demand": 0
@@ -436,7 +403,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 3000,
-		
 		"simulation_id": 6,
 		"commodity_id": 25,
 		"demand": 0
@@ -449,7 +415,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 6,
 		"commodity_id": 23,
 		"demand": 0
@@ -462,7 +427,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 6,
 		"commodity_id": 22,
 		"demand": 0
@@ -475,7 +439,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 6,
 		"commodity_id": 25,
 		"demand": 0
@@ -488,7 +451,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 6000,
-		
 		"simulation_id": 6,
 		"commodity_id": 23,
 		"demand": 0
@@ -513,7 +475,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 10000,
-		
 		"simulation_id": 7,
 		"commodity_id": 30,
 		"demand": 0
@@ -526,7 +487,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 7,
 		"commodity_id": 29,
 		"demand": 0
@@ -539,7 +499,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 7,
 		"commodity_id": 27,
 		"demand": 0
@@ -552,7 +511,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 3000,
-		
 		"simulation_id": 7,
 		"commodity_id": 30,
 		"demand": 0
@@ -565,7 +523,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 7,
 		"commodity_id": 29,
 		"demand": 0
@@ -590,7 +547,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 3000,
-		
 		"simulation_id": 7,
 		"commodity_id": 30,
 		"demand": 0
@@ -603,7 +559,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 300,
-		
 		"simulation_id": 7,
 		"commodity_id": 29,
 		"demand": 0
@@ -616,7 +571,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 8,
 		"commodity_id": 31,
 		"demand": 0
@@ -629,7 +583,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 8,
 		"commodity_id": 34,
 		"demand": 0
@@ -642,7 +595,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 0,
-		
 		"simulation_id": 8,
 		"commodity_id": 33,
 		"demand": 0
@@ -655,7 +607,6 @@
 		"price": 0,
 		"usage_type": "Consumption",
 		"size": 0,
-		
 		"simulation_id": 8,
 		"commodity_id": 31,
 		"demand": 0
@@ -668,7 +619,6 @@
 		"price": 0,
 		"usage_type": "Money",
 		"size": 1500,
-		
 		"simulation_id": 8,
 		"commodity_id": 34,
 		"demand": 0
@@ -681,7 +631,6 @@
 		"price": 0,
 		"usage_type": "Sales",
 		"size": 3000,
-		
 		"simulation_id": 8,
 		"commodity_id": 33,
 		"demand": 0
