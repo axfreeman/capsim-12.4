@@ -10,7 +10,7 @@
     "demand": 0,
     "value": 8000,
     "price": 8000,
-    "name": "Department I.Money.Money.(id_6)(sim_1)"
+    "Name": "Department I.Money.Money.(id_6)(sim_1)"
   },
   {
     "id": 8,
@@ -23,7 +23,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Labour Power.(id_8)(sim_1)"
+    "Name": "Department I.Production.Labour Power.(id_8)(sim_1)"
   },
   {
     "id": 9,
@@ -36,7 +36,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Means of Production.(id_9)(sim_1)"
+    "Name": "Department I.Production.Means of Production.(id_9)(sim_1)"
   },
   {
     "id": 5,
@@ -49,7 +49,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Sales.Means of Production.(id_5)(sim_1)"
+    "Name": "Department I.Sales.Means of Production.(id_5)(sim_1)"
   },
   {
     "id": 7,
@@ -62,7 +62,7 @@
     "demand": 0,
     "value": 4000,
     "price": 4000,
-    "name": "Department II.Money.Money.(id_7)(sim_1)"
+    "Name": "Department II.Money.Money.(id_7)(sim_1)"
   },
   {
     "id": 1,
@@ -75,7 +75,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Means of Production.(id_1)(sim_1)"
+    "Name": "Department II.Production.Means of Production.(id_1)(sim_1)"
   },
   {
     "id": 4,
@@ -88,7 +88,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Labour Power.(id_4)(sim_1)"
+    "Name": "Department II.Production.Labour Power.(id_4)(sim_1)"
   },
   {
     "id": 10,
@@ -101,7 +101,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department II.Sales.Consumption.(id_10)(sim_1)"
+    "Name": "Department II.Sales.Consumption.(id_10)(sim_1)"
   },
   {
     "id": 21,
@@ -114,7 +114,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department II.Money.Money.(id_21)(sim_2)"
+    "Name": "Department II.Money.Money.(id_21)(sim_2)"
   },
   {
     "id": 18,
@@ -127,7 +127,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Labour Power.(id_18)(sim_2)"
+    "Name": "Department II.Production.Labour Power.(id_18)(sim_2)"
   },
   {
     "id": 23,
@@ -140,7 +140,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Means of Production.(id_23)(sim_2)"
+    "Name": "Department II.Production.Means of Production.(id_23)(sim_2)"
   },
   {
     "id": 24,
@@ -153,7 +153,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department II.Sales.Consumption.(id_24)(sim_2)"
+    "Name": "Department II.Sales.Consumption.(id_24)(sim_2)"
   },
   {
     "id": 22,
@@ -166,7 +166,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Money.Money.(id_22)(sim_2)"
+    "Name": "Department I.Money.Money.(id_22)(sim_2)"
   },
   {
     "id": 17,
@@ -179,7 +179,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Labour Power.(id_17)(sim_2)"
+    "Name": "Department I.Production.Labour Power.(id_17)(sim_2)"
   },
   {
     "id": 20,
@@ -192,7 +192,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Means of Production.(id_20)(sim_2)"
+    "Name": "Department I.Production.Means of Production.(id_20)(sim_2)"
   },
   {
     "id": 19,
@@ -205,7 +205,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Sales.Means of Production.(id_19)(sim_2)"
+    "Name": "Department I.Sales.Means of Production.(id_19)(sim_2)"
   },
   {
     "id": 31,
@@ -218,7 +218,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Consumption.Money.Money.(id_31)(sim_3)"
+    "Name": "Consumption.Money.Money.(id_31)(sim_3)"
   },
   {
     "id": 33,
@@ -231,7 +231,7 @@
     "demand": 0,
     "value": 1000,
     "price": 1000,
-    "name": "Consumption.Production.Means of Production.(id_33)(sim_3)"
+    "Name": "Consumption.Production.Means of Production.(id_33)(sim_3)"
   },
   {
     "id": 36,
@@ -244,7 +244,7 @@
     "demand": 0,
     "value": 250,
     "price": 250,
-    "name": "Consumption.Production.Labour Power.(id_36)(sim_3)"
+    "Name": "Consumption.Production.Labour Power.(id_36)(sim_3)"
   },
   {
     "id": 38,
@@ -257,7 +257,7 @@
     "demand": 0,
     "value": 1500,
     "price": 1500,
-    "name": "Consumption.Sales.Consumption.(id_38)(sim_3)"
+    "Name": "Consumption.Sales.Consumption.(id_38)(sim_3)"
   },
   {
     "id": 32,
@@ -270,7 +270,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Means of Production.Money.Money.(id_32)(sim_3)"
+    "Name": "Means of Production.Money.Money.(id_32)(sim_3)"
   },
   {
     "id": 34,
@@ -283,7 +283,7 @@
     "demand": 0,
     "value": 2000,
     "price": 2000,
-    "name": "Means of Production.Production.Means of Production.(id_34)(sim_3)"
+    "Name": "Means of Production.Production.Means of Production.(id_34)(sim_3)"
   },
   {
     "id": 35,
@@ -296,7 +296,7 @@
     "demand": 0,
     "value": 500,
     "price": 500,
-    "name": "Means of Production.Production.Labour Power.(id_35)(sim_3)"
+    "Name": "Means of Production.Production.Labour Power.(id_35)(sim_3)"
   },
   {
     "id": 37,
@@ -309,7 +309,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Means of Production.Sales.Means of Production.(id_37)(sim_3)"
+    "Name": "Means of Production.Sales.Means of Production.(id_37)(sim_3)"
   },
   {
     "id": 53,
@@ -322,7 +322,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Money.Money.(id_53)(sim_4)"
+    "Name": "Department I.Money.Money.(id_53)(sim_4)"
   },
   {
     "id": 51,
@@ -335,7 +335,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Labour Power.(id_51)(sim_4)"
+    "Name": "Department I.Production.Labour Power.(id_51)(sim_4)"
   },
   {
     "id": 52,
@@ -348,7 +348,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Means of Production.(id_52)(sim_4)"
+    "Name": "Department I.Production.Means of Production.(id_52)(sim_4)"
   },
   {
     "id": 50,
@@ -361,7 +361,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Sales.Means of Production.(id_50)(sim_4)"
+    "Name": "Department I.Sales.Means of Production.(id_50)(sim_4)"
   },
   {
     "id": 54,
@@ -374,7 +374,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department IIa.Money.Money.(id_54)(sim_4)"
+    "Name": "Department IIa.Money.Money.(id_54)(sim_4)"
   },
   {
     "id": 46,
@@ -387,7 +387,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department IIa.Production.Labour Power.(id_46)(sim_4)"
+    "Name": "Department IIa.Production.Labour Power.(id_46)(sim_4)"
   },
   {
     "id": 49,
@@ -400,7 +400,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department IIa.Production.Means of Production.(id_49)(sim_4)"
+    "Name": "Department IIa.Production.Means of Production.(id_49)(sim_4)"
   },
   {
     "id": 55,
@@ -413,7 +413,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department IIa.Sales.Necessities.(id_55)(sim_4)"
+    "Name": "Department IIa.Sales.Necessities.(id_55)(sim_4)"
   },
   {
     "id": 57,
@@ -426,7 +426,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department IIb.Money.Money.(id_57)(sim_4)"
+    "Name": "Department IIb.Money.Money.(id_57)(sim_4)"
   },
   {
     "id": 48,
@@ -439,7 +439,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department IIb.Production.Means of Production.(id_48)(sim_4)"
+    "Name": "Department IIb.Production.Means of Production.(id_48)(sim_4)"
   },
   {
     "id": 56,
@@ -452,7 +452,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department IIb.Production.Labour Power.(id_56)(sim_4)"
+    "Name": "Department IIb.Production.Labour Power.(id_56)(sim_4)"
   },
   {
     "id": 47,
@@ -465,7 +465,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department IIb.Sales.Luxuries.(id_47)(sim_4)"
+    "Name": "Department IIb.Sales.Luxuries.(id_47)(sim_4)"
   },
   {
     "id": 71,
@@ -478,7 +478,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Consumption.Money.Money.(id_71)(sim_5)"
+    "Name": "Consumption.Money.Money.(id_71)(sim_5)"
   },
   {
     "id": 68,
@@ -491,7 +491,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Consumption.Production.Means of Production.(id_68)(sim_5)"
+    "Name": "Consumption.Production.Means of Production.(id_68)(sim_5)"
   },
   {
     "id": 69,
@@ -504,7 +504,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Consumption.Production.Labour Power.(id_69)(sim_5)"
+    "Name": "Consumption.Production.Labour Power.(id_69)(sim_5)"
   },
   {
     "id": 72,
@@ -517,7 +517,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Consumption.Sales.Consumption.(id_72)(sim_5)"
+    "Name": "Consumption.Sales.Consumption.(id_72)(sim_5)"
   },
   {
     "id": 67,
@@ -530,7 +530,7 @@
     "demand": 0,
     "value": 9000,
     "price": 9000,
-    "name": "Means of Production.Money.Money.(id_67)(sim_5)"
+    "Name": "Means of Production.Money.Money.(id_67)(sim_5)"
   },
   {
     "id": 66,
@@ -543,7 +543,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Means of Production.Production.Means of Production.(id_66)(sim_5)"
+    "Name": "Means of Production.Production.Means of Production.(id_66)(sim_5)"
   },
   {
     "id": 70,
@@ -556,7 +556,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Means of Production.Production.Labour Power.(id_70)(sim_5)"
+    "Name": "Means of Production.Production.Labour Power.(id_70)(sim_5)"
   },
   {
     "id": 65,
@@ -569,7 +569,7 @@
     "demand": 0,
     "value": 5500,
     "price": 5500,
-    "name": "Means of Production.Sales.Means of Production.(id_65)(sim_5)"
+    "Name": "Means of Production.Sales.Means of Production.(id_65)(sim_5)"
   },
   {
     "id": 83,
@@ -582,7 +582,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Money.Money.(id_83)(sim_6)"
+    "Name": "Department I.Money.Money.(id_83)(sim_6)"
   },
   {
     "id": 81,
@@ -595,7 +595,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Labour Power.(id_81)(sim_6)"
+    "Name": "Department I.Production.Labour Power.(id_81)(sim_6)"
   },
   {
     "id": 84,
@@ -608,7 +608,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department I.Production.Means of Production.(id_84)(sim_6)"
+    "Name": "Department I.Production.Means of Production.(id_84)(sim_6)"
   },
   {
     "id": 79,
@@ -621,7 +621,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department I.Sales.Means of Production.(id_79)(sim_6)"
+    "Name": "Department I.Sales.Means of Production.(id_79)(sim_6)"
   },
   {
     "id": 80,
@@ -634,7 +634,7 @@
     "demand": 0,
     "value": 4000,
     "price": 4000,
-    "name": "Department II.Money.Money.(id_80)(sim_6)"
+    "Name": "Department II.Money.Money.(id_80)(sim_6)"
   },
   {
     "id": 82,
@@ -647,7 +647,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Labour Power.(id_82)(sim_6)"
+    "Name": "Department II.Production.Labour Power.(id_82)(sim_6)"
   },
   {
     "id": 85,
@@ -660,7 +660,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Means of Production.(id_85)(sim_6)"
+    "Name": "Department II.Production.Means of Production.(id_85)(sim_6)"
   },
   {
     "id": 86,
@@ -673,7 +673,7 @@
     "demand": 0,
     "value": 6000,
     "price": 6000,
-    "name": "Department II.Sales.Consumption.(id_86)(sim_6)"
+    "Name": "Department II.Sales.Consumption.(id_86)(sim_6)"
   },
   {
     "id": 96,
@@ -686,7 +686,7 @@
     "demand": 0,
     "value": 9000,
     "price": 9000,
-    "name": "Consumption.Money.Money.(id_96)(sim_7)"
+    "Name": "Consumption.Money.Money.(id_96)(sim_7)"
   },
   {
     "id": 102,
@@ -699,7 +699,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Consumption.Production.Circulating.(id_102)(sim_7)"
+    "Name": "Consumption.Production.Circulating.(id_102)(sim_7)"
   },
   {
     "id": 104,
@@ -712,7 +712,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Consumption.Production.Fixed.(id_104)(sim_7)"
+    "Name": "Consumption.Production.Fixed.(id_104)(sim_7)"
   },
   {
     "id": 105,
@@ -725,7 +725,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Consumption.Production.Labour Power.(id_105)(sim_7)"
+    "Name": "Consumption.Production.Labour Power.(id_105)(sim_7)"
   },
   {
     "id": 111,
@@ -738,7 +738,7 @@
     "demand": 0,
     "value": 150,
     "price": 150,
-    "name": "Consumption.Sales.Consumption.(id_111)(sim_7)"
+    "Name": "Consumption.Sales.Consumption.(id_111)(sim_7)"
   },
   {
     "id": 103,
@@ -751,7 +751,7 @@
     "demand": 0,
     "value": 8000,
     "price": 8000,
-    "name": "Circulating.Money.Money.(id_103)(sim_7)"
+    "Name": "Circulating.Money.Money.(id_103)(sim_7)"
   },
   {
     "id": 97,
@@ -764,7 +764,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Circulating.Production.Circulating.(id_97)(sim_7)"
+    "Name": "Circulating.Production.Circulating.(id_97)(sim_7)"
   },
   {
     "id": 98,
@@ -777,7 +777,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Circulating.Production.Labour Power.(id_98)(sim_7)"
+    "Name": "Circulating.Production.Labour Power.(id_98)(sim_7)"
   },
   {
     "id": 101,
@@ -790,7 +790,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Circulating.Production.Fixed.(id_101)(sim_7)"
+    "Name": "Circulating.Production.Fixed.(id_101)(sim_7)"
   },
   {
     "id": 100,
@@ -803,7 +803,7 @@
     "demand": 0,
     "value": 600,
     "price": 600,
-    "name": "Circulating.Sales.Circulating.(id_100)(sim_7)"
+    "Name": "Circulating.Sales.Circulating.(id_100)(sim_7)"
   },
   {
     "id": 94,
@@ -816,7 +816,7 @@
     "demand": 0,
     "value": 10000,
     "price": 10000,
-    "name": "Fixed.Money.Money.(id_94)(sim_7)"
+    "Name": "Fixed.Money.Money.(id_94)(sim_7)"
   },
   {
     "id": 106,
@@ -829,7 +829,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Fixed.Production.Circulating.(id_106)(sim_7)"
+    "Name": "Fixed.Production.Circulating.(id_106)(sim_7)"
   },
   {
     "id": 107,
@@ -842,7 +842,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Fixed.Production.Fixed.(id_107)(sim_7)"
+    "Name": "Fixed.Production.Fixed.(id_107)(sim_7)"
   },
   {
     "id": 109,
@@ -855,7 +855,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Fixed.Production.Labour Power.(id_109)(sim_7)"
+    "Name": "Fixed.Production.Labour Power.(id_109)(sim_7)"
   },
   {
     "id": 110,
@@ -868,7 +868,7 @@
     "demand": 0,
     "value": 10000,
     "price": 10000,
-    "name": "Fixed.Sales.Fixed.(id_110)(sim_7)"
+    "Name": "Fixed.Sales.Fixed.(id_110)(sim_7)"
   },
   {
     "id": 120,
@@ -881,7 +881,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department Ia.Money.Money.(id_120)(sim_8)"
+    "Name": "Department Ia.Money.Money.(id_120)(sim_8)"
   },
   {
     "id": 118,
@@ -894,7 +894,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ia.Production.Raw Materials.(id_118)(sim_8)"
+    "Name": "Department Ia.Production.Raw Materials.(id_118)(sim_8)"
   },
   {
     "id": 119,
@@ -907,7 +907,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ia.Production.Labour Power.(id_119)(sim_8)"
+    "Name": "Department Ia.Production.Labour Power.(id_119)(sim_8)"
   },
   {
     "id": 121,
@@ -920,7 +920,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ia.Production.Fixed.(id_121)(sim_8)"
+    "Name": "Department Ia.Production.Fixed.(id_121)(sim_8)"
   },
   {
     "id": 122,
@@ -933,7 +933,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department Ia.Sales.Fixed.(id_122)(sim_8)"
+    "Name": "Department Ia.Sales.Fixed.(id_122)(sim_8)"
   },
   {
     "id": 128,
@@ -946,7 +946,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department II.Money.Money.(id_128)(sim_8)"
+    "Name": "Department II.Money.Money.(id_128)(sim_8)"
   },
   {
     "id": 129,
@@ -959,7 +959,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Labour Power.(id_129)(sim_8)"
+    "Name": "Department II.Production.Labour Power.(id_129)(sim_8)"
   },
   {
     "id": 131,
@@ -972,7 +972,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Fixed.(id_131)(sim_8)"
+    "Name": "Department II.Production.Fixed.(id_131)(sim_8)"
   },
   {
     "id": 132,
@@ -985,7 +985,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department II.Production.Raw Materials.(id_132)(sim_8)"
+    "Name": "Department II.Production.Raw Materials.(id_132)(sim_8)"
   },
   {
     "id": 130,
@@ -998,7 +998,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department II.Sales.Consumption.(id_130)(sim_8)"
+    "Name": "Department II.Sales.Consumption.(id_130)(sim_8)"
   },
   {
     "id": 124,
@@ -1011,7 +1011,7 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department Ib.Money.Money.(id_124)(sim_8)"
+    "Name": "Department Ib.Money.Money.(id_124)(sim_8)"
   },
   {
     "id": 125,
@@ -1024,7 +1024,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ib.Production.Fixed.(id_125)(sim_8)"
+    "Name": "Department Ib.Production.Fixed.(id_125)(sim_8)"
   },
   {
     "id": 126,
@@ -1037,7 +1037,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ib.Production.Raw Materials.(id_126)(sim_8)"
+    "Name": "Department Ib.Production.Raw Materials.(id_126)(sim_8)"
   },
   {
     "id": 127,
@@ -1050,7 +1050,7 @@
     "demand": 0,
     "value": 0,
     "price": 0,
-    "name": "Department Ib.Production.Labour Power.(id_127)(sim_8)"
+    "Name": "Department Ib.Production.Labour Power.(id_127)(sim_8)"
   },
   {
     "id": 123,
@@ -1063,6 +1063,6 @@
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "name": "Department Ib.Sales.Raw Materials.(id_123)(sim_8)"
+    "Name": "Department Ib.Sales.Raw Materials.(id_123)(sim_8)"
   }
 ]
