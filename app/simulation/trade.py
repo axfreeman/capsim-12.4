@@ -72,7 +72,7 @@ def buy_and_sell(db:Session, simulation:Simulation):
             Buyer.commodity_id == seller.commodity_id,
         ):
             report(3,simulation.id,
-                f"buyer {buyer.owner_name(db)} is buying {buyer.purchase_stock(db).demand}",db,
+                f"buyer {buyer.owner_name(db)} will be asked to buy {buyer.purchase_stock(db).demand}",db,
             )
             buy(buyer, seller, simulation, db)
     db.commit()
@@ -88,6 +88,10 @@ def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
     seller_money_stock:Industry_stock|Class_stock = seller.money_stock(db)
     commodity:Commodity = seller.commodity(db)  # does not change yet, so no need to add it to the session
     amount = buyer_purchase_stock.demand
+    report(5,simulation.id,f"seller sales stock is {seller_sales_stock.name}",db)
+    report(5,simulation.id,f"buyer purchase stock is {buyer_purchase_stock.name}",db)
+    report(5,simulation.id,f"buyer money stock is {buyer_money_stock.name}",db)
+    report(5,simulation.id,f"seller money stock is {seller_money_stock.name}",db)
     report(4,simulation.id,
         f"Buying {amount} at price {commodity.unit_price} and value {commodity.unit_value}",db,
     )
@@ -101,8 +105,9 @@ def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
     seller_sales_stock.change_size(-amount,db)
 
 # Pay for the goods
+    report(4,simulation.id,"Now you must pay",db)
 
-    if buyer_money_stock.id == seller_money_stock.id:  
+    if buyer_money_stock == seller_money_stock:  
         # Internal trade to the sector
         report(4,simulation.id,"Internal transfer: no net payment effected",db,)
     else:

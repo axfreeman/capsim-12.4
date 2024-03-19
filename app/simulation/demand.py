@@ -31,12 +31,12 @@ def initialise_demand(db: Session,simulation: Simulation):
         report(2,simulation.id,f"Initialising demand for commodity {c.name}",db)
         db.add(c)
         c.demand=0
-    squery = db.query(Industry_stock)
+    squery = db.query(Industry_stock).where(Industry_stock.simulation_id==simulation.id)
     for s in squery:
         report(2,simulation.id,f"Initialising demand for industry stock {s.name}",db)
         db.add(s)
         s.demand=0
-    squery = db.query(Class_stock)
+    squery = db.query(Class_stock).where(Class_stock.simulation_id==simulation.id)
     for s in squery:
         report(2,simulation.id,f"Initialising demand for class stock {s.name}",db)
         db.add(s)
@@ -83,16 +83,20 @@ def commodity_demand(db:Session,simulation:Simulation):
     report(1,simulation.id,"ADDING UP DEMAND FOR COMMODITIES",db)
     query=db.query(models.Commodity).where(Commodity.simulation_id==simulation.id)
     for commodity in query:
-            # Demand from Industry Stocks
+       
+# Demand from Industry Stocks
+
         db.add(commodity)
         report(2,simulation.id, f'Calculating total demand for {commodity.name} from Industries',db)
-        squery=db.query(Industry_stock).filter(Industry_stock.commodity_id==commodity.id)
+        squery=db.query(Industry_stock).filter(Industry_stock.commodity_id==commodity.id,Industry_stock.usage_type=="Production")
         for stock in squery:
             industry:Industry=stock.industry(db)
             report(3,simulation.id,f'Demand for {commodity.name} from {stock.name} with owner ({industry.name}) is {stock.demand}',db)
             commodity.demand+=stock.demand
         report (2,simulation.id, f'Total demand for {commodity.name} is now {commodity.demand}',db)
-            # Demand from Class Stocks
+
+# Demand from Class Stocks
+
         report(2,simulation.id, f'Calculating total demand for {commodity.name} from Classes',db)
         squery=db.query(Class_stock).filter(Class_stock.commodity_id==commodity.id)
         for stock in squery:
@@ -100,5 +104,6 @@ def commodity_demand(db:Session,simulation:Simulation):
             report(3,simulation.id,f'Demand for {commodity.name} from {stock.name} with owner ({social_class.name}) is {stock.demand}',db)
             commodity.demand+=stock.demand
         report (2,simulation.id, f'Total demand for {commodity.name} is now {commodity.demand}',db)
+
     db.commit()
 

@@ -15,10 +15,8 @@ def find_industry_stocks(
 ):
     """Get all industry stocks in one simulation.
     Return empty list if simulation is None."""
-    print("Entered get industry stocks")
     if simulation == None:
         return []
-    print("Proceeding with get industry stocks")
     return db.query(Industry_stock).filter(Industry_stock.simulation_id == simulation.id)
 
 @router.get("/industry/{id}")

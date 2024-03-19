@@ -202,8 +202,7 @@ class SocialClass(Base):
         return get_class_money_stock(self, session)
 
 class Industry_stock(Base):
-    """Stocks are produced, consumed, and traded in a
-    market economy.
+    """Stocks are produced, consumed, and traded in a market economy.
 
     There are two types of stock:
         Those that belong to Industries
@@ -225,7 +224,6 @@ class Industry_stock(Base):
     Industry to produce a unit of output.
 
     The helper method Stock.unit_cost says how much it will cost to do this.
-
     """
 
     __tablename__ = "industry_stocks"
@@ -252,7 +250,7 @@ class Industry_stock(Base):
         """
         if self.usage_type == "Production":
             industry = db.query(Industry).where(Industry.id == self.industry_id).first()
-            return industry.output_scale * self.requirement
+            return round(industry.output_scale * self.requirement,4)
         else:
             return 0.0
 
