@@ -257,7 +257,7 @@ class Industry_stock(Base):
             return 0.0
 
     def flow_per_period(self, db: Session) -> float:
-        return self.annual_flow_rate(db) / self.simulation(db).periods_per_year
+        return round(self.annual_flow_rate(db) / self.simulation(db).periods_per_year,4)
 
     def standard_stock(self, db: Session) -> float:
         """The size of the normal stock which an industry must maintain in order to conduct
