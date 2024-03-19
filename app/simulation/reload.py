@@ -39,8 +39,8 @@ def initialise_buyers_and_sellers(db, simulation_id):
 
 # Add all Industry Sales stocks to seller list
 
-    stock_query = db.query(Industry_stock).where(
-        Stock.simulation_id == simulation_id, Industry_stock.usage_type == "Sales"
+    stock_query = db.query(Industry_stock).filter(
+        Industry_stock.simulation_id == simulation_id, Industry_stock.usage_type == "Sales"
     )
     for stock in stock_query:
         owner = stock.owner(db)
@@ -63,8 +63,8 @@ def initialise_buyers_and_sellers(db, simulation_id):
 
 # Add all Class Sales stocks to seller list
 
-    stock_query = db.query(Class_stock).where(
-        Stock.simulation_id == simulation_id, Class_stock.usage_type == "Sales"
+    stock_query = db.query(Class_stock).filter(
+        Class_stock.simulation_id == simulation_id, Class_stock.usage_type == "Sales"
     )
     for stock in stock_query:
         owner = stock.owner(db)
@@ -94,7 +94,7 @@ def initialise_buyers_and_sellers(db, simulation_id):
 
 # Add all productive Industry stocks to buyer list
     
-    stock_query = db.query(Industry_stock).where(
+    stock_query = db.query(Industry_stock).filter(
         Industry_stock.simulation_id == simulation_id,
         Industry_stock.usage_type != "Money",
         Industry_stock.usage_type != "Sales",
@@ -120,7 +120,7 @@ def initialise_buyers_and_sellers(db, simulation_id):
 
 # Add all consumption Class stocks to buyer list
     
-    stock_query = db.query(Class_stock).where(
+    stock_query = db.query(Class_stock).filter(
         Class_stock.simulation_id == simulation_id,
         Class_stock.usage_type != "Money",
         Class_stock.usage_type != "Sales",

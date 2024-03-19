@@ -34,7 +34,7 @@ router = APIRouter(prefix="/action", tags=["Actions"])
 def demandHandler(
     db: Session = Depends(get_db),
     u:usPair = Depends(get_current_user_and_simulation)
-):
+)->str:
     """
     Handles calls to the 'Demand' action. Sets demand, then resets the 
     simulation state to the next in the circuit. 

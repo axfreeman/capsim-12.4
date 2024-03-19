@@ -41,7 +41,6 @@ def constrain_demand(session,simulation):
                     stock.demand=stock.demand*commodity.allocation_ratio
                     report(4,simulation.id, f"constraining stock {stock.id} demand to {stock.demand}",session)
 
-
 def buy_and_sell(db:Session, simulation:Simulation):
     """Implements buying and selling.
 
@@ -90,7 +89,7 @@ def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
     commodity:Commodity = seller.commodity(db)  # does not change yet, so no need to add it to the session
     amount = buyer_purchase_stock.demand
     report(4,simulation.id,
-        f"Buying {amount} at price {commodity.unitPrice} and value {commodity.unitValue}",db,
+        f"Buying {amount} at price {commodity.unit_price} and value {commodity.unit_value}",db,
     )
 
 # Transfer the goods

@@ -523,6 +523,12 @@ class Buyer(Base):
         """Returns the Commodity which this buyer wants to get for this stock."""
         return session.get_one(Commodity, self.commodity_id)
 
+    def owner_name(self, session):  # Really just for diagnostic convenience
+        if self.owner_type == "Industry":
+            return session.get_one(Industry, self.purchase_stock(session).industry_id).name
+        else:
+            return session.get_one(SocialClass, self.purchase_stock(session).class_id).name
+
 class Seller(Base):
     """The Seller class is initialized when a simulation is created,
     that is, when a user clones a template.
@@ -539,7 +545,7 @@ class Seller(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     owner_type = Column(String)  # `Industry` or `Class`
     simulation_id = Column(Integer)
-    purchase_stock_id = Column(Integer)
+    sales_stock_id = Column(Integer)
     money_stock_id = Column(Integer)
     commodity_id = Column(Integer)
 
@@ -573,7 +579,7 @@ class Seller(Base):
         """Returns the Commodity which this seller is offering."""
         return session.get_one(Commodity, self.commodity_id)
 
-    def owner_name(self, session):  # Really just for diagnostic purposes only
+    def owner_name(self, session):  # Really just for diagnostic convenience
         if self.owner_type == "Industry":
             return session.get_one(Industry, self.sales_stock(session).industry_id).name
         else:
