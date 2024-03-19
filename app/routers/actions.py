@@ -45,20 +45,12 @@ def demandHandler(
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
     
-    initialise_demand(
-        db, u.simulation
-    )  ## set demand to zero as start point
-    industry_demand(
-        db, u.simulation
-    )  # tell industries to register their demand and supply with their stocks
-    class_demand(
-        db, u.simulation
-    )  # tell classes to register their demand and supply with their stocks
-    commodity_demand(
-        db, u.simulation
-    )  # tell the commodities to tot up the demand from all stocks of them
+    initialise_demand(db, u.simulation)
+    industry_demand(db, u.simulation) # tell industries to register their demand with their stocks.
+    class_demand(db, u.simulation)  # tell classes to register their demand with their stocks.
+    commodity_demand(db, u.simulation)  # tell the commodities to tot up the demand from all stocks of them.
     db.add(u.simulation)
-    u.simulation.state = "SUPPLY"
+    u.simulation.state = "SUPPLY" # set the next state in the circuit, obliging the user to do this next.
     db.commit()
     return "Demand initialised"
 
@@ -67,27 +59,19 @@ def supplyHandler(
     db: Session = Depends(get_db),
     u: usPair = Depends(get_current_user_and_simulation),
 ):
-    """
-    Handles calls to the 'Supply' action. Sets supply, then resets the
+    """Handles calls to the 'Supply' action. Sets supply, then resets 
     simulation state to the next in the circuit.
 
     Assumes that get_current_user() has handled any errors. 
+
     Therefore does not check u except to decide whether or not to go ahead. 
     """
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
-
-    initialise_supply(
-        db, u.simulation, 0
-    )  # test to see if it worked by putting 2 in the db. TODO remember to set this back to 0
-    industry_supply(
-        db, u.simulation
-    )  # tell industries to register their demand and supply with their stocks
-    class_supply(
-        db, u.simulation
-    )  # tell classes to register their demand and supply with their stocks
-    # tell the commodities to tot up the demand from all stocks of them (note supply was set directly)
-
+    initialise_supply(db, u.simulation)
+    industry_supply(db, u.simulation)  # tell industries to register their supply
+    class_supply(db, u.simulation)  # tell classes to register their supply 
+    # tell the commodities to tot up supply from all stocks of them (note supply was set directly)
     db.add(u.simulation)
     u.simulation.state = "TRADE"
     db.commit()

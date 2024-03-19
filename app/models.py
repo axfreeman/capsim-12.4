@@ -1,7 +1,10 @@
-from fastapi import Depends, Query, Depends
+import typing
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
-from .database import Base
 from sqlalchemy.orm import relationship, Session
+from .database import Base
+
+Industry_stock = typing.NewType("Industry_stock", None)
+Class_stock = typing.NewType("Class_stock", None)
 
 """This module contains models, and their methods, for the objects of
 the system, except for the User model which is in authorization.py.
@@ -138,13 +141,13 @@ class Industry(Base):
     profit_rate = Column(Float)
     successor_id = Column(Integer, nullable=True)  # Helper column to use when cloning
 
-    def unit_cost(self, db: Session):
+    def unit_cost(self, db: Session)->float:
         """Calculate the cost of producing a single unit of output."""
         cost = 0
         for stock in (
-            db.query(Stock)
-            .where(Stock.owner_id == self.id)
-            .where(Stock.usage_type == "Production")
+            db.query(Industry_stock)
+            .where(Industry_stock.industry_id == self.id)
+            .where(Industry_stock.usage_type == "Production")
         ):
             print(
                 f"Stock called {stock.name} is adding {stock.unit_cost(db)} to its industry's unit cost"
@@ -152,54 +155,24 @@ class Industry(Base):
             cost += stock.unit_cost(db)
         return cost
 
-    def simulation(self, db: Session):
+    def simulation(self, db: Session)->Simulation:
         """
         Helper method yields the (unique) Simulation this industry belongs to.
         """
         return db.get_one(Simulation, self.simulation_id)
 
-    def sales_stock(self, db: Session):
+    def sales_stock(self, db: Session)->Industry_stock:
         """Helper method yields the Sales Stock of this industry."""
-        result = get_industry_sales_stock(
-            self, db
-        )  # workaround because pydantic won't easily accept this query in a built-in function
+        result = get_industry_sales_stock(self, db)  # workaround because pydantic won't easily accept this query in a built-in function
         if result == None:
             raise Exception(
                 f"INDUSTRY {self.name} with id {self.id} and simulation id {self.simulation_id} HAS NO SALES STOCK"
             )
         return result
 
-    def money_stock(self, session):
+    def money_stock(self, session)->Industry_stock:
         """Helper method yields the Money Stock of this industry."""
-        return get_industry_money_stock(
-            self, session
-        )  # workaround because pydantic won't easily accept this query in a built-in function
-
-def get_industry_sales_stock(industry, session):
-    """Workaround because pydantic won't accept this query in a built-in function."""
-    return (
-        session.query(Stock)
-        .filter(
-            Stock.owner_id == industry.id,
-            Stock.usage_type == "Sales",
-            Stock.owner_type == "Industry",
-            Stock.simulation_id == industry.simulation_id,
-        )
-        .first()
-    )
-
-def get_industry_money_stock(industry, session):
-    """workaround because pydantic won't accept this query in a built-in function."""
-    return (
-        session.query(Stock)
-        .filter(
-            Stock.owner_id == industry.id,
-            Stock.usage_type == "Money",
-            Stock.owner_type == "Industry",
-            Stock.simulation_id == industry.simulation_id,
-        )
-        .first()
-    )
+        return get_industry_money_stock(self, session)  # workaround because pydantic won't easily accept this query in a built-in function
 
 class SocialClass(Base):
     __tablename__ = "social_classes"
@@ -217,38 +190,16 @@ class SocialClass(Base):
     assets = Column(Float)
     successor_id = Column(Integer, nullable=True)  # Helper column to use when cloning
 
-    def simulation(self, session):
+    def simulation(self, session)->Simulation:
         return session.get_one(Simulation, self.simulation_id)
 
     def sales_stock(self, session):
+        """Helper method yields the Sales Class_stock of this class."""
         return get_class_sales_stock(self, session)
 
     def money_stock(self, session):
+        """Helper method yields the Money Class_stock of this class."""
         return get_class_money_stock(self, session)
-
-def get_class_sales_stock(social_class, session):
-    return (
-        session.query(Stock)
-        .filter(
-            Stock.owner_id == social_class.id,
-            Stock.usage_type == "Sales",
-            Stock.owner_type == "Class",
-            Stock.simulation_id == social_class.simulation_id,
-        )
-        .first()
-    )
-
-def get_class_money_stock(social_class, session):
-    return (
-        session.query(Stock)
-        .filter(
-            Stock.owner_id == social_class.id,
-            Stock.usage_type == "Money",
-            Stock.owner_type == "Class",
-            Stock.simulation_id == social_class.simulation_id,
-        )
-        .first()
-    )
 
 class Stock(Base):
     """Stocks are the things that are produced, consumed, and traded in a
@@ -293,86 +244,6 @@ class Stock(Base):
     price = Column(Float)
     requirement = Column(Float)
     demand = Column(Float)
-
-    def flow_rate(self, db: Session) -> float:
-        """The annual rate at which this Stock is consumed.
-
-        Applies only to productive stocks and consumption stocks.
-
-        Returns zero for Money and Sales Stocks.
-        """
-        if self.usage_type == "Production":
-            industry = db.query(Industry).where(Industry.id == self.owner_id).first()
-            return industry.output_scale * self.requirement
-        elif self.usage_type == "Consumption":
-            social_class = (
-                db.query(SocialClass).where(SocialClass.id == self.owner_id).first()
-            )
-            return social_class.population * social_class.consumption_ratio
-        else:
-            return 0.0
-
-    def flow_per_period(self, db: Session) -> float:
-        """The same as flow_rate, but per period instead of per year."""
-        simulation = (
-            db.query(Simulation).where(Simulation.id == self.simulation_id).first()
-        )
-        return self.flow_rate(db) / simulation.periods_per_year
-
-    def standard_stock(self, db: Session) -> float:
-        """The normal stock which an owner must maintain in order to conduct
-        production or consumption.
-
-        Applies only to productive stocks and consumption stocks.
-
-        Returns zero for Money and Sales Stocks.
-        """
-        if self.usage_type == "Production":
-            commodity = (
-                db.query(Commodity).where(Commodity.id == self.commodity_id).first()
-            )
-            return self.flow_rate(db) * commodity.turnover_time
-        elif self.usage_type == "Consumption":
-            commodity = (
-                db.query(Commodity).where(Commodity.id == self.commodity_id).first()
-            )
-            # Not sure about this one. I guess even food has a turnover time.
-            # But makes sense for consumer durables and housing, so quite a large
-            # proportion of consumer spending.
-            return self.flow_rate(db) * commodity.turnover_time
-        else:
-            return 0.0
-
-    def owner(self, db: Session):
-        """Returns either an Industry or a SocialClass, depending on
-        self.usage_type.
-
-        This is a substitute for subclassing, which I find too complex
-        to store in a database polymorphically (that is, taking due
-        account of subclassing).
-        """
-        if self.owner_type == "Industry":
-            return db.get_one(Industry, self.owner_id)
-        elif self.owner_type == "Class":
-            return db.get_one(SocialClass, self.owner_id)
-        else:
-            print(f"owner type for stock with id {self.id} was not understood")
-
-    def commodity(self, db: Session):
-        return db.get_one(Commodity, self.commodity_id)
-
-    def simulation(self, session):
-        return session.get_one(Simulation, self.simulation_id)
-
-    def unit_cost(self, db: Session):
-        """Money price of using this Stock to make one unit of output
-        in a period.
-
-        Returns zero if Stock is not productive, which is harmless -
-        nevertheless, caller should invoke this method only on productive
-        Stocks.
-        """
-        return self.requirement * self.commodity(db).unit_price
 
 class Industry_stock(Base):
     """Stocks are produced, consumed, and traded in a
@@ -622,3 +493,53 @@ class Seller(Base):
             return session.get_one(Industry, self.sales_stock(session).owner_id).id
         else:
             return session.get_one(SocialClass, self.sales_stock(session).owner_id).id
+
+"""Helper functions which serve as workarounds for dealing with pydantic limitations."""
+
+def get_industry_sales_stock(industry, session)->Industry_stock:
+    """Workaround because pydantic won't accept this query in a built-in function."""
+    return (
+        session.query(Industry_stock)
+        .filter(
+            Industry_stock.industry_id == industry.id,
+            Industry_stock.usage_type == "Sales",
+            Industry_stock.simulation_id == industry.simulation_id,
+        )
+        .first()
+    )
+
+def get_industry_money_stock(industry, session)->Industry_stock:
+    """workaround because pydantic won't accept this query in a built-in function."""
+    return (
+        session.query(Industry_stock)
+        .filter(
+            Industry_stock.industry_id == industry.id,
+            Industry_stock.usage_type == "Money",
+            Industry_stock.simulation_id == industry.simulation_id,
+        )
+        .first()
+    )
+
+def get_class_sales_stock(social_class, session)->Class_stock:
+    """Workaround because pydantic won't accept this query in a built-in function."""
+    return (
+        session.query(Class_stock)
+        .filter(
+            Class_stock.class_id == social_class.id,
+            Class_stock.usage_type == "Sales",
+            Class_stock.simulation_id == social_class.simulation_id,
+        )
+        .first()
+    )
+
+def get_class_money_stock(social_class, session)->Class_stock:
+    """Workaround because pydantic won't accept this query in a built-in function."""    
+    return (
+        session.query(Class_stock)
+        .filter(
+            Class_stock.class_id == social_class.id,
+            Class_stock.usage_type == "Money",
+            Class_stock.simulation_id == social_class.simulation_id,
+        )
+        .first()
+    )

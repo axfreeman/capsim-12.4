@@ -50,7 +50,6 @@ def clone_model(model, session: Session, **kwargs):
     except:
         return None
 
-
 @router.get("/clone/{id}")
 def create_simulation_from_template(
     id: str,
