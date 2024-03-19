@@ -1,12 +1,13 @@
-from .. import models
-from ..models import Class_stock, Commodity,Industry, Industry_stock,SocialClass, Stock
-from .logging import report
-
 """Functions used by the 'Supply' action.
+
 Their purpose is to calculate the total supply for each commodity, in
 preparation for Trade.
+
 Quite simple: supply is simply the size of the Sales Stock.
 """
+from ..models import Class_stock, Commodity,Industry, Industry_stock,SocialClass
+from .logging import report
+
 def initialise_supply(session,simulation):
     """Set supply of every commodity to zero to prepare for the calculation."""
     cquery = session.query(Commodity).where(Commodity.simulation_id==simulation.id)

@@ -1,8 +1,3 @@
-from .. import models
-from ..models import Class_stock, Commodity,Industry, Industry_stock,SocialClass, Stock, Simulation
-from .logging import report
-from sqlalchemy.orm import Session
-
 """Helper functions used by the 'demand' action.
 
 They are all called by 'demandHandler' but are available for use 
@@ -20,6 +15,11 @@ The sequence is:
     
     Finally, tell every commodity to add up demand from stocks of it.
 """
+
+from .. import models
+from ..models import Class_stock, Commodity,Industry, Industry_stock,SocialClass, Simulation
+from .logging import report
+from sqlalchemy.orm import Session
 
 def initialise_demand(db: Session,simulation: Simulation):
     """Set demand to zero for all commodities and stocks, prior to

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 import json
 from sqlalchemy import insert
-from ..models import Buyer, Seller, Stock 
+from ..models import Buyer, Class_stock, Industry_stock, Seller, Stock 
 from .demand import report
 
 def reload_table(db: Session, baseModel, filename: str, reload: bool, simulation_id:int):
@@ -17,79 +17,130 @@ def reload_table(db: Session, baseModel, filename: str, reload: bool, simulation
             db.add(new_object)
     db.commit()
 
-def initialise_buyers_and_sellers(session, simulation_id):
+def initialise_buyers_and_sellers(db, simulation_id):
     """
     Create a helper table of buyers and sellers.
 
     Used by 'Trade' action, to organise the allocation of demand to supply
-    and to conduct the actual transfers of goods and money from one owner to another.
+    and to conduct the actual transfers of goods and money from one owner 
+    to another.
 
-    The objects in this table are not cloned. They are references to the original objects
-    in the underlying owner and stock tables.
+    The objects in this table are the id fields of the objects in the
+    underlying owner and stock tables.
 
-    So when trade actually takes place, using these two tables, the result modifies
-    the original objects, not copies of them.
+    These references are created when a simulation is cloned.
     """
-    report(1, simulation_id, "Creating a list of sellers for simulation {simulation_id}", session)
-    query = session.query(Seller)
+
+# Create seller list
+
+    report(1, simulation_id, "Creating a list of sellers for simulation {simulation_id}", db)
+    query = db.query(Seller)
     query.delete(synchronize_session=False)
-    stock_query = session.query(Stock).where(
-        Stock.simulation_id == simulation_id, Stock.usage_type == "Sales"
+
+# Add all Industry Sales stocks to seller list
+
+    stock_query = db.query(Industry_stock).where(
+        Stock.simulation_id == simulation_id, Industry_stock.usage_type == "Sales"
     )
     for stock in stock_query:
-        owner = stock.owner(session)
-        print(f"Processing the owner {owner.name} with id {owner.id}")
-        commodity = stock.commodity(session)
-        money_stock_id = owner.money_stock(session).id
+        owner = stock.owner(db)
+        commodity = stock.commodity(db)
+        money_stock_id = owner.money_stock(db).id
         sales_stock_id = stock.id
-        owner_type = stock.owner_type
         commodity_id = commodity.id
-        report(
-            2,
-            simulation_id,
-            f"Adding seller {owner.name} type {owner_type} selling {stock.name} ({commodity.name})for money {money_stock_id}",
-            session,
+        report(2,simulation_id,
+            f"Adding seller {owner.name} selling {stock.name} ({commodity.name}) for money {money_stock_id}",db,
         )
         seller = {
             "simulation_id": simulation_id,
-            "owner_type": owner_type,
+            "owner_type": "Industry",
             "sales_stock_id": sales_stock_id,
             "money_stock_id": money_stock_id,
             "commodity_id": commodity_id,
         }
         new_seller = Seller(**seller)
-        session.add(new_seller)
-    session.commit()
+        db.add(new_seller)
 
-    report(1, simulation_id, "Creating a list of buyers", session)
-    query = session.query(Buyer)
-    query.delete(synchronize_session=False)
-    stock_query = session.query(Stock).where(
-        Stock.simulation_id == simulation_id,
-        Stock.usage_type != "Money",
-        Stock.usage_type != "Sales",
+# Add all Class Sales stocks to seller list
+
+    stock_query = db.query(Class_stock).where(
+        Stock.simulation_id == simulation_id, Class_stock.usage_type == "Sales"
     )
     for stock in stock_query:
-        owner = stock.owner(session)
-        commodity = stock.commodity(session)
-        money_stock_id = owner.money_stock(session).id
-        purchase_stock_id = stock.id
-        owner_type = stock.owner_type
+        owner = stock.owner(db)
+        commodity = stock.commodity(db)
+        money_stock_id = owner.money_stock(db).id
+        sales_stock_id = stock.id
         commodity_id = commodity.id
-        report(
-            2,
-            simulation_id,
-            f"Adding buyer {owner.name} type {owner_type} buying {stock.name} ({commodity.name}) using money {money_stock_id}",
-            session,
+        report(2,simulation_id,
+            f"Adding seller {owner.name} selling {stock.name} ({commodity.name})for money {money_stock_id}",db,
+        )
+        seller = {
+            "simulation_id": simulation_id,
+            "owner_type": "Class",
+            "sales_stock_id": sales_stock_id,
+            "money_stock_id": money_stock_id,
+            "commodity_id": commodity_id,
+        }
+        new_seller = Seller(**seller)
+        db.add(new_seller)
+    db.commit()
+
+# Create buyer list
+
+    report(1, simulation_id, "Creating a list of buyers for simulation {simulation_id}", db)
+    query = db.query(Buyer)
+    query.delete(synchronize_session=False)
+
+# Add all productive Industry stocks to buyer list
+    
+    stock_query = db.query(Industry_stock).where(
+        Industry_stock.simulation_id == simulation_id,
+        Industry_stock.usage_type != "Money",
+        Industry_stock.usage_type != "Sales",
+    )
+    for stock in stock_query:
+        owner = stock.owner(db)
+        commodity = stock.commodity(db)
+        money_stock_id = owner.money_stock(db).id
+        purchase_stock_id = stock.id
+        commodity_id = commodity.id
+        report(2,simulation_id,
+            f"Adding buyer {owner.name} buying {stock.name} ({commodity.name}) using money {money_stock_id}",db,
         )
         buyer = {
             "simulation_id": simulation_id,
-            "owner_type": owner_type,
+            "owner_type": "Industry",
             "purchase_stock_id": purchase_stock_id,
             "money_stock_id": money_stock_id,
             "commodity_id": commodity_id,
         }
         new_buyer = Buyer(**buyer)
-        session.add(new_buyer)
-    session.commit()
+        db.add(new_buyer)
 
+# Add all consumption Class stocks to buyer list
+    
+    stock_query = db.query(Class_stock).where(
+        Class_stock.simulation_id == simulation_id,
+        Class_stock.usage_type != "Money",
+        Class_stock.usage_type != "Sales",
+    )
+    for stock in stock_query:
+        owner = stock.owner(db)
+        commodity = stock.commodity(db)
+        money_stock_id = owner.money_stock(db).id
+        purchase_stock_id = stock.id
+        commodity_id = commodity.id
+        report(2,simulation_id,
+            f"Adding buyer {owner.name} buying {stock.name} ({commodity.name}) using money {money_stock_id}",db,
+        )
+        buyer = {
+            "simulation_id": simulation_id,
+            "owner_type": "Class",
+            "purchase_stock_id": purchase_stock_id,
+            "money_stock_id": money_stock_id,
+            "commodity_id": commodity_id,
+        }
+        new_buyer = Buyer(**buyer)
+        db.add(new_buyer)
+    db.commit()

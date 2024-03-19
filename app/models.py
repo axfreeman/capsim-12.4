@@ -1,3 +1,7 @@
+"""This module contains models, and their methods, for the objects of
+the system, except for the User model which is in authorization.py.
+"""
+
 import typing
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationship, Session
@@ -5,10 +9,6 @@ from .database import Base
 
 Industry_stock = typing.NewType("Industry_stock", None)
 Class_stock = typing.NewType("Class_stock", None)
-
-"""This module contains models, and their methods, for the objects of
-the system, except for the User model which is in authorization.py.
-"""
 
 class Simulation(Base):
     """
@@ -335,6 +335,27 @@ class Industry_stock(Base):
         """
         return self.requirement * self.commodity(db).unit_price
 
+    def owner(self, db:Session)->Industry: 
+        """Really just for diagnostic purposes """
+        return db.get_one(Industry, self.industry_id)
+    
+    def change_size(self,amount:float,db:Session)->bool:
+        """Change the size of this Industry_stock by 'amount'.
+        
+        Change the value and price using the unit_value and unit_price 
+        of this Industry_stock's Commodity.
+        
+        Return false if the result is negative, true otherwise.
+
+        ONLY for use in Trade.
+
+        Do NOT use this in production or consumption, which can change
+        unit values and prices.
+        """
+        self.size += amount
+        self.price=self.size*self.commodity(db).unit_value
+        self.value=self.size*self.commodity(db).unit_price
+
 class Class_stock(Base):
     """Stocks are produced, consumed, and traded in a
     market economy.
@@ -414,6 +435,27 @@ class Class_stock(Base):
         else:
             return 0.0
 
+    def owner(self, session)->SocialClass: 
+        """Really just for diagnostic purposes """
+        return session.get_one(SocialClass, self.class_id)
+
+    def change_size(self,amount:float,db:Session)->bool:
+        """Change the size of this Class_stock by 'amount'.
+        
+        Change the value and price using the unit_value and unit_price 
+        of this Industry_stock's Commodity.
+        
+        Return false if the result is negative, true otherwise.
+
+        ONLY for use in Trade.
+
+        Do NOT use this in production or consumption, which can change
+        unit values and prices.
+        """
+        self.size += amount
+        self.price=self.size*self.commodity(db).unit_value
+        self.value=self.size*self.commodity(db).unit_price
+
 class Trace(Base):
     """
     Trace reports the progress of the simulation in a format meaningful
@@ -431,68 +473,117 @@ class Trace(Base):
     message = Column(String)
 
 class Buyer(Base):
+    """The Buyer class is initialized when a simulation is created,
+    that is, when a user clones a template.
+
+    It contains a list of the id fields of all objects relevant to purchasing:
+        The type of the owner (the owner itself is not relevant);
+        The simulation;
+        The commodity that is being traded;
+        The stock that will receive goods through trade;
+        The money stock that will pay for the goods.
+
+    """
     __tablename__ = "buyers"
 
     id = Column(Integer, primary_key=True, nullable=False)
-    simulation_id = Column(Integer)
     owner_type = Column(String)  # `Industry` or `Class`
+    simulation_id = Column(Integer)
     purchase_stock_id = Column(Integer)
     money_stock_id = Column(Integer)
     commodity_id = Column(Integer)
 
-    def simulation(self, session):
+    def simulation(self, session)->Simulation:
+        """Returns the simulation to which this buyer belongs"""
         return session.get_one(Simulation, self.simulation_id)
 
-    def purchase_stock(self, session):
-        return session.get_one(Stock, self.purchase_stock_id)
+    def purchase_stock(self, session)->Industry_stock|Class_stock:
+        """The stock that must receive the goods.
+        This may be either an Industry_stock OR a Class_stock, as indicated by the
+        type annotation of the method result.
+        Trade assumes that both classes implement methods which allow them to receive goods.
+        """
+        if self.owner_type=="Industry":
+            return session.get_one(Industry_stock, self.purchase_stock_id)
+        else:
+            return session.get_one(Class_stock, self.purchase_stock_id)
 
-    def money_stock(self, session):
-        return session.get_one(Stock, self.money_stock_id)
+    def money_stock(self, session)->Industry_stock|Class_stock:
+        """The stock that pays for the goods.
+        This may be either an Industry_stock OR a Class_stock, as indicated by the
+        type annotation of the method result.
+        Trade assumes that both classes implement methods which allow them to pay for goods.
+        """
+        if self.owner_type=="Industry":
+            return session.get_one(Industry_stock, self.money_stock_id)
+        else:
+            return session.get_one(Class_stock, self.money_stock_id)
 
-    def commodity(self, session):
+    def commodity(self, session)->Commodity:
+        """Returns the Commodity which this buyer wants to get for this stock."""
         return session.get_one(Commodity, self.commodity_id)
 
-    def owner_name(self, session):  # Really just for diagnostic purposes only
-        if self.owner_type == "Industry":
-            return session.get_one(Industry, self.purchase_stock(session).owner_id).name
-        else:
-            return session.get_one(
-                SocialClass, self.purchase_stock(session).owner_id
-            ).name
-
 class Seller(Base):
+    """The Seller class is initialized when a simulation is created,
+    that is, when a user clones a template.
+
+    It contains a list of the id fields of all objects relevant to purchasing:
+        The type of the owner (the owner itself is not relevant);
+        The simulation;
+        The commodity that is being traded;
+        The stock that will sell goods through trade;
+        The money stock that will receive payment.
+    """
     __tablename__ = "sellers"
 
     id = Column(Integer, primary_key=True, nullable=False)
-    simulation_id = Column(Integer)
     owner_type = Column(String)  # `Industry` or `Class`
-    sales_stock_id = Column(Integer)
+    simulation_id = Column(Integer)
+    purchase_stock_id = Column(Integer)
     money_stock_id = Column(Integer)
     commodity_id = Column(Integer)
 
-    def simulation(self, session):
+    def simulation(self, session)->Simulation:
+        """Returns the simulation to which this buyer belongs"""
         return session.get_one(Simulation, self.simulation_id)
 
-    def sales_stock(self, session):
-        return session.get_one(Stock, self.sales_stock_id)
+    def sales_stock(self, session)->Industry_stock|Class_stock:
+        """The stock that must receive the goods.
+        This may be either an Industry_stock OR a Class_stock, as indicated by the
+        type annotation of the method result.
+        Trade assumes that both classes implement methods which allow them to receive goods.
+        """
+        if self.owner_type=="Industry":
+            return session.get_one(Industry_stock, self.sales_stock_id)
+        else:
+            return session.get_one(Class_stock, self.sales_stock_id)
 
     def money_stock(self, session):
-        return session.get_one(Stock, self.money_stock_id)
+        """The stock that pays for the goods.
+        This may be either an Industry_stock OR a Class_stock, as indicated by the
+        type annotation of the method result.
+        Trade assumes that both classes implement methods which allow them to pay for goods.
+        """
+        if self.owner_type=="Industry":
+            return session.get_one(Industry_stock, self.money_stock_id)
+        else:
+            return session.get_one(Class_stock, self.money_stock_id)
 
     def commodity(self, session):
+        """Returns the Commodity which this seller is offering."""
         return session.get_one(Commodity, self.commodity_id)
 
     def owner_name(self, session):  # Really just for diagnostic purposes only
         if self.owner_type == "Industry":
-            return session.get_one(Industry, self.sales_stock(session).owner_id).name
+            return session.get_one(Industry, self.sales_stock(session).industry_id).name
         else:
-            return session.get_one(SocialClass, self.sales_stock(session).owner_id).name
+            return session.get_one(SocialClass, self.sales_stock(session).class_id).name
 
     def owner_id(self, session):  # also just for diagnostic purposes
         if self.owner_type == "Industry":
-            return session.get_one(Industry, self.sales_stock(session).owner_id).id
+            return session.get_one(Industry, self.sales_stock(session).industry_id).id
         else:
-            return session.get_one(SocialClass, self.sales_stock(session).owner_id).id
+            return session.get_one(SocialClass, self.sales_stock(session).class_id).id
 
 """Helper functions which serve as workarounds for dealing with pydantic limitations."""
 

@@ -86,11 +86,13 @@ def tradeHandler(
     Handles calls to the 'Trade' action. Allocates supply, conducts 
     trade, and resets simulation state to the next in the circuit.
 
+    Receives a 'usPair' object from get_current_user_and_simulation to
+    make life easier.
+
     Assumes that get_current_user() has handled any errors. 
     Therefore does not check u except to decide whether or not to go ahead. 
     """
-    user=usPair.user; simulation=usPair.simulation
-    if user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
+    if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
 
     constrain_demand(db, u.simulation)
@@ -101,7 +103,6 @@ def tradeHandler(
     # TODO I don't think it's necessary to revalue, but check.
     # This is because trade only involves a change of ownership.
     # revalue_stocks(db,u.simulation) 
-    
     return "Trading complete"
 
 @router.get("/produce")

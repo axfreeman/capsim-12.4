@@ -1,11 +1,13 @@
+# TODO REMOVE THIS MODULE
+
 from fastapi import  status, Depends, APIRouter
 from sqlalchemy.orm import Session
 
 from ..authorization.auth import get_current_simulation
 from typing import List
 from ..database import  get_db
-from ..models import Commodity,Simulation, Buyer, Seller
-from ..schemas import CommodityBase, BuyerBase, SellerBase
+from ..models import Simulation, Buyer, Seller
+from ..schemas import BuyerBase, SellerBase
 
 router=APIRouter(
     prefix="/buysell",
