@@ -15,10 +15,12 @@ from ..simulation.demand import (
 from ..simulation.supply import initialise_supply, industry_supply, class_supply
 from ..simulation.trade import buy_and_sell, constrain_demand
 from ..simulation.production import produce
+from ..simulation.invest import invest
 from ..authorization.auth import User, get_current_user_and_simulation, usPair
 from ..models import (
+    Class_stock,
+    Industry_stock,
     Simulation,
-    Stock,
     SocialClass,
     Industry,
     Commodity,
@@ -32,7 +34,7 @@ router = APIRouter(prefix="/action", tags=["Actions"])
 def demandHandler(
     db: Session = Depends(get_db),
     u:usPair = Depends(get_current_user_and_simulation)
-):
+)->str:
     """
     Handles calls to the 'Demand' action. Sets demand, then resets the 
     simulation state to the next in the circuit. 
@@ -43,20 +45,12 @@ def demandHandler(
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
     
-    initialise_demand(
-        db, u.simulation, 0
-    )  ## set demand to zero as start point
-    industry_demand(
-        db, u.simulation
-    )  # tell industries to register their demand and supply with their stocks
-    class_demand(
-        db, u.simulation
-    )  # tell classes to register their demand and supply with their stocks
-    commodity_demand(
-        db, u.simulation
-    )  # tell the commodities to tot up the demand from all stocks of them
+    initialise_demand(db, u.simulation)
+    industry_demand(db, u.simulation) # tell industries to register their demand with their stocks.
+    class_demand(db, u.simulation)  # tell classes to register their demand with their stocks.
+    commodity_demand(db, u.simulation)  # tell the commodities to tot up the demand from all stocks of them.
     db.add(u.simulation)
-    u.simulation.state = "SUPPLY"
+    u.simulation.state = "SUPPLY" # set the next state in the circuit, obliging the user to do this next.
     db.commit()
     return "Demand initialised"
 
@@ -65,27 +59,19 @@ def supplyHandler(
     db: Session = Depends(get_db),
     u: usPair = Depends(get_current_user_and_simulation),
 ):
-    """
-    Handles calls to the 'Supply' action. Sets supply, then resets the
+    """Handles calls to the 'Supply' action. Sets supply, then resets 
     simulation state to the next in the circuit.
 
     Assumes that get_current_user() has handled any errors. 
+
     Therefore does not check u except to decide whether or not to go ahead. 
     """
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
-
-    initialise_supply(
-        db, u.simulation, 0
-    )  # test to see if it worked by putting 2 in the db. TODO remember to set this back to 0
-    industry_supply(
-        db, u.simulation
-    )  # tell industries to register their demand and supply with their stocks
-    class_supply(
-        db, u.simulation
-    )  # tell classes to register their demand and supply with their stocks
-    # tell the commodities to tot up the demand from all stocks of them (note supply was set directly)
-
+    initialise_supply(db, u.simulation)
+    industry_supply(db, u.simulation)  # tell industries to register their supply
+    class_supply(db, u.simulation)  # tell classes to register their supply 
+    # tell the commodities to tot up supply from all stocks of them (note supply was set directly)
     db.add(u.simulation)
     u.simulation.state = "TRADE"
     db.commit()
@@ -100,11 +86,13 @@ def tradeHandler(
     Handles calls to the 'Trade' action. Allocates supply, conducts 
     trade, and resets simulation state to the next in the circuit.
 
+    Receives a 'usPair' object from get_current_user_and_simulation to
+    make life easier.
+
     Assumes that get_current_user() has handled any errors. 
     Therefore does not check u except to decide whether or not to go ahead. 
     """
-    user=usPair.user; simulation=usPair.simulation
-    if user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
+    if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
 
     constrain_demand(db, u.simulation)
@@ -115,14 +103,13 @@ def tradeHandler(
     # TODO I don't think it's necessary to revalue, but check.
     # This is because trade only involves a change of ownership.
     # revalue_stocks(db,u.simulation) 
-    
     return "Trading complete"
 
 @router.get("/produce")
 def produceHandler(
     db: Session = Depends(get_db),
     u: usPair = Depends(get_current_user_and_simulation),
-):
+)->str:
     """
     Handles calls to the 'Produce' action then resets simulation state
     to the next in the circuit.
@@ -147,7 +134,7 @@ def produceHandler(
 def consumeHandler(
     db: Session = Depends(get_db),
     u: usPair = Depends(get_current_user_and_simulation),
-):
+)->str:
     """
     Handles calls to the 'Consume' action then resets simulation state
     to the next in the circuit.
@@ -175,9 +162,8 @@ def consumeHandler(
 def investHandler(
     db: Session = Depends(get_db),
     u: usPair = Depends(get_current_user_and_simulation),
-):
-    """
-    Handles calls to the 'Invest' action then resets simulation state
+)->str:
+    """Handles calls to the 'Invest' action then resets simulation state
     to the next in the circuit.
 
     Instructs every industry to assess whether it has a money surplus
@@ -197,43 +183,7 @@ def investHandler(
     Therefore does not check u except to decide whether or not to go ahead. 
     """
     report(1,u.simulation.id,"INVESTING", db)
-    industries=db.query(Industry).where(Industry.simulation_id==u.simulation.id)
-    for industry in industries:
-        report(3,u.simulation.id,"Transferring profit to the capitalists as revenue",db)
-        # TODO calculate private consumption
-        capitalists=db.query(SocialClass).where(SocialClass.simulation_id==u.simulation.id).first() # for now suppose just one propertied class
-        private_capitalist_consumption = capitalists.consumption_ratio*industry.profit
-        report(3,u.simulation.id,f"Industry {industry.name} will transfer {private_capitalist_consumption} of its profit to its owners",db)
-        cms =capitalists.money_stock(db)
-        ims=industry.money_stock(db)
-        print("Capitalist money stock",cms.id, cms.name)
-        print("Industry money stock",ims.id,ims.name)
-        db.add(cms)
-        db.add(ims)
-        cms.size+=private_capitalist_consumption
-        cms.value=cms.size # TODO for now suppose MELT is 1
-        cms.price=cms.size
-        ims.size-=private_capitalist_consumption
-        ims.value=ims.size # TODO for now suppose MELT is 1
-        ims.price=ims.size
-        db.commit()
-        report(3,u.simulation.id,f"Capitalists now have a money stock of {capitalists.money_stock(db).size}",db)
-        report(3,u.simulation.id,f"Industry {industry.name} now has a money stock of {industry.money_stock(db).size}",db)
-        report(2,u.simulation.id,"Estimating the output scale which can be financed",db)
-        cost=industry.unit_cost(db)*industry.output_scale
-        report(3,u.simulation.id,f"Industry {industry.name} has unit cost {industry.unit_cost(db)} so needs to spend {cost} to produce at the same scale.",db)
-        spare=industry.money_stock(db).size-cost
-        report(3,u.simulation.id,f"It has {industry.money_stock(db).size} to spend and so can invest {spare}",db)
-        possible_increase=spare/industry.unit_cost(db)
-        monetarily_potential_growth=possible_increase/cost
-        if monetarily_potential_growth>industry.output_growth_rate:
-            attempted_new_scale=industry.output_scale*(1+industry.output_growth_rate)
-        else:
-            attempted_new_scale=industry.output_scale*(1+monetarily_potential_growth)
-        report(3,u.simulation.id,f"Setting output scale, which was {industry.output_scale}, to {attempted_new_scale}",db)
-        industry.output_scale=attempted_new_scale
-    u.simulation.state = "DEMAND"
-    db.commit()
+    invest(u.simulation,db)
     return "Investment decision-making complete"
 
 @router.get("/reset")
@@ -249,15 +199,20 @@ def get_json(db: Session = Depends(get_db)):
     reload_table(db, SocialClass, "static/classes.json", True, 1)
     reload_table(db, Commodity, "static/commodities.json", True, 1)
     reload_table(db, Industry, "static/industries.json", True, 1)
-    # reload_table(session, SocialStocks, "static/class_stocks.json", True, 1)
-    # reload_table(session, IndustryStocks, "static/industry_stocks.json", True, 1)
-    reload_table(db, Stock, "static/stocks.json", True, 1)
+    reload_table(db, Class_stock, "static/class_stocks.json", True, 1)
+    reload_table(db, Industry_stock, "static/industry_stocks.json", True, 1)
     reload_table(db, Trace, "Trace table: no reload required", False, 1)
-    users:User=db.query(User).all()
+
     # Reset all users to default status
-    for user in users:
+    for user in db.query(User).all():
         db.add(user)
         user.current_simulation=0
         user.is_logged_in=0
+
+    # Set the username in all simulations to be "admin"
+    # TODO improve on this bodge
+    for simulation in db.query(Simulation).all():
+        db.add(simulation)
+        simulation.username="admin"
     db.commit()
     return "Database reloaded"

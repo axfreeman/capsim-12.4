@@ -20,7 +20,7 @@ interface = FastAPI()
 
 interface.include_router(actions.router)
 interface.include_router(auth.router)
-interface.include_router(buyers_and_sellers.router)
+# interface.include_router(buyers_and_sellers.router) # TODO remove this module - buyers and sellers should not be exported
 interface.include_router(commodity.router)
 interface.include_router(industry.router)
 interface.include_router(simulation.router)
