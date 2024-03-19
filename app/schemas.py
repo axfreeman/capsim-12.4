@@ -112,6 +112,7 @@ class Industry_stock_base(BaseModel):
     simulation_id:int
     industry_id: int
     commodity_id:int
+    username:str
     name:str
     usage_type: str
     size: float
@@ -128,6 +129,7 @@ class Class_stock_base(BaseModel):
     class_id: int
     commodity_id:int
     name:str
+    username:str
     usage_type: str
     size: float
     value: float

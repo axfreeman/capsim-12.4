@@ -411,12 +411,59 @@ class Industry_stock(Base):
         Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
     )
     name = Column(String)  # Owner.Name+Commodity.Name+usage_type
+    username = Column(String, nullable=True)
     usage_type = Column(String)  # 'Consumption', 'Production' or 'Money'
     size = Column(Float)
     value = Column(Float)
     price = Column(Float)
     requirement = Column(Float)
     demand = Column(Float)
+
+    def flow_rate(self, db: Session) -> float:
+        """The annual rate at which this Stock is consumed.
+
+        Returns zero for Money and Sales Stocks.
+        """
+        if self.usage_type == "Production":
+            industry = db.query(Industry).where(Industry.id == self.owner_id).first()
+            return industry.output_scale * self.requirement
+        else:
+            return 0.0
+
+    def flow_per_period(self, db: Session) -> float:
+        return self.flow_rate(db) / self.simulation(db).periods_per_year
+
+    def standard_stock(self, db: Session) -> float:
+        """The size of the normal stock which an owner must maintain in order to conduct
+        production.
+
+        Returns zero for non-productive Stocks.
+        """
+        if self.usage_type == "Production":
+            commodity = db.query(Commodity).where(Commodity.id == self.commodity_id).first()
+            return self.flow_rate(db) * commodity.turnover_time
+        else:
+            return 0.0
+
+    def industry(self, db: Session)->Industry:
+        """Returns the  Industry to which this stock belongs."""
+        return db.get_one(Industry, self.industry_id)
+
+    def commodity(self, db: Session):
+        return db.get_one(Commodity, self.commodity_id)
+
+    def simulation(self, session):
+        return session.get_one(Simulation, self.simulation_id)
+
+    def unit_cost(self, db: Session):
+        """Money price of using this Stock to make one unit of output
+        in a period.
+
+        Returns zero if Stock is not productive, which is harmless -
+        nevertheless, caller should invoke this method only on productive
+        Stocks.
+        """
+        return self.requirement * self.commodity(db).unit_price
 
 class Class_stock(Base):
     """Stocks are produced, consumed, and traded in a
@@ -437,7 +484,6 @@ class Class_stock(Base):
     This is because Labour Power is a stock of type Production.
 
     Usage_type is a substitute for subclassing, since these are all types of Stock.
-
     """
 
     __tablename__ = "class_stocks"
@@ -450,11 +496,22 @@ class Class_stock(Base):
         Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
     )
     name = Column(String)  # Owner.Name+Commodity.Name+usage_type
+    username = Column(String, nullable=True)
     usage_type = Column(String)  # 'Consumption', Production' or 'Money'
     size = Column(Float)
     value = Column(Float)
     price = Column(Float)
     demand = Column(Float)
+
+    def social_class(self, db: Session)->SocialClass:
+        """Returns the Class to which this stock belongs."""
+        return db.get_one(SocialClass, self.class_id)
+
+    def commodity(self, db: Session):
+        return db.get_one(Commodity, self.commodity_id)
+
+    def simulation(self, session):
+        return session.get_one(Simulation, self.simulation_id)
 
 class Trace(Base):
     """

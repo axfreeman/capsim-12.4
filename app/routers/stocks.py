@@ -23,23 +23,25 @@ def get_stock(id: str, db: Session = Depends(get_db)):
     stock = db.query(Stock).filter(Stock.id == int(id)).first()
     return stock
 
-@router.get("/industry_stocks", response_model=List[Industry_stock_base])
+@router.get("/industry", response_model=List[Industry_stock_base])
 def find_industry_stocks(
     db: Session = Depends(get_db),
     simulation: Simulation = Depends(get_current_simulation),
 ):
     """Get all industry stocks in one simulation.
-    Return empty list if simulation is None"""
+    Return empty list if simulation is None."""
+    print("Entered get industry stocks")
     if simulation == None:
         return []
+    print("Proceeding with get industry stocks")
     return db.query(Industry_stock).filter(Industry_stock.simulation_id == simulation.id)
 
-@router.get("/industry_stock/{id}")
+@router.get("/industry/{id}")
 def get_stock(id: str, db: Session = Depends(get_db)):
     """Get one industry stock with the given id."""
     return db.query(Industry_stock).filter(Industry_stock.id == int(id)).first()
 
-@router.get("/class_stocks", response_model=List[Class_stock_base])
+@router.get("/class", response_model=List[Class_stock_base])
 def find_class_stocks(
     db: Session = Depends(get_db),
     simulation: Simulation = Depends(get_current_simulation),
@@ -50,7 +52,7 @@ def find_class_stocks(
         return []
     return db.query(Class_stock).filter(Class_stock.simulation_id == simulation.id)
 
-@router.get("/class_stock/{id}")
+@router.get("/class/{id}")
 def get_stock(id: str, db: Session = Depends(get_db)):
     """Get one class stock with the given id."""
     return db.query(Class_stock).filter(Class_stock.id == int(id)).first()

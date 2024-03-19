@@ -57,7 +57,7 @@ class usPair:
     
     We tried to use tuples but fastAPI's Depends() did not allow it
     """
-    user:User=""
+    user:User=None
     simulation:Simulation=0
 
     def __init__(self,user,simulation):
@@ -78,21 +78,22 @@ async def get_current_user_and_simulation(
 
     Cannot return (None, Simulation)
     """
+
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username = payload.get("sub")
-        if username is None:
-            logger.error("Token contained no username")
-            raise credentials_exception
-    except JWTError:
-        logger.error(f"Could not decode {username}'s token")
-        raise credentials_exception
+    except Exception as error:
+        logger.error(f"No meaningful token {token}. Client is probably not logged in")
+        return usPair(None,None)
+    if username is None:
+        logger.error("Token contained no username. Client did not tell us anything meaningful")
+        return usPair(None,None)
     user = get_user_from_username(username=username, db=db)
     if user is None:
         logger.error(f"Token was authenticated but {username} was not found in the database")
-        raise credentials_exception
+        return usPair(None,None)
     simulation = db.query(Simulation).where(Simulation.user_id == user.id).first()
-    return usPair(user,simulation)
+    return usPair(user,simulation) # if there is no such simulation, this returns (user,None), as specified
 
 def get_user_from_username(username: str, db: Session) -> User:
     """
@@ -131,7 +132,7 @@ def get_current_simulation(
     Since this is a synonym, assumes reporting and exception 
     handling has already been done
     """
-    if u.user.username is None:
+    if u.user is None:
         return None
     return u.simulation
 

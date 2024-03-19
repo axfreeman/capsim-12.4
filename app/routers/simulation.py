@@ -14,28 +14,40 @@ router=APIRouter(
     tags=['Simulation']
 )
 
+@router.get("/",response_model=List[SimulationBase])
+def get_simulations(db: Session = Depends (get_db)):
+    """Retrieve all Simulation objects in the system.
+    Not protected because it is not sensitive.
+    TODO think about security implications if any.
+    """
+    simulations=db.query(Simulation).all()
+    return simulations
+
 @router.get("/templates",response_model=List[SimulationBase])
 def get_simulations(db: Session = Depends (get_db)):
+    """Retrieve all templates. 
+    These are used to create actual simulations.
+    This is not protected because it is not sensitive.
+    TODO think about security implications if any.
     """
-    Retrieve all templates. These are used to create actual simulations
-    This is not protected because it is available to anyone
-    """
-
     # report(1,1,f"Request to retrieve templates",db) 
     simulations=db.query(Simulation).filter(Simulation.state=="TEMPLATE")
     return simulations
 
-# get one simulation
+
 @router.get("/by_id/{id}")
 def get_simulation(id:str,db: Session=Depends(get_db)):    
+    """Get one simulation.
+    Currently protected, but not sure if this is needed.
+    TODO think about security implications if any.
+    """
     simulation=db.query(Simulation).filter(Simulation.id==int(id)).first()
     return simulation
 
-# Provide a list of simulations owned by the logged-in user
 @router.get("/mine",response_model=List[SimulationBase])
 def get_simulations(db: Session = Depends (get_db),u:usPair=Depends(get_current_user_and_simulation)):
-    """
-    Replies with all simulations belonging to the logged-in user
+    """Replies with all simulations belonging to the logged-in user.
+    Protected because we need to know which user's information to supply.
     """
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return []
