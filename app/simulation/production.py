@@ -1,4 +1,4 @@
-from ..models import Simulation, Stock, Industry
+from ..models import Simulation, Industry, Industry_stock
 from .demand import report
 from sqlalchemy.orm import Session
 
@@ -10,9 +10,8 @@ def produce(session:Session, simulation:Simulation):
     for ind in iquery:
         industry_produce(ind, session, simulation)
 
-def industry_produce(industry:Industry, db:Session, simulation:Simulation):
-    """
-    Tell 'industry' to produce.
+def industry_produce(industry:Industry, db:Session, simulation:Simulation)->str:
+    """Tell 'industry' to produce.
 
     Increase the size of self.sales_stock by self.output_scale.
     
@@ -44,10 +43,10 @@ def industry_produce(industry:Industry, db:Session, simulation:Simulation):
         f"{sales_stock.name} of {sc.name} before production is {sales_stock.size} with value {sales_stock.value}",db,
     )
 
-    productive_stocks_query = db.query(Stock).where(
-        Stock.simulation_id == simulation.id,
-        Stock.owner_id == industry.id,
-        Stock.usage_type == "Production",
+    productive_stocks_query = db.query(Industry_stock).filter(
+        Industry_stock.simulation_id == simulation.id,
+        Industry_stock.industry_id_id == industry.id,
+        Industry_stock.usage_type == "Production",
     )
     for stock in productive_stocks_query:
         db.add(stock)

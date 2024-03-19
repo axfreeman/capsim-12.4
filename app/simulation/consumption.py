@@ -1,11 +1,11 @@
 from sqlalchemy.orm import Session
-from ..models import Stock, SocialClass, Simulation
+from ..models import SocialClass, Simulation, Class_stock
 from .demand import report
 
 """This module contains functions needed to implement the consumption action.
 """
 
-def consume(db:Session, simulation:Simulation):
+def consume(db:Session, simulation:Simulation)->str:
     """Tell all classes to consume and reproduce their product if they have one.
     TODO currentluy there are no population dynamics
     """
@@ -14,7 +14,9 @@ def consume(db:Session, simulation:Simulation):
     )
 
     for social_class in squery:
-        class_consume(social_class, db, simulation)    
+        class_consume(social_class, db, simulation)
+
+    return "Consumption complete"
 
 def class_consume(social_class:SocialClass, db:Session, simulation:Simulation):
     """Tell one social class to consume and reproduce its product if it has one.
@@ -31,10 +33,10 @@ def class_consume(social_class:SocialClass, db:Session, simulation:Simulation):
         f"Sales stock size before consumption is {ss.size} with value {ss.value}",db,
     )
 
-    consuming_stocks_query = db.query(Stock).where(
-        Stock.simulation_id == simulation.id,
-        Stock.owner_id == social_class.id,
-        Stock.usage_type == "Consumption",
+    consuming_stocks_query = db.query(Class_stock).where(
+        Class_stock.simulation_id == simulation.id,
+        Class_stock.owner_id == social_class.id,
+        Class_stock.usage_type == "Consumption",
     )
 
     for stock in consuming_stocks_query:
