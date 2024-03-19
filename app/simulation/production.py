@@ -45,7 +45,7 @@ def industry_produce(industry:Industry, db:Session, simulation:Simulation)->str:
 
     productive_stocks_query = db.query(Industry_stock).filter(
         Industry_stock.simulation_id == simulation.id,
-        Industry_stock.industry_id_id == industry.id,
+        Industry_stock.industry_id == industry.id,
         Industry_stock.usage_type == "Production",
     )
     for stock in productive_stocks_query:
