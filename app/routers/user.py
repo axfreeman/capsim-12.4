@@ -56,9 +56,9 @@ def create_simulation_from_template(
     id: str,
     db: Session = Depends(get_db),
     u:usPair = Depends(get_current_user_and_simulation),
-):
+)->str:
     """Create a complete clone of the template defined by 'id'.
-    Rename the user to be the user who requested this clone
+    Rename the user to be the user who requested this.
     """
     template = db.query(Simulation).filter(Simulation.id == int(id)).first()
     new_simulation = clone_model(template, db)
@@ -234,9 +234,9 @@ def create_simulation_from_template(
         )
         db.commit()
 
-    # Create buyers and sellers table
     initialise_buyers_and_sellers(db, new_simulation.id)
     revalue_commodities(db,new_simulation)
     revalue_stocks(db,new_simulation)
     calculate_initial_capitals(db,new_simulation)
     calculate_current_capitals(db,new_simulation)
+    return f"Cloned Template with id {id} into simulation with id {new_simulation.id}"

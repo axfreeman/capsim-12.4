@@ -419,29 +419,28 @@ class Industry_stock(Base):
     requirement = Column(Float)
     demand = Column(Float)
 
-    def flow_rate(self, db: Session) -> float:
+    def annual_flow_rate(self, db: Session) -> float:
         """The annual rate at which this Stock is consumed.
-
         Returns zero for Money and Sales Stocks.
         """
         if self.usage_type == "Production":
-            industry = db.query(Industry).where(Industry.id == self.owner_id).first()
+            industry = db.query(Industry).where(Industry.id == self.industry_id).first()
             return industry.output_scale * self.requirement
         else:
             return 0.0
 
     def flow_per_period(self, db: Session) -> float:
-        return self.flow_rate(db) / self.simulation(db).periods_per_year
+        return self.annual_flow_rate(db) / self.simulation(db).periods_per_year
 
     def standard_stock(self, db: Session) -> float:
-        """The size of the normal stock which an owner must maintain in order to conduct
+        """The size of the normal stock which an industry must maintain in order to conduct
         production.
 
         Returns zero for non-productive Stocks.
         """
         if self.usage_type == "Production":
             commodity = db.query(Commodity).where(Commodity.id == self.commodity_id).first()
-            return self.flow_rate(db) * commodity.turnover_time
+            return self.annual_flow_rate(db) * commodity.turnover_time
         else:
             return 0.0
 
@@ -449,13 +448,13 @@ class Industry_stock(Base):
         """Returns the  Industry to which this stock belongs."""
         return db.get_one(Industry, self.industry_id)
 
-    def commodity(self, db: Session):
+    def commodity(self, db: Session)->Commodity:
         return db.get_one(Commodity, self.commodity_id)
 
-    def simulation(self, session):
+    def simulation(self, session)->Simulation:
         return session.get_one(Simulation, self.simulation_id)
 
-    def unit_cost(self, db: Session):
+    def unit_cost(self, db: Session)->float:
         """Money price of using this Stock to make one unit of output
         in a period.
 
@@ -504,14 +503,45 @@ class Class_stock(Base):
     demand = Column(Float)
 
     def social_class(self, db: Session)->SocialClass:
-        """Returns the Class to which this stock belongs."""
+        """Returns the Class which owns this Class_stock."""
         return db.get_one(SocialClass, self.class_id)
 
-    def commodity(self, db: Session):
+    def commodity(self, db: Session)->Commodity:
+        """Returns the Commodity that this Class_stock consists of."""
         return db.get_one(Commodity, self.commodity_id)
 
-    def simulation(self, session):
+    def simulation(self, session)->Simulation:
+        """Return the Simulation that this Class_stock is part of"""
         return session.get_one(Simulation, self.simulation_id)
+    
+    def annual_flow_rate(self, db: Session) -> float:
+        """The annual rate at which this Class_stock is consumed.
+        Returns zero for Money and Sales Stocks.
+        """
+        if self.usage_type == "Consumption":
+            social_class:SocialClass = db.query(SocialClass).where(SocialClass.id == self.class_id).first()
+            return social_class.population * social_class.consumption_ratio
+        else:
+            return 0.0
+
+    def flow_per_period(self, db: Session) -> float:
+        return self.annual_flow_rate(db) / self.simulation(db).periods_per_year
+
+    def standard_stock(self, db: Session) -> float:
+        """The size of the normal stock which a class must maintain in order to 
+        exist at its current population level.
+
+        Returns zero for Class_stocks other than Consumption stocks
+
+        TODO money stock requires a non-zero standard, but it is not so 
+        easy to calculate. Leave this for now. Too much money is not a 
+        problem at present since we do not have any monetary algorithms,
+        whilst too little money has results which we wish to investigate.
+        """
+        if self.usage_type == "Consumption":
+            return self.annual_flow_rate(db) * self.commodity().turnover_time
+        else:
+            return 0.0
 
 class Trace(Base):
     """

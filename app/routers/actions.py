@@ -46,7 +46,7 @@ def demandHandler(
         return None
     
     initialise_demand(
-        db, u.simulation, 0
+        db, u.simulation
     )  ## set demand to zero as start point
     industry_demand(
         db, u.simulation
