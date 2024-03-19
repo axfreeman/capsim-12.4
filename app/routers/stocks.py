@@ -3,25 +3,10 @@ from sqlalchemy.orm import Session
 from ..authorization.auth import get_current_simulation
 from typing import List
 from ..database import get_db
-from ..models import Class_stock, Industry_stock, Simulation, Stock
-from ..schemas import Class_stock_base, Industry_stock_base, stocksBase
+from ..models import Class_stock, Industry_stock, Simulation
+from ..schemas import Class_stock_base, Industry_stock_base
 
 router = APIRouter(prefix="/stocks", tags=["Stocks"])
-
-@router.get("/", response_model=List[stocksBase])
-def find_stocks(
-    db: Session = Depends(get_db),
-    simulation: Simulation = Depends(get_current_simulation),
-):
-    if simulation == None:
-        return []
-    return db.query(Stock).filter(Stock.simulation_id == simulation.id)
-
-@router.get("/stock/{id}")
-def get_stock(id: str, db: Session = Depends(get_db)):
-    """Get one stock"""
-    stock = db.query(Stock).filter(Stock.id == int(id)).first()
-    return stock
 
 @router.get("/industry", response_model=List[Industry_stock_base])
 def find_industry_stocks(

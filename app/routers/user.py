@@ -6,7 +6,7 @@ from app.schemas import UserBase
 from app.simulation.logging import report
 from app.simulation.reload import initialise_buyers_and_sellers
 from app.simulation.utils import calculate_current_capitals, calculate_initial_capitals, revalue_commodities, revalue_stocks
-from ..models import Class_stock, Commodity, Industry, Industry_stock, SocialClass, Stock, Simulation
+from ..models import Class_stock, Commodity, Industry, Industry_stock, SocialClass, Simulation
 
 from sqlalchemy.orm import Session
 

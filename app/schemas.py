@@ -88,23 +88,6 @@ class SocialClassBase(BaseModel):
     revenue: float
     assets: float
 
-class stocksBase(BaseModel):
-    __tablename__="stocks"
-
-    id: int
-    simulation_id:int
-    username: str
-    owner_id: int
-    commodity_id:int
-    owner_type:str
-    name:str
-    usage_type: str
-    size: float
-    value: float
-    price: float
-    requirement: float
-    demand: float
-
 class Industry_stock_base(BaseModel):
     __tablename__="industry_stocks"
 

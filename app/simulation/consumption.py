@@ -35,7 +35,7 @@ def class_consume(social_class:SocialClass, db:Session, simulation:Simulation):
 
     consuming_stocks_query = db.query(Class_stock).where(
         Class_stock.simulation_id == simulation.id,
-        Class_stock.owner_id == social_class.id,
+        Class_stock.class_id == social_class.id,
         Class_stock.usage_type == "Consumption",
     )
 

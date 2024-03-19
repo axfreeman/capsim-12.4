@@ -21,7 +21,6 @@ from ..models import (
     Class_stock,
     Industry_stock,
     Simulation,
-    Stock,
     SocialClass,
     Industry,
     Commodity,
@@ -202,7 +201,6 @@ def get_json(db: Session = Depends(get_db)):
     reload_table(db, Industry, "static/industries.json", True, 1)
     reload_table(db, Class_stock, "static/class_stocks.json", True, 1)
     reload_table(db, Industry_stock, "static/industry_stocks.json", True, 1)
-    reload_table(db, Stock, "static/stocks.json", True, 1)
     reload_table(db, Trace, "Trace table: no reload required", False, 1)
 
     # Reset all users to default status

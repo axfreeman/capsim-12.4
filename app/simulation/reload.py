@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 import json
 from sqlalchemy import insert
-from ..models import Buyer, Class_stock, Industry_stock, Seller, Stock 
+from ..models import Buyer, Class_stock, Industry_stock, Seller
 from .demand import report
 
 def reload_table(db: Session, baseModel, filename: str, reload: bool, simulation_id:int):

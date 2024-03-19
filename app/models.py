@@ -201,50 +201,6 @@ class SocialClass(Base):
         """Helper method yields the Money Class_stock of this class."""
         return get_class_money_stock(self, session)
 
-class Stock(Base):
-    """Stocks are the things that are produced, consumed, and traded in a
-    market economy.
-
-    A Stock knows:
-        which Commodity it consists of (in Marx's terms, its Use Value);
-        who owns it (which may either be an Industry or a Class);
-        which Simulation it belongs to;
-        quantitative information notably its size, value and price.
-    Every Stock has a usage_type which may be Consumption, Production or Money.
-    This is a substitute for subclassing, since these are all types of Stock.
-
-    The other fields depend to some extent on the usage_type.
-
-    Thus a productive Stock has a field Stock.requirement which says how
-    much of it will be used for its Industry to produce Industry.output_scale.
-
-    The helper method Stock.unit_cost says how much it will cost to do this.
-
-    (TODO document the properties of Consumption Stocks)
-    """
-
-    __tablename__ = "stocks"
-    id = Column(Integer, primary_key=True, nullable=False)
-    # We cannot make this a foreign key because the owner can either be
-    # a social class or an industry and we don't know which.
-    # This arises from the difficulty of implementing polymorphic relations in an SQL database
-    owner_id = Column(Integer, nullable=False)
-    simulation_id = Column(
-        Integer, ForeignKey("simulations.id", ondelete="CASCADE"), nullable=False
-    )
-    username = Column(String, nullable=True)
-    commodity_id = Column(
-        Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
-    )
-    name = Column(String)  # Owner.Name+Commodity.Name+usage_type
-    owner_type = Column(String)  #'Industry' or 'Class'
-    usage_type = Column(String)  # 'Consumption' or 'Production'
-    size = Column(Float)
-    value = Column(Float)
-    price = Column(Float)
-    requirement = Column(Float)
-    demand = Column(Float)
-
 class Industry_stock(Base):
     """Stocks are produced, consumed, and traded in a
     market economy.

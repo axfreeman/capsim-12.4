@@ -4,7 +4,7 @@ from typing import List
 from app.authorization.auth import get_current_user_and_simulation, get_current_simulation
 from app.simulation.logging import report
 from ..database import  get_db
-from ..models import Simulation, Commodity,Industry,SocialClass, Stock, Trace
+from ..models import Simulation, Commodity,Industry,SocialClass,Trace
 from ..authorization.auth import User, usPair
 from ..schemas import  SimulationBase
 
@@ -80,10 +80,6 @@ def delete_simulation(id:str,db: Session=Depends(get_db),u:usPair=Depends(get_cu
     social_classQuery=db.query(SocialClass).where(SocialClass.simulation_id==int(id))
     for social_class in social_classQuery:
         db.delete(social_class)
-
-    stockQuery=db.query(Stock).where(Stock.simulation_id==int(id))
-    for stock in stockQuery:
-        db.delete(stock)
 
     traceQuery=db.query(Trace).where(Trace.simulation_id==int(id))
     for trace in traceQuery:
