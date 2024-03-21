@@ -1,0 +1,30 @@
+[
+  {
+    "id": 20,
+    "name": "Department I",
+    "simulation_id": 9,
+    "username": "guest",
+    "output": "Means of Production",
+    "output_scale": 6000,
+    "output_growth_rate": 0,
+    "initial_capital": 14000,
+    "work_in_progress": 0,
+    "current_capital": 15000,
+    "profit": 1000,
+    "profit_rate": 0.07142857142857142
+  },
+  {
+    "id": 21,
+    "name": "Department II",
+    "simulation_id": 9,
+    "username": "guest",
+    "output": "Consumption",
+    "output_scale": 3000,
+    "output_growth_rate": 0,
+    "initial_capital": 7000,
+    "work_in_progress": 0,
+    "current_capital": 7500,
+    "profit": 500,
+    "profit_rate": 0.07142857142857142
+  }
+]

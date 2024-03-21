@@ -13,8 +13,18 @@ def revalue_commodities(db:Session, simulation:Simulation):
   Normally, 'revalue stocks' should be called after this, because a change
   in the unit value and/or price will affect all stocks of it.
   """
+  report(1,simulation.id,"CALCULATE NEW UNIT VALUES AND PRICES",db)
+  commodities=db.query(Commodity).where(Commodity.simulation_id==simulation.id)
+  for commodity in commodities:
+      if commodity.size>0:
+        commodity.unit_price=commodity.total_price/commodity.size
+        commodity.unit_value=commodity.total_price/commodity.size
+        report(2,simulation.id,f"Setting the value of commodity {commodity.name} to {commodity.total_value} and its price to {commodity.total_price}",db)
+        report(2,simulation.id,f"Setting the unit value of commodity {commodity.name} to {commodity.unit_value} and its unit price to {commodity.unit_price}",db)
 
-  report(1,simulation.id,"CALCULATE THE SIZE, VALUE AND PRICE OF ALL COMMODITIES",db)
+def recalculate_commodity_totals(db:Session, simulation:Simulation):
+  """Recalculate commodity sizes, values and prices from stocks."""
+  report(1,simulation.id,"CALCULATE NEW TOTAL VALUES AND PRICES",db)
   commodities=db.query(Commodity).where(Commodity.simulation_id==simulation.id)
   for commodity in commodities:
       commodity.total_value=0
@@ -38,14 +48,7 @@ def revalue_commodities(db:Session, simulation:Simulation):
           commodity.total_value+=stock.value
           commodity.total_price+=stock.price
           commodity.size+=stock.size
-  db.commit() # TODO is this necessary at this time?
-
-  for commodity in commodities:
-      if commodity.size>0:
-        commodity.unit_price=commodity.total_price/commodity.size
-        commodity.unit_value=commodity.total_price/commodity.size
-        report(2,simulation.id,f"Setting the value of commodity {commodity.name} to {commodity.total_value} and its price to {commodity.total_price}",db)
-        report(2,simulation.id,f"Setting the unit value of commodity {commodity.name} to {commodity.unit_value} and its unit price to {commodity.unit_price}",db)
+  db.commit()
 
 def revalue_stocks(db:Session, simulation:Simulation):
   """ Interrogate all stocks.
@@ -121,4 +124,27 @@ def calculate_current_capitals(db:Session, simulation:Simulation):
       industry.profit_rate=industry.profit/industry.initial_capital
     db.commit()
 
+def clone_model(model, session: Session, **kwargs):
+    """Clone an arbitrary sqlalchemy model object without its 
+    primary key values.
+
+    These primary keys are then added by the caller.
+
+    Returns the clone unless the call is illegal (eg null model).
+
+    Returns None if it can't be done.
+    """
+    try:
+        table = model.__table__
+        non_pk_columns = [
+            k for k in table.columns.keys() if k not in table.primary_key.columns.keys()
+        ]
+        data = {c: getattr(model, c) for c in non_pk_columns}
+        data.update(kwargs)
+        clone = model.__class__(**data)
+        session.add(clone)
+        session.commit()
+        return clone
+    except:
+        return None
 

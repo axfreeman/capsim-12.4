@@ -79,15 +79,20 @@ def buy_and_sell(db:Session, simulation:Simulation):
 
 def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
     """Tell seller to sell whatever the buyer demands and collect the money."""
+
     report(4,simulation.id,
         f"buyer {buyer.owner_name(db)} is buying {buyer.purchase_stock(db).demand}",db,
     )
+
     buyer_purchase_stock:Industry_stock|Class_stock = buyer.purchase_stock(db)
     seller_sales_stock:Industry_stock|Class_stock = seller.sales_stock(db)
     buyer_money_stock:Industry_stock|Class_stock = buyer.money_stock(db)
     seller_money_stock:Industry_stock|Class_stock = seller.money_stock(db)
     commodity:Commodity = seller.commodity(db)  # does not change yet, so no need to add it to the session
     amount = buyer_purchase_stock.demand
+
+# Very low level reporting - more for diagnostics than anything else
+# TODO user should be able to set the level at which diagnostic information is passsed on, or perhaps displayed
     report(5,simulation.id,f"seller sales stock is {seller_sales_stock.name}",db)
     report(5,simulation.id,f"buyer purchase stock is {buyer_purchase_stock.name}",db)
     report(5,simulation.id,f"buyer money stock is {buyer_money_stock.name}",db)
@@ -105,6 +110,7 @@ def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
     seller_sales_stock.change_size(-amount,db)
 
 # Pay for the goods
+
     report(4,simulation.id,"Now you must pay",db)
 
     if buyer_money_stock == seller_money_stock:  
@@ -116,5 +122,18 @@ def buy(buyer:Buyer, seller:Seller, simulation:Simulation, db:Session):
         # TODO account for MELT. Money can have a value different from its price
         seller_money_stock.change_size(amount * commodity.unit_price,db)
         buyer_money_stock.change_size(-amount * commodity.unit_price,db)
+
+# Report on the results of trade
+
+# Very low level reporting - more for diagnostics than anything else
+# TODO user should be able to set the level at which diagnostic information is passsed on, or perhaps displayed
+    report(4,simulation.id, "Results after trade were as follows:",db)
+    report(5,simulation.id,f"seller sales stock size is {seller_sales_stock.size}",db)
+    report(5,simulation.id,f"buyer purchase stock size is {buyer_purchase_stock.size}",db)
+    report(5,simulation.id,f"buyer money stock size is {buyer_money_stock.size}",db)
+    report(5,simulation.id,f"seller money stock size is {seller_money_stock.size}",db)
+# report on the effect of trade on demand and supply.
+    report(5,simulation.id,f"buyer purchase stock demand is {buyer_purchase_stock.demand}",db)
+
     # db.commit() # TODO verify that this is achieved by the final commit.
 

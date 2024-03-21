@@ -1,0 +1,80 @@
+[
+  {
+    "id": 136,
+    "simulation_id": 9,
+    "class_id": 37,
+    "commodity_id": 45,
+    "name": "Capitalists.Consumption.Consumption.9",
+    "username": "guest",
+    "usage_type": "Consumption",
+    "size": 0,
+    "value": 0,
+    "price": 0,
+    "demand": 0
+  },
+  {
+    "id": 137,
+    "simulation_id": 9,
+    "class_id": 37,
+    "commodity_id": 48,
+    "name": "Capitalists.Money.Money.9",
+    "username": "guest",
+    "usage_type": "Money",
+    "size": 1500,
+    "value": 1500,
+    "price": 1500,
+    "demand": 0
+  },
+  {
+    "id": 138,
+    "simulation_id": 9,
+    "class_id": 38,
+    "commodity_id": 45,
+    "name": "Workers.Consumption.Consumption.9",
+    "username": "guest",
+    "usage_type": "Consumption",
+    "size": 0,
+    "value": 0,
+    "price": 0,
+    "demand": 0
+  },
+  {
+    "id": 139,
+    "simulation_id": 9,
+    "class_id": 38,
+    "commodity_id": 48,
+    "name": "Workers.Money.Money.9",
+    "username": "guest",
+    "usage_type": "Money",
+    "size": 1500,
+    "value": 1500,
+    "price": 1500,
+    "demand": 0
+  },
+  {
+    "id": 140,
+    "simulation_id": 9,
+    "class_id": 38,
+    "commodity_id": 46,
+    "name": "Workers.Labour Power.Sales.9",
+    "username": "guest",
+    "usage_type": "Sales",
+    "size": 3000,
+    "value": 0,
+    "price": 0,
+    "demand": 0
+  },
+  {
+    "id": 141,
+    "simulation_id": 9,
+    "class_id": 37,
+    "commodity_id": 49,
+    "name": "Capitalists.Capital Services.Sales.9",
+    "username": "guest",
+    "usage_type": "Sales",
+    "size": 1500,
+    "value": 0,
+    "price": 0,
+    "demand": 0
+  }
+]

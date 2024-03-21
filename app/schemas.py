@@ -1,3 +1,4 @@
+import http
 from pydantic import BaseModel
 
 class AuthDetails(BaseModel):
@@ -8,6 +9,9 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
+class ServerMessage(BaseModel):
+    message:str
+    statusCode:http.HTTPStatus
 
 class UserBase(BaseModel):
     id: int

@@ -1,3 +1,17 @@
+"""This module handles 'actions', each of which takes the 
+simulation one step through the circuit.
+
+Once an action is complete it resets the state of the simulation
+to the next stage of the circuit. 
+
+The user implements an action by pressing a button on the main
+menuu. The simulation state is used to ensure that the user can
+only undertake the correct action in the circuit, so they proceed
+in sequence.
+
+TODO prevent the user implementing an action by entering its URL.
+"""
+
 from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
 
@@ -26,7 +40,7 @@ from ..models import (
     Commodity,
     Trace,
 )
-from ..simulation.utils import calculate_current_capitals, revalue_stocks, revalue_commodities
+from ..simulation.utils import calculate_current_capitals, recalculate_commodity_totals, revalue_stocks, revalue_commodities
 
 router = APIRouter(prefix="/action", tags=["Actions"])
 
@@ -100,9 +114,24 @@ def tradeHandler(
     db.add(u.simulation)
     u.simulation.state = "CONSUME"
     db.commit()
-    # TODO I don't think it's necessary to revalue, but check.
-    # This is because trade only involves a change of ownership.
+
+# Reset commodity demand from stock demands
+        
+    commodity_demand(db,u.simulation)
+
+# Reset commodity supply from industry and class supplies
+# TODO there may be some duplication in the code for supply
+
+    initialise_supply(db, u.simulation)
+    industry_supply(db, u.simulation)  # tell industries to register their supply
+    class_supply(db, u.simulation)  # tell classes to register their supply 
+
+    # TODO I don't think it's necessary to also to revalue, but check.
+    # It should not be necessary, because trade only involves a change of ownership.
+    # If it is necessary, we should probably implement the line below.
+
     # revalue_stocks(db,u.simulation) 
+
     return "Trading complete"
 
 @router.get("/produce")
@@ -116,7 +145,29 @@ def produceHandler(
 
     Assumes that get_current_user() has handled any errors. 
     Therefore does not check u except to decide whether or not to go ahead. 
+
+    Once Production and Consumption are both complete, we will 
+    recalculate unit values and prices and then revalue all Stocks.
+
+    This separate calculation cannot done inside production, because
+    in order to revise unit values and prices, Social Classes must first
+    restore their sale_stocks. Otherwise there is an apparent net loss 
+    of Labour Power and it will be overvalued.
+
+    At this stage, we *do* recalculate the total size, value and price of
+    every commodity in existence but do not revise values and prices in 
+    accordance with the resultant change in unit values and prices.
+
+    And we *do* calculate the new current capital, profits, and profit 
+    rates to demonstrate the independent effect of production on these
+    magnitudes.
+
+    This has to be recalculated, however, after consumption because if 
+    the industries have stocks of labour power on hand, and there has been
+    a change in the value of labour power (for example due to a wage increase)
+    their stocks will be revalued accordingly, changing their profits.
     """
+
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
 
@@ -125,8 +176,12 @@ def produceHandler(
     u.simulation.state = "CONSUME"
     db.commit()
 
-    # Don't revalue yet, because consumption (social reproduction) has to
-    # be complete before all the facts are in. 
+# Recalculate commodity totals (but do not revalue or reprice)
+    
+    recalculate_commodity_totals(db,u.simulation)
+
+# Recalculate current capital and profit
+
     calculate_current_capitals(db,u.simulation)
     return "Production complete"
 
@@ -152,6 +207,7 @@ def consumeHandler(
     db.add(u.simulation)
     u.simulation.state = "INVEST"
     db.commit()
+    recalculate_commodity_totals()
     revalue_commodities(db,u.simulation)
     # Then recalculate the price and value of every stock
     revalue_stocks(db, u.simulation)

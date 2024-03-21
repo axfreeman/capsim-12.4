@@ -1,0 +1,9 @@
+﻿id,name,time_stamp,state,periods_per_year,population_growth_rate,investment_ratio,labour_supply_response,price_response_type,melt_response_type,currency_symbol,quantity_symbol,melt,user_id
+1,Simple Reproduction,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+2,SR with lower MELT,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+3,SR with halved period,0,TEMPLATE,2,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+4,SR two consumption goods,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+5,Expanded Reproduction,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+6,SR with equalisation,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+7,Three-sector Dynamic,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1
+8,SR two production goods,0,TEMPLATE,1,1,1,UNDEFINED,UNDEFINED,,$,#,1,1

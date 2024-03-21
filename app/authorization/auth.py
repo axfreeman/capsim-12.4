@@ -1,10 +1,20 @@
+"""This module contains the variables, functions and classes required for 
+fastapi's authorization capabilities.
+
+It provides the User Class and helper functions needed to verify
+and authorize the current logged-in user and supply information 
+that is unique to a user. 
+
+In particular it supplies the name of the logged-in user and the
+the simulation that this user is currently working on.
+"""
+
 from datetime import datetime, timedelta, timezone
 from typing import Annotated
-from fastapi import APIRouter, Depends, FastAPI, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jose import JWTError, jwt
+from jose import jwt
 from passlib.context import CryptContext
-from pydantic import BaseModel
 from sqlalchemy import Boolean, Column, Integer, String
 from sqlalchemy.orm import Session
 from ..database import Base, get_db
@@ -17,8 +27,6 @@ from ..reporting.caplog import logger
 SECRET_KEY = settings.secret_key
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 3000
-
-router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
@@ -78,7 +86,6 @@ async def get_current_user_and_simulation(
 
     Cannot return (None, Simulation)
     """
-
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username = payload.get("sub")
@@ -96,10 +103,10 @@ async def get_current_user_and_simulation(
     return usPair(user,simulation) # if there is no such simulation, this returns (user,None), as specified
 
 def get_user_from_username(username: str, db: Session) -> User:
+    """Looks up username in the database. 
+    Returns the user if found, None if not.
     """
-    Looks up username in the database. 
-    Returns the user if found, None if not
-    """
+
     try:
         user = db.query(User).where(User.username == username).first()
     except Exception as error:
@@ -110,10 +117,10 @@ def get_user_from_username(username: str, db: Session) -> User:
     return user
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
-    """
-    Creates an encoded jwt token from data.
+    """Creates an encoded jwt token from data.
     Usage is standard. Data contains the "SUB" key and the username
     """
+
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.now(timezone.utc) + expires_delta
@@ -126,8 +133,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
 def get_current_simulation(
     db: Session = Depends(get_db), u:usPair=Depends(get_current_user_and_simulation)
 )->Simulation:
-    """
-    Synonym for get_current_user_and_simulation().simulation
+    """Synonym for get_current_user_and_simulation().simulation.
 
     Since this is a synonym, assumes reporting and exception 
     handling has already been done
@@ -137,8 +143,7 @@ def get_current_simulation(
     return u.simulation
 
 def add_superuser(db: Session = Depends(get_db)):
-    """
-    Creates the admin user. 
+    """Creates the admin user.
     TODO complete this. Does it hash the password?
     """
     superuser = User("admin", "insecure")
@@ -154,10 +159,9 @@ def add_superuser(db: Session = Depends(get_db)):
     return {"message": "Superuser already exists"}
 
 def authenticate_user(username: str, password: str, db: Session):
-    """
-    Primary authentication entry point.
+    """Primary authentication entry point.
 
-    First checks that the user is in the database at all
+    First checks that the user is in the database at all.
 
     If this passes, checks the supplied password against the hashed 
     password in the database
@@ -172,75 +176,4 @@ def authenticate_user(username: str, password: str, db: Session):
         )
         return None
     return user
-
-@router.get("/logout")
-async def logout(u:usPair  = Depends(get_current_user_and_simulation), db: Session = Depends(get_db)):
-    # Note: if we are not logged in, we won't be authenticated to log out, so we won't even reach this point
-    print(f"Logging out user {u.user.username}")
-    db.add(u.user)
-    u.user.is_logged_in = False
-    db.commit()
-    return f"{u.user.username} logged out"
-
-@router.post("/login")
-async def login_for_access_token(
-    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
-    db: Session = Depends(get_db),
-) -> Token:
-    """
-    Responds to a login request received through the API.
-    Authenticates the user
-    """
-    user: User = authenticate_user(form_data.username, form_data.password, db)
-    if user == None:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    access_token = create_access_token(
-        data={"sub": user.username}, expires_delta=access_token_expires
-    )
-    # message=f"User {user.username} has logged in"
-    logger.info("User %s has logged in",user.username)
-    db.add(user)
-    user.is_logged_in = True
-    db.commit()
-    return Token(access_token=access_token, token_type="bearer")
-
-
-@router.post("/register", status_code=201)
-def register(auth_details: AuthDetails, db: Session = Depends(get_db)):
-    report(1, 1, f"Trying to add user called {auth_details.username}", db)
-    try:
-        already_registered = (
-            db.query(User).where(User.username == auth_details.username).first()
-            is not None
-        )
-        if already_registered:
-            report(
-                1,
-                1,
-                f"User  {auth_details.username} tried to register, but the name is taken",
-                db,
-            )
-            return {
-                "message": f"The name {auth_details.username} is taken: please try another name"
-            }
-        report(
-            1,
-            1,
-            f"User {auth_details.username} not yet registered - will now be added",
-            db,
-        )
-        new_user = User(auth_details.username, auth_details.password)
-        db.add(new_user)
-        db.commit()
-        return {
-            "message": f"User {new_user.username} added with hashed password {new_user.password}"
-        }
-    except Exception as error:
-        report(1, 1, f"Error trying to add user {auth_details.username}: {error}", db)
-        return {"message": "Server error"}
 

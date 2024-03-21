@@ -7,7 +7,7 @@
  
 # Authorization sources and methodology  
 Will now be updated to https://fastapi.tiangolo.com/tutorial/security/simple-oauth2/  
-The login functions of my own frontend at capfront.05 are set up as reverseproxy so login requests are simply passed through into this backend  
+The login functions of my own frontend at capfront.05 simply passes requests through into this backend  
 The frontend does no authentication except to store the token in a client cookie  
 
 ### Also see (descriptions are simply to remind me which is which):
@@ -27,13 +27,6 @@ The frontend does no authentication except to store the token in a client cookie
 * https://gist.github.com/samsch/0d1f3d3b4745d778f78b230cf6061452  
 * https://www.youtube.com/watch?v=pYeekwv3vC4  
 * 
-# Installation and use brief suggestions  
-To install, create virtual environment (assuming you want one) and pip install from ``requirements.txt``  
-To run, enter ``uvicorn app.main:app `` or any other local development server  
-Default port is 8000 - choose a different port if you don't want that  
-To see the endpoints enter http://localhost:8000/docs (or use whichever port you created)  
-
-
 ### More reading
 * on the Users map see https://stackoverflow.com/questions/42605337/cannot-assign-to-struct-field-in-a-map  
 
