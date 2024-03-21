@@ -1,3 +1,6 @@
+"""This module provides the endpoints for users management.
+TODO clone function and endpoints should probably be in a separate module."""
+
 from fastapi import APIRouter, Depends
 from typing import List
 from app.authorization.auth import get_current_user_and_simulation, usPair, User

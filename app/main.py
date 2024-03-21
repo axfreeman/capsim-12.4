@@ -1,12 +1,11 @@
-from fastapi import Depends, FastAPI
+from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from .authorization import auth
 from .database import Base, engine
 from .routers import (
     actions,
-    buyers_and_sellers,
     commodity,
     industry,
+    login,
     simulation,
     socialClass,
     stocks,
@@ -19,8 +18,7 @@ Base.metadata.create_all(bind=engine)
 interface = FastAPI()
 
 interface.include_router(actions.router)
-interface.include_router(auth.router)
-# interface.include_router(buyers_and_sellers.router) # TODO remove this module - buyers and sellers should not be exported
+interface.include_router(login.router)
 interface.include_router(commodity.router)
 interface.include_router(industry.router)
 interface.include_router(simulation.router)

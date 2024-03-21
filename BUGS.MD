@@ -1,8 +1,22 @@
 # Informal list of issues requiring attention
 * see also the buglist for capfront.05
 
-# TODO
+## Admin stuff
 * Reset should be protected and only admin can do it
 * Neither tokens nor hashed passwords should be exported in any endpoint
 * Two standard users guest and admin should be initialised via the reset method
 * Use .env file
+
+## The simulation as such
+
+### State (as viewed through 'Home') should be the same after a complete circuit as it was before. At present we see the following discrepancies:  
+* Both departments have less money.  
+* The capitalists have more money  
+** The above two are because the capitalists should have transferred their money to the industries.
+
+* The current capital of the departments is wrong - it is too high.
+* The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it)
+* The workers don't have any labour power to sell.
+* Demand should have been reduced to zero once trade has taken place, though we may want to keep note of the excess demand.
+
+

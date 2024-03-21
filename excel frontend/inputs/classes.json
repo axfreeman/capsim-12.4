@@ -1,0 +1,24 @@
+[
+  {
+    "id": 37,
+    "simulation_id": 9,
+    "name": "Capitalists",
+    "username": "guest",
+    "population": 1500,
+    "participation_ratio": 0,
+    "consumption_ratio": 1,
+    "revenue": 1500,
+    "assets": 0
+  },
+  {
+    "id": 38,
+    "simulation_id": 9,
+    "name": "Workers",
+    "username": "guest",
+    "population": 3000,
+    "participation_ratio": 1,
+    "consumption_ratio": 0.5,
+    "revenue": 0,
+    "assets": 0
+  }
+]
