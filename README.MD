@@ -1,4 +1,6 @@
 # Capitalism 12.4
+## Other documentation on this site: See docs folder.
+
 ## This is the front end for the simulation of a capitalist economy 
 It builds on previous Django versions (see capitalism 11.8 and predecessors)  
 But I have split the project into this backend and a separate front end  
