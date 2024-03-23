@@ -9,8 +9,9 @@
 
 ## The simulation as such
 ### State (as viewed through 'Home') should be the same after a complete circuit as it was before. At present we see the following discrepancies:  
+* The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it) THIS PROBLEM HAS RETURNED.  
+* Unsold capital services should probably just go to waste.  
 
-Classes stocks of consumption goods go negative after investment.  
 
 ## Crashes
 API can't handle some bad requests. EG  
@@ -25,5 +26,5 @@ fastapi.exceptions.ResponseValidationError: 1 validation errors:
 ## DONE
 * Demand should have been reduced to zero once trade has taken place, though we may want to keep note of the excess demand. DONE
 * After Consumption, total value and price of labour power have not been recalculated for commodities. DONE  
-* The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it) GONE AWAY BUT DON'T KNOW WHY  
+* Classes stocks of consumption goods go negative after investment.  NO THEY DON'T  
 
