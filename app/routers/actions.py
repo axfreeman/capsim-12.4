@@ -100,9 +100,24 @@ def tradeHandler(
     db.add(u.simulation)
     u.simulation.state = "CONSUME"
     db.commit()
-    # TODO I don't think it's necessary to revalue, but check.
-    # This is because trade only involves a change of ownership.
+
+# Reset commodity demand from stock demands
+        
+    commodity_demand(db,u.simulation)
+
+# Reset commodity supply from industry and class supplies
+# TODO there may be some duplication in the code for supply
+
+    initialise_supply(db, u.simulation)
+    industry_supply(db, u.simulation)  # tell industries to register their supply
+    class_supply(db, u.simulation)  # tell classes to register their supply 
+
+    # TODO I don't think it's necessary to also to revalue, but check.
+    # It should not be necessary, because trade only involves a change of ownership.
+    # If it is necessary, we should probably implement the line below.
+
     # revalue_stocks(db,u.simulation) 
+
     return "Trading complete"
 
 @router.get("/produce")

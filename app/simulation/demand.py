@@ -26,11 +26,15 @@ def initialise_demand(db: Session,simulation: Simulation):
     recalculating total demand."""
 
     report(1,simulation.id, "INITIALISING DEMAND FOR COMMODITIES AND STOCKS",db)
-    cquery = db.query(Commodity).where(Commodity.simulation_id==simulation.id)
+
+
+#TODO the next six lines duplicate code in commodity_demand()
+    cquery = db.query(Commodity).where(Commodity.simulation_id==simulation.id) 
     for c in cquery:
         report(2,simulation.id,f"Initialising demand for commodity {c.name}",db)
         db.add(c)
         c.demand=0
+
     squery = db.query(Industry_stock).where(Industry_stock.simulation_id==simulation.id)
     for s in squery:
         report(2,simulation.id,f"Initialising demand for industry stock {s.name}",db)
@@ -88,6 +92,7 @@ def commodity_demand(db:Session,simulation:Simulation):
 
         db.add(commodity)
         report(2,simulation.id, f'Calculating total demand for {commodity.name} from Industries',db)
+        commodity.demand=0 #TODO this duplicates some of the code in initialize_demand()
         squery=db.query(Industry_stock).filter(Industry_stock.commodity_id==commodity.id,Industry_stock.usage_type=="Production")
         for stock in squery:
             industry:Industry=stock.industry(db)
