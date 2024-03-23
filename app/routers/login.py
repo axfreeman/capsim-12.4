@@ -21,7 +21,7 @@ async def login_for_access_token(
     db: Session = Depends(get_db),
 ) -> Token:
     """Endpoint for a login request received through the API.
-    Authenticates the user by checking they exist and supplied the right password.
+    Authenticates by checking user exists and supplied the right password.
     """
     user: User = authenticate_user(form_data.username, form_data.password, db)
     if user == None:

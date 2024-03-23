@@ -20,3 +20,13 @@
 * Demand should have been reduced to zero once trade has taken place, though we may want to keep note of the excess demand.
 
 
+## Crashes
+API can't handle some bad requests. EG  
+
+* GET /auth/login%26username%3Dguest%26password%3Dinsecure HTTP/1.1" 500 Internal Server Error  
+results in    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'model_attributes_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}  
+
+
+
