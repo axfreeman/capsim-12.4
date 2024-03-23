@@ -11,6 +11,8 @@
 ### State (as viewed through 'Home') should be the same after a complete circuit as it was before. At present we see the following discrepancies:  
 * The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it) THIS PROBLEM HAS RETURNED.  
 * Unsold capital services should probably just go to waste.  
+* Or we could have them sell these services to their own industries for nothing.  
+
 
 
 ## Crashes
