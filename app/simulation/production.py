@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 def produce(session:Session, simulation:Simulation):
     """Tell all industries to produce."""
+
     report(1, simulation.id, "PRODUCTION", session)
     iquery = session.query(Industry).where(Industry.simulation_id == simulation.id)
 
@@ -11,7 +12,7 @@ def produce(session:Session, simulation:Simulation):
         industry_produce(ind, session, simulation)
 
 def industry_produce(industry:Industry, db:Session, simulation:Simulation)->str:
-    """Tell 'industry' to produce.
+    """Tell  the given industry to produce.
 
     Increase the size of self.sales_stock by self.output_scale.
     
@@ -23,16 +24,6 @@ def industry_produce(industry:Industry, db:Session, simulation:Simulation)->str:
 
     Add the used-up size of each socially-produced productive Stock to 
     the value of self.sales_stock.
-
-    Once Production and Reproduction are both complete, recalculate
-    unit values and prices and then revalue all Stocks from their sizes.
-
-    This is a separate calculation and is not done inside production,
-    because it can only calculated after Social Classes have restored
-    their sale_stocks. This applies in particular to Labour - but a 
-    value-creating function can be assigned to any Social Class to study 
-    the consequences of a theory which asserts that it provides a 'factor 
-    of production' whether ficitious or not.
     """
 
     report(2, simulation.id, f"{industry.name} is producing", db)

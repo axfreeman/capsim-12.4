@@ -27,7 +27,6 @@ def initialise_demand(db: Session,simulation: Simulation):
 
     report(1,simulation.id, "INITIALISING DEMAND FOR COMMODITIES AND STOCKS",db)
 
-
 #TODO the next six lines duplicate code in commodity_demand()
     cquery = db.query(Commodity).where(Commodity.simulation_id==simulation.id) 
     for c in cquery:

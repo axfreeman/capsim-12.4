@@ -8,17 +8,9 @@
 * Use .env file
 
 ## The simulation as such
-
 ### State (as viewed through 'Home') should be the same after a complete circuit as it was before. At present we see the following discrepancies:  
-* Both departments have less money.  
-* The capitalists have more money  
-** The above two are because the capitalists should have transferred their money to the industries.
 
-* The current capital of the departments is wrong - it is too high.
-* The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it)
-* The workers don't have any labour power to sell.
-* Demand should have been reduced to zero once trade has taken place, though we may want to keep note of the excess demand.
-
+Classes stocks of consumption goods go negative after investment.  
 
 ## Crashes
 API can't handle some bad requests. EG  
@@ -29,4 +21,9 @@ fastapi.exceptions.ResponseValidationError: 1 validation errors:
   {'type': 'model_attributes_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': None, 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}  
 
 
+
+## DONE
+* Demand should have been reduced to zero once trade has taken place, though we may want to keep note of the excess demand. DONE
+* After Consumption, total value and price of labour power have not been recalculated for commodities. DONE  
+* The capitalists have not sold their capital services (which is correct, but we can't just let it accumulate just because nobody is buying it) GONE AWAY BUT DON'T KNOW WHY  
 

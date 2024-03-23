@@ -26,7 +26,7 @@ from ..models import (
     Commodity,
     Trace,
 )
-from ..simulation.utils import calculate_current_capitals, revalue_stocks, revalue_commodities
+from ..simulation.utils import calculate_current_capitals, recalculate_commodity_totals, revalue_stocks, revalue_commodities
 
 router = APIRouter(prefix="/action", tags=["Actions"])
 
@@ -131,7 +131,29 @@ def produceHandler(
 
     Assumes that get_current_user() has handled any errors. 
     Therefore does not check u except to decide whether or not to go ahead. 
+
+    Once Production and Consumption are both complete, we will 
+    recalculate unit values and prices and then revalue all Stocks.
+
+    This separate calculation cannot done inside production, because
+    in order to revise unit values and prices, Social Classes must first
+    restore their sale_stocks. Otherwise there is an apparent net loss 
+    of Labour Power and it will be overvalued.
+
+    At this stage, we *do* recalculate the total size, value and price of
+    every commodity in existence but do not revise values and prices in 
+    accordance with the resultant change in unit values and prices.
+
+    And we *do* calculate the new current capital, profits, and profit 
+    rates to demonstrate the independent effect of production on these
+    magnitudes.
+
+    This has to be recalculated, however, after consumption because if 
+    the industries have stocks of labour power on hand, and there has been
+    a change in the value of labour power (for example due to a wage increase)
+    their stocks will be revalued accordingly, changing their profits.
     """
+
     if u.user is None or u.simulation is None or u.simulation.state=="TEMPLATE": 
         return None
 
@@ -140,8 +162,12 @@ def produceHandler(
     u.simulation.state = "CONSUME"
     db.commit()
 
-    # Don't revalue yet, because consumption (social reproduction) has to
-    # be complete before all the facts are in. 
+# Recalculate commodity totals (but do not revalue or reprice)
+    
+    recalculate_commodity_totals(db,u.simulation)
+
+# Recalculate current capital and profit
+
     calculate_current_capitals(db,u.simulation)
     return "Production complete"
 

@@ -13,8 +13,18 @@ def revalue_commodities(db:Session, simulation:Simulation):
   Normally, 'revalue stocks' should be called after this, because a change
   in the unit value and/or price will affect all stocks of it.
   """
+  report(1,simulation.id,"CALCULATE NEW UNIT VALUES AND PRICES",db)
+  commodities=db.query(Commodity).where(Commodity.simulation_id==simulation.id)
+  for commodity in commodities:
+      if commodity.size>0:
+        commodity.unit_price=commodity.total_price/commodity.size
+        commodity.unit_value=commodity.total_price/commodity.size
+        report(2,simulation.id,f"Setting the value of commodity {commodity.name} to {commodity.total_value} and its price to {commodity.total_price}",db)
+        report(2,simulation.id,f"Setting the unit value of commodity {commodity.name} to {commodity.unit_value} and its unit price to {commodity.unit_price}",db)
 
-  report(1,simulation.id,"CALCULATE THE SIZE, VALUE AND PRICE OF ALL COMMODITIES",db)
+def recalculate_commodity_totals(db:Session, simulation:Simulation):
+  """Recalculate commodity sizes, values and prices from stocks."""
+  report(1,simulation.id,"CALCULATE NEW TOTAL VALUES AND PRICES",db)
   commodities=db.query(Commodity).where(Commodity.simulation_id==simulation.id)
   for commodity in commodities:
       commodity.total_value=0
@@ -38,14 +48,7 @@ def revalue_commodities(db:Session, simulation:Simulation):
           commodity.total_value+=stock.value
           commodity.total_price+=stock.price
           commodity.size+=stock.size
-  db.commit() # TODO is this necessary at this time?
-
-  for commodity in commodities:
-      if commodity.size>0:
-        commodity.unit_price=commodity.total_price/commodity.size
-        commodity.unit_value=commodity.total_price/commodity.size
-        report(2,simulation.id,f"Setting the value of commodity {commodity.name} to {commodity.total_value} and its price to {commodity.total_price}",db)
-        report(2,simulation.id,f"Setting the unit value of commodity {commodity.name} to {commodity.unit_value} and its unit price to {commodity.unit_price}",db)
+  db.commit()
 
 def revalue_stocks(db:Session, simulation:Simulation):
   """ Interrogate all stocks.
