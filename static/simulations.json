@@ -9,11 +9,11 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 2,
@@ -25,27 +25,27 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 3,
     "name": "SR with halved period",
     "time_stamp": 0,
     "state": "TEMPLATE",
-    "periods_per_year": 1,
+    "periods_per_year": 2,
     "population_growth_rate": 1,
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 4,
@@ -57,11 +57,11 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 5,
@@ -73,11 +73,11 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 6,
@@ -89,11 +89,11 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 7,
@@ -105,11 +105,11 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   },
   {
     "id": 8,
@@ -121,10 +121,10 @@
     "investment_ratio": 1,
     "labour_supply_response": "UNDEFINED",
     "price_response_type": "UNDEFINED",
-    "melt_response_type": null,
+    "melt_response_type": "",
     "currency_symbol": "$",
     "quantity_symbol": "#",
     "melt": 1,
-    "user_id":1
+    "user_id": 1
   }
 ]
