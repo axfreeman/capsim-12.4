@@ -9,6 +9,9 @@ def consume(db:Session, simulation:Simulation)->str:
     """Tell all classes to consume and reproduce their product if they have one.
     TODO currentluy there are no population dynamics
     """
+
+    report(1,simulation.id,f"CONSUMPTION AND REPRODUCTION",db,)
+
     squery = db.query(SocialClass).where(
         SocialClass.simulation_id == simulation.id
     )

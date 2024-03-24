@@ -195,13 +195,13 @@
     "id": 42,
     "class_id": 24,
     "simulation_id": 3,
-    "commodity_id": 10,
+    "commodity_id": 39,
     "usage_type": "Sales",
     "size": 0,
     "value": 0,
     "price": 0,
     "demand": 0,
-    "name": "Capitalists.Sales.Labour Power.(id_42)(sim_3)"
+    "name": "Capitalists.Sales.Capital Services.(id_42)(sim_3)"
   },
   {
     "id": 41,
