@@ -193,6 +193,7 @@ def consumeHandler(
     db.add(u.simulation)
     u.simulation.state = "INVEST"
     db.commit()
+    recalculate_commodity_totals()
     revalue_commodities(db,u.simulation)
     # Then recalculate the price and value of every stock
     revalue_stocks(db, u.simulation)
