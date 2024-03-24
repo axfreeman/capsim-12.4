@@ -1,6 +1,11 @@
 # Capitalism 12.4
 ## Other documentation on this site: See docs folder.
 
+## State of this project
+Simulation 1 (Simple Reproduction) is working  
+Simulation 3 (Simple Reproduction with two periods in the year) is under test  
+ALL OTHER SIMULATIONS ARE NOT YET FUNCTIONAL AND ARE INCLUDED FOR ILLUSTRATION AND DEVELOPMENT ONLY
+
 ## This is the front end for the simulation of a capitalist economy 
 It builds on previous Django versions (see capitalism 11.8 and predecessors)  
 But I have split the project into this backend and a separate front end  
@@ -26,7 +31,6 @@ At present they are initialised by the clumsy method of registering them through
 This should be automated, perhaps through the reset endpoint  
 
 ## Other notes
-
 * There are no migration tools because there is no permanent database as yet. Therefore to change any model, the database should be removed and the app will create and initialize a new one.  
 * When and if this is done, the developer should register the two standard users using Swagger. These are 'guest' and 'admin'. This initialization is not yet automatic.  
 * Swagger can be used directly on the API but a user has to be logged in and the token applied in any GET requests. This can be done by using the Authorization key (at the top of the Swagger listing) and specifying 'bearer' authentication with the token.  
