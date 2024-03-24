@@ -124,4 +124,27 @@ def calculate_current_capitals(db:Session, simulation:Simulation):
       industry.profit_rate=industry.profit/industry.initial_capital
     db.commit()
 
+def clone_model(model, session: Session, **kwargs):
+    """Clone an arbitrary sqlalchemy model object without its 
+    primary key values.
+
+    These primary keys are then added by the caller.
+
+    Returns the clone unless the call is illegal (eg null model).
+
+    Returns None if it can't be done.
+    """
+    try:
+        table = model.__table__
+        non_pk_columns = [
+            k for k in table.columns.keys() if k not in table.primary_key.columns.keys()
+        ]
+        data = {c: getattr(model, c) for c in non_pk_columns}
+        data.update(kwargs)
+        clone = model.__class__(**data)
+        session.add(clone)
+        session.commit()
+        return clone
+    except:
+        return None
 
