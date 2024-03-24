@@ -36,7 +36,7 @@ def class_consume(social_class:SocialClass, db:Session, simulation:Simulation):
         f"Sales stock size before consumption is {ss.size} with value {ss.value}",db,
     )
 
-    consuming_stocks_query = db.query(Class_stock).where(
+    consuming_stocks_query = db.query(Class_stock).filter(
         Class_stock.simulation_id == simulation.id,
         Class_stock.class_id == social_class.id,
         Class_stock.usage_type == "Consumption",
