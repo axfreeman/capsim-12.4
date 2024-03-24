@@ -1,5 +1,18 @@
 [
   {
+    "id": 32,
+    "industry_id": 6,
+    "simulation_id": 3,
+    "commodity_id": 12,
+    "usage_type": "Money",
+    "size": 8000,
+    "requirement": 0,
+    "demand": 0,
+    "value": 8000,
+    "price": 8000,
+    "Name": "Department I.Money.Money.(id_32)(sim_3)"
+  },
+  {
     "id": 6,
     "industry_id": 1,
     "simulation_id": 1,
@@ -11,6 +24,19 @@
     "value": 8000,
     "price": 8000,
     "Name": "Department I.Money.Money.(id_6)(sim_1)"
+  },
+  {
+    "id": 35,
+    "industry_id": 6,
+    "simulation_id": 3,
+    "commodity_id": 10,
+    "usage_type": "Production",
+    "size": 0,
+    "requirement": 0.333333333,
+    "demand": 0,
+    "value": 0,
+    "price": 0,
+    "Name": "Department I.Production.Labour Power.(id_35)(sim_3)"
   },
   {
     "id": 8,
@@ -26,6 +52,19 @@
     "Name": "Department I.Production.Labour Power.(id_8)(sim_1)"
   },
   {
+    "id": 34,
+    "industry_id": 6,
+    "simulation_id": 3,
+    "commodity_id": 11,
+    "usage_type": "Production",
+    "size": 0,
+    "requirement": 0.666666667,
+    "demand": 0,
+    "value": 0,
+    "price": 0,
+    "Name": "Department I.Production.Means of Production.(id_34)(sim_3)"
+  },
+  {
     "id": 9,
     "industry_id": 1,
     "simulation_id": 1,
@@ -39,6 +78,19 @@
     "Name": "Department I.Production.Means of Production.(id_9)(sim_1)"
   },
   {
+    "id": 37,
+    "industry_id": 6,
+    "simulation_id": 3,
+    "commodity_id": 11,
+    "usage_type": "Sales",
+    "size": 6000,
+    "requirement": 0,
+    "demand": 0,
+    "value": 6000,
+    "price": 6000,
+    "Name": "Department I.Sales.Means of Production.(id_37)(sim_3)"
+  },
+  {
     "id": 5,
     "industry_id": 1,
     "simulation_id": 1,
@@ -50,58 +102,6 @@
     "value": 6000,
     "price": 6000,
     "Name": "Department I.Sales.Means of Production.(id_5)(sim_1)"
-  },
-  {
-    "id": 7,
-    "industry_id": 2,
-    "simulation_id": 1,
-    "commodity_id": 4,
-    "usage_type": "Money",
-    "size": 4000,
-    "requirement": 0,
-    "demand": 0,
-    "value": 4000,
-    "price": 4000,
-    "Name": "Department II.Money.Money.(id_7)(sim_1)"
-  },
-  {
-    "id": 1,
-    "industry_id": 2,
-    "simulation_id": 1,
-    "commodity_id": 3,
-    "usage_type": "Production",
-    "size": 0,
-    "requirement": 0.666666667,
-    "demand": 0,
-    "value": 0,
-    "price": 0,
-    "Name": "Department II.Production.Means of Production.(id_1)(sim_1)"
-  },
-  {
-    "id": 4,
-    "industry_id": 2,
-    "simulation_id": 1,
-    "commodity_id": 2,
-    "usage_type": "Production",
-    "size": 0,
-    "requirement": 0.333333333,
-    "demand": 0,
-    "value": 0,
-    "price": 0,
-    "Name": "Department II.Production.Labour Power.(id_4)(sim_1)"
-  },
-  {
-    "id": 10,
-    "industry_id": 2,
-    "simulation_id": 1,
-    "commodity_id": 1,
-    "usage_type": "Sales",
-    "size": 3000,
-    "requirement": 0,
-    "demand": 0,
-    "value": 3000,
-    "price": 3000,
-    "Name": "Department II.Sales.Consumption.(id_10)(sim_1)"
   },
   {
     "id": 21,
@@ -213,25 +213,25 @@
     "simulation_id": 3,
     "commodity_id": 12,
     "usage_type": "Money",
-    "size": 3000,
+    "size": 4000,
     "requirement": 0,
     "demand": 0,
-    "value": 3000,
-    "price": 3000,
-    "Name": "Consumption.Money.Money.(id_31)(sim_3)"
+    "value": 4000,
+    "price": 4000,
+    "Name": "Department II.Money.Money.(id_31)(sim_3)"
   },
   {
-    "id": 33,
-    "industry_id": 5,
-    "simulation_id": 3,
-    "commodity_id": 11,
-    "usage_type": "Production",
-    "size": 1000,
-    "requirement": 0.666666667,
+    "id": 7,
+    "industry_id": 2,
+    "simulation_id": 1,
+    "commodity_id": 4,
+    "usage_type": "Money",
+    "size": 4000,
+    "requirement": 0,
     "demand": 0,
-    "value": 1000,
-    "price": 1000,
-    "Name": "Consumption.Production.Means of Production.(id_33)(sim_3)"
+    "value": 4000,
+    "price": 4000,
+    "Name": "Department II.Money.Money.(id_7)(sim_1)"
   },
   {
     "id": 36,
@@ -239,12 +239,64 @@
     "simulation_id": 3,
     "commodity_id": 10,
     "usage_type": "Production",
-    "size": 500,
+    "size": 0,
     "requirement": 0.333333333,
     "demand": 0,
-    "value": 250,
-    "price": 250,
-    "Name": "Consumption.Production.Labour Power.(id_36)(sim_3)"
+    "value": 0,
+    "price": 0,
+    "Name": "Department II.Production.Labour Power.(id_36)(sim_3)"
+  },
+  {
+    "id": 4,
+    "industry_id": 2,
+    "simulation_id": 1,
+    "commodity_id": 2,
+    "usage_type": "Production",
+    "size": 0,
+    "requirement": 0.333333333,
+    "demand": 0,
+    "value": 0,
+    "price": 0,
+    "Name": "Department II.Production.Labour Power.(id_4)(sim_1)"
+  },
+  {
+    "id": 1,
+    "industry_id": 2,
+    "simulation_id": 1,
+    "commodity_id": 3,
+    "usage_type": "Production",
+    "size": 0,
+    "requirement": 0.666666667,
+    "demand": 0,
+    "value": 0,
+    "price": 0,
+    "Name": "Department II.Production.Means of Production.(id_1)(sim_1)"
+  },
+  {
+    "id": 33,
+    "industry_id": 5,
+    "simulation_id": 3,
+    "commodity_id": 11,
+    "usage_type": "Production",
+    "size": 0,
+    "requirement": 0.666666667,
+    "demand": 0,
+    "value": 0,
+    "price": 0,
+    "Name": "Department II.Production.Means of Production.(id_33)(sim_3)"
+  },
+  {
+    "id": 10,
+    "industry_id": 2,
+    "simulation_id": 1,
+    "commodity_id": 1,
+    "usage_type": "Sales",
+    "size": 3000,
+    "requirement": 0,
+    "demand": 0,
+    "value": 3000,
+    "price": 3000,
+    "Name": "Department II.Sales.Consumption.(id_10)(sim_1)"
   },
   {
     "id": 38,
@@ -252,64 +304,12 @@
     "simulation_id": 3,
     "commodity_id": 9,
     "usage_type": "Sales",
-    "size": 1500,
-    "requirement": 0,
-    "demand": 0,
-    "value": 1500,
-    "price": 1500,
-    "Name": "Consumption.Sales.Consumption.(id_38)(sim_3)"
-  },
-  {
-    "id": 32,
-    "industry_id": 6,
-    "simulation_id": 3,
-    "commodity_id": 12,
-    "usage_type": "Money",
-    "size": 6000,
-    "requirement": 0,
-    "demand": 0,
-    "value": 6000,
-    "price": 6000,
-    "Name": "Means of Production.Money.Money.(id_32)(sim_3)"
-  },
-  {
-    "id": 34,
-    "industry_id": 6,
-    "simulation_id": 3,
-    "commodity_id": 11,
-    "usage_type": "Production",
-    "size": 2000,
-    "requirement": 0.666666667,
-    "demand": 0,
-    "value": 2000,
-    "price": 2000,
-    "Name": "Means of Production.Production.Means of Production.(id_34)(sim_3)"
-  },
-  {
-    "id": 35,
-    "industry_id": 6,
-    "simulation_id": 3,
-    "commodity_id": 10,
-    "usage_type": "Production",
-    "size": 1000,
-    "requirement": 0.333333333,
-    "demand": 0,
-    "value": 500,
-    "price": 500,
-    "Name": "Means of Production.Production.Labour Power.(id_35)(sim_3)"
-  },
-  {
-    "id": 37,
-    "industry_id": 6,
-    "simulation_id": 3,
-    "commodity_id": 11,
-    "usage_type": "Sales",
     "size": 3000,
     "requirement": 0,
     "demand": 0,
     "value": 3000,
     "price": 3000,
-    "Name": "Means of Production.Sales.Means of Production.(id_37)(sim_3)"
+    "Name": "Department II.Sales.Department II.(id_38)(sim_3)"
   },
   {
     "id": 53,
