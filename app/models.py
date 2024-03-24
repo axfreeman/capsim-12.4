@@ -238,6 +238,8 @@ class Industry_stock(Base):
     name = Column(String)  # Owner.Name+Commodity.Name+usage_type
     username = Column(String, nullable=True)
     usage_type = Column(String)  # 'Consumption', 'Production' or 'Money'
+    industry_name =Column(String)  # For diagnostic purposes only: the name of the industry that owns this stock
+    commodity_name =Column(String)  # For diagnostic purposes only: the name of the commodity this stock consists of
     size = Column(Float)
     value = Column(Float)
     price = Column(Float)
@@ -340,9 +342,11 @@ class Class_stock(Base):
     commodity_id = Column(
         Integer, ForeignKey("commodities.id", ondelete="CASCADE"), nullable=False
     )
-    name = Column(String)  # Owner.Name+Commodity.Name+usage_type
+    name = Column(String)  
     username = Column(String, nullable=True)
     usage_type = Column(String)  # 'Consumption', Production' or 'Money'
+    class_name =Column(String)  # For diagnostic purposes only: the name of the class that owns this stock
+    commodity_name =Column(String)  # For diagnostic purposes only: the name of the commodity this stock consists of
     size = Column(Float)
     value = Column(Float)
     price = Column(Float)
