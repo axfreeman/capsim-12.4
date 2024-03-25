@@ -9,10 +9,7 @@ from ..authorization.auth import User, usPair
 from ..schemas import  SimulationBase
 
 
-router=APIRouter(
-    prefix="/simulations",
-    tags=['Simulation']
-)
+router=APIRouter(prefix="/simulations",tags=['Simulation'])
 
 @router.get("/",response_model=List[SimulationBase])
 def get_simulations(db: Session = Depends (get_db)):

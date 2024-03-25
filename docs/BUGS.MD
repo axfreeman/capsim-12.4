@@ -13,8 +13,6 @@
 * Unsold capital services should probably just go to waste.  
 * Or we could have them sell these services to their own industries for nothing.  
 
-
-
 ## Crashes
 API can't handle some bad requests. EG  
 

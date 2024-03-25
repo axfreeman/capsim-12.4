@@ -1,3 +1,17 @@
+"""This module handles 'actions', each of which takes the 
+simulation one step through the circuit.
+
+Once an action is complete it resets the state of the simulation
+to the next stage of the circuit. 
+
+The user implements an action by pressing a button on the main
+menuu. The simulation state is used to ensure that the user can
+only undertake the correct action in the circuit, so they proceed
+in sequence.
+
+TODO prevent the user implementing an action by entering its URL.
+"""
+
 from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
 

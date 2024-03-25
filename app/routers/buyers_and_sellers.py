@@ -1,4 +1,13 @@
-# TODO REMOVE THIS MODULE
+"""This module provides access to the Buyers and Sellers Models.
+
+However these are purely internal and not relevant to the 
+user of the simulation.
+
+Moreover for diagnostic purposes we can directly interrogate the
+database. So this module should go.
+
+TODO remove this module
+"""
 
 from fastapi import  status, Depends, APIRouter
 from sqlalchemy.orm import Session
@@ -9,10 +18,7 @@ from ..database import  get_db
 from ..models import Simulation, Buyer, Seller
 from ..schemas import BuyerBase, SellerBase
 
-router=APIRouter(
-    prefix="/buysell",
-    tags=['Buyers and Sellers']
-)
+router=APIRouter(prefix="/buysell",tags=['Buyers and Sellers'])
 
 # get all buyers
 @router.get("/buyers",response_model=List[BuyerBase])

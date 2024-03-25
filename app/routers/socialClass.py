@@ -6,10 +6,7 @@ from ..database import  get_db
 from ..models import SocialClass,Simulation
 from ..schemas import SocialClassBase
 
-router=APIRouter(
-    prefix="/classes",
-    tags=['Class']
-)
+router=APIRouter(prefix="/classes",tags=['Class'])
 
 # get all socialClasses
 @router.get("/",response_model=List[SocialClassBase])
