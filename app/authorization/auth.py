@@ -86,7 +86,6 @@ async def get_current_user_and_simulation(
 
     Cannot return (None, Simulation)
     """
-
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username = payload.get("sub")

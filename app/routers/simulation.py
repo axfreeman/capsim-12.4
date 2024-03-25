@@ -8,7 +8,6 @@ from ..models import Simulation, Commodity,Industry,SocialClass,Trace
 from ..authorization.auth import User, usPair
 from ..schemas import  SimulationBase
 
-
 router=APIRouter(prefix="/simulations",tags=['Simulation'])
 
 @router.get("/",response_model=List[SimulationBase])
